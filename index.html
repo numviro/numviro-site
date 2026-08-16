@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hourly Pay & Salary Calculator | Numviro</title>
+  <meta name="description" content="Convert hourly pay into weekly, biweekly, monthly, and annual income. Includes overtime earnings and a clear pay breakdown.">
+  <link rel="canonical" href="https://numviro.com/">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Hourly Pay & Salary Calculator | Numviro">
+  <meta property="og:description" content="A fast, free hourly pay and salary calculator with overtime, weekly, monthly, and annual breakdowns.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://numviro.com/">
+  <meta name="theme-color" content="#111827">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Numviro Hourly Pay & Salary Calculator",
+    "url": "https://numviro.com/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "description": "Free calculator for converting hourly pay into weekly, biweekly, monthly and annual income with overtime.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Google AdSense code can be added here later after approval. -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Numviro home">
+        <span class="brand-mark">N</span>
+        <span>Numviro</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#calculator">Calculator</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">FREE WORK & PAY TOOL</p>
+          <h1>Hourly Pay & Salary Calculator</h1>
+          <p class="hero-copy">Turn your hourly wage into weekly, biweekly, monthly, and annual income in seconds — with optional overtime included.</p>
+          <div class="hero-pills" aria-label="Highlights">
+            <span>No signup</span>
+            <span>Instant results</span>
+            <span>Overtime included</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <span class="mini-label">Example</span>
+          <strong>$25/hour</strong>
+          <span>40 hours/week</span>
+          <div class="mini-result">
+            <small>Annual pay</small>
+            <b>$52,000</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+      <div class="container calc-layout">
+        <div class="calculator-card">
+          <div class="section-heading">
+            <p class="eyebrow">CALCULATOR</p>
+            <h2>Calculate your pay</h2>
+            <p>Enter your regular work schedule. Overtime is optional.</p>
+          </div>
+
+          <form id="payForm" class="calc-form">
+            <label>
+              Hourly wage
+              <div class="input-wrap">
+                <span>$</span>
+                <input id="hourlyWage" type="number" min="0" step="0.01" value="25" inputmode="decimal" required>
+              </div>
+            </label>
+
+            <label>
+              Regular hours per week
+              <div class="input-wrap no-prefix">
+                <input id="hoursPerWeek" type="number" min="0" max="168" step="0.25" value="40" inputmode="decimal" required>
+              </div>
+            </label>
+
+            <label>
+              Weeks worked per year
+              <div class="input-wrap no-prefix">
+                <input id="weeksPerYear" type="number" min="1" max="52" step="1" value="52" inputmode="numeric" required>
+              </div>
+            </label>
+
+            <label>
+              Overtime hours per week
+              <div class="input-wrap no-prefix">
+                <input id="overtimeHours" type="number" min="0" max="168" step="0.25" value="0" inputmode="decimal">
+              </div>
+            </label>
+
+            <label>
+              Overtime multiplier
+              <div class="input-wrap no-prefix">
+                <input id="overtimeMultiplier" type="number" min="1" max="5" step="0.1" value="1.5" inputmode="decimal">
+              </div>
+            </label>
+
+            <button class="primary-btn" type="submit">Calculate pay</button>
+          </form>
+
+          <p class="form-note">This calculator estimates gross pay before taxes, benefits, deductions, or unpaid time off.</p>
+        </div>
+
+        <aside class="results-card" aria-live="polite">
+          <div class="results-top">
+            <p class="eyebrow">YOUR RESULTS</p>
+            <h2 id="annualPay">$52,000</h2>
+            <span>Estimated annual gross pay</span>
+          </div>
+
+          <div class="result-grid">
+            <div>
+              <span>Weekly</span>
+              <strong id="weeklyPay">$1,000</strong>
+            </div>
+            <div>
+              <span>Biweekly</span>
+              <strong id="biweeklyPay">$2,000</strong>
+            </div>
+            <div>
+              <span>Monthly</span>
+              <strong id="monthlyPay">$4,333.33</strong>
+            </div>
+            <div>
+              <span>Daily*</span>
+              <strong id="dailyPay">$200</strong>
+            </div>
+          </div>
+
+          <div class="breakdown">
+            <div>
+              <span>Regular annual pay</span>
+              <strong id="regularAnnual">$52,000</strong>
+            </div>
+            <div>
+              <span>Annual overtime pay</span>
+              <strong id="overtimeAnnual">$0</strong>
+            </div>
+          </div>
+          <p class="tiny-note">*Daily pay assumes a 5-day workweek.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Future AdSense placement can go between major content sections after approval. -->
+
+    <section id="how-it-works" class="content-section">
+      <div class="container narrow">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>How hourly pay becomes annual salary</h2>
+        <p>Your regular annual pay is calculated by multiplying your hourly wage by the number of regular hours you work each week, then multiplying that result by the number of weeks you work per year.</p>
+        <div class="formula">Hourly wage × hours per week × weeks per year</div>
+        <p>For example, $25 per hour × 40 hours per week × 52 weeks equals <strong>$52,000 per year</strong> before taxes and deductions.</p>
+
+        <h3>How overtime is calculated</h3>
+        <p>Overtime pay is calculated separately using your overtime hours and overtime multiplier. A common multiplier is 1.5×, but actual overtime rules can vary by employer and location.</p>
+        <div class="formula">Hourly wage × overtime multiplier × overtime hours × weeks per year</div>
+      </div>
+    </section>
+
+    <section class="content-section alt">
+      <div class="container narrow">
+        <p class="eyebrow">EXAMPLE</p>
+        <h2>$30 an hour: what does that equal?</h2>
+        <div class="example-table" role="table" aria-label="$30 per hour example">
+          <div role="row"><span role="cell">Weekly, 40 hours</span><strong role="cell">$1,200</strong></div>
+          <div role="row"><span role="cell">Biweekly</span><strong role="cell">$2,400</strong></div>
+          <div role="row"><span role="cell">Monthly average</span><strong role="cell">$5,200</strong></div>
+          <div role="row"><span role="cell">Annual, 52 weeks</span><strong role="cell">$62,400</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="content-section">
+      <div class="container narrow">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently asked questions</h2>
+
+        <details>
+          <summary>Does this calculator show take-home pay?</summary>
+          <p>No. The result is estimated gross pay before federal, state, local, payroll, benefit, or other deductions.</p>
+        </details>
+
+        <details>
+          <summary>Why is monthly pay an average?</summary>
+          <p>Months have different numbers of workdays and pay periods. Numviro calculates average monthly income by dividing estimated annual pay by 12.</p>
+        </details>
+
+        <details>
+          <summary>Can I include overtime?</summary>
+          <p>Yes. Enter your average overtime hours per week and the overtime multiplier that applies to you.</p>
+        </details>
+
+        <details>
+          <summary>Is Numviro free?</summary>
+          <p>Yes. Numviro is designed to provide simple, free calculators for work and money decisions.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="coming-section">
+      <div class="container">
+        <p class="eyebrow">COMING NEXT</p>
+        <h2>More Numviro tools</h2>
+        <div class="tool-grid">
+          <article><span>01</span><h3>Overtime Calculator</h3><p>Estimate overtime earnings quickly.</p></article>
+          <article><span>02</span><h3>Salary to Hourly</h3><p>Convert annual salary back to an hourly rate.</p></article>
+          <article><span>03</span><h3>Work Hours Calculator</h3><p>Calculate hours worked between shifts.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand footer-brand" href="/">
+          <span class="brand-mark">N</span>
+          <span>Numviro</span>
+        </a>
+        <p>Simple tools for work & money.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="container copyright">© <span id="year"></span> Numviro. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
