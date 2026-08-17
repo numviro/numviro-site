@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F3GZ1Q68KJ');
+  </script>
+
+  <title>Work Hours Calculator | Numviro</title>
+  <meta name="description" content="Calculate total work hours from start time, end time, and break duration. Free work hours calculator from Numviro.">
+  <link rel="canonical" href="https://numviro.com/work-hours-calculator/">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Work Hours Calculator | Numviro">
+  <meta property="og:description" content="Calculate your work hours after breaks in seconds.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://numviro.com/work-hours-calculator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .field label{display:block;font-weight:700;margin-bottom:8px;color:#111827}
+    .field input{width:100%;box-sizing:border-box;padding:15px 16px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff}
+    .field input:focus{outline:2px solid #2563eb;outline-offset:1px}
+    .result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}
+    .result-card .eyebrow{color:#60a5fa}
+    .big-result{font-size:clamp(40px,5vw,58px);font-weight:800;letter-spacing:-2px;margin:10px 0 4px}
+    .result-sub{color:#aeb8c8;margin-bottom:26px}
+    .result-grid{border-top:1px solid #2b3547;display:grid;grid-template-columns:1fr 1fr}
+    .result-item{padding:20px 8px;border-bottom:1px solid #2b3547}
+    .result-item:nth-child(odd){border-right:1px solid #2b3547}
+    .result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}
+    .result-value{font-size:20px;font-weight:800}
+    .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;margin-top:30px}
+    .calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}
+    .info-section{padding:70px 0}
+    .info-section h2{font-size:32px;margin-bottom:16px}
+    .info-section h3{margin-top:28px}
+    .formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}
+    .related-grid a{color:#111827;text-decoration:none}
+    .related-grid p{color:#6b7280;margin-bottom:0}
+    @media(max-width:800px){
+      .tool-grid,.calculator-grid,.related-grid{grid-template-columns:1fr}
+      .result-grid{grid-template-columns:1fr}
+      .result-item:nth-child(odd){border-right:0}
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Numviro home">
+      <span class="brand-mark">N</span>
+      <span>Numviro</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">FREE WORK &amp; PAY TOOL</p>
+        <h1>Work Hours Calculator</h1>
+        <p class="hero-copy">Enter your start time, end time, and break duration to calculate your actual hours worked.</p>
+        <div class="hero-pills">
+          <span>No signup</span>
+          <span>Instant results</span>
+          <span>Breaks included</span>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-hidden="true">
+        <span class="mini-label">Example</span>
+        <strong>9:00 AM → 5:30 PM</strong>
+        <span>30-minute break</span>
+        <div class="mini-result">
+          <small>Total worked</small>
+          <b>8h 0m</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculator" class="calculator-section">
+    <div class="container tool-grid">
+      <div class="calculator-card">
+        <p class="eyebrow">CALCULATOR</p>
+        <h2>Calculate work hours</h2>
+        <p>Enter your shift times and unpaid break.</p>
+
+        <div class="calculator-grid">
+          <div class="field">
+            <label for="startTime">Start time</label>
+            <input id="startTime" type="time" value="09:00">
+          </div>
+
+          <div class="field">
+            <label for="endTime">End time</label>
+            <input id="endTime" type="time" value="17:30">
+          </div>
+
+          <div class="field">
+            <label for="breakMinutes">Break minutes</label>
+            <input id="breakMinutes" type="number" min="0" step="1" value="30">
+          </div>
+
+          <div class="field">
+            <label for="daysPerWeek">Days per week</label>
+            <input id="daysPerWeek" type="number" min="1" max="7" step="1" value="5">
+          </div>
+        </div>
+
+        <p class="form-note">If your shift ends after midnight, Numviro automatically treats the end time as the next day.</p>
+      </div>
+
+      <div class="result-card">
+        <p class="eyebrow">YOUR RESULTS</p>
+        <div class="big-result" id="workedResult">8h 0m</div>
+        <div class="result-sub">Total hours worked per day</div>
+
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-label">Shift length</span>
+            <span class="result-value" id="shiftLength">8h 30m</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Break time</span>
+            <span class="result-value" id="breakResult">30m</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Decimal hours</span>
+            <span class="result-value" id="decimalResult">8.00</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Weekly hours</span>
+            <span class="result-value" id="weeklyResult">40.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section" id="how-it-works">
+    <div class="container">
+      <h2>How to calculate work hours</h2>
+      <p>Subtract your start time from your end time, then subtract any unpaid break time.</p>
+      <div class="formula-box">Work hours = End time − Start time − Unpaid break</div>
+
+      <h3>Example</h3>
+      <p>If you work from 9:00 AM to 5:30 PM, your shift lasts 8 hours 30 minutes. After subtracting a 30-minute unpaid break, your total work time is <strong>8 hours</strong>.</p>
+
+      <h3>What if a shift crosses midnight?</h3>
+      <p>If your end time is earlier than your start time, Numviro assumes the shift ended the following day. For example, 10:00 PM to 6:00 AM is treated as an 8-hour overnight shift before breaks.</p>
+    </div>
+  </section>
+
+  <section class="info-section" id="faq">
+    <div class="container">
+      <h2>Frequently asked questions</h2>
+
+      <h3>Does break time count as work time?</h3>
+      <p>This calculator subtracts the break minutes you enter. Whether a break must be paid depends on local rules and workplace policies.</p>
+
+      <h3>How do I convert minutes to decimal hours?</h3>
+      <p>Divide minutes by 60. For example, 30 minutes equals 0.5 hours and 15 minutes equals 0.25 hours.</p>
+
+      <h3>Can I use this for night shifts?</h3>
+      <p>Yes. Overnight shifts that pass midnight are supported automatically.</p>
+
+      <h3>Can I estimate weekly work hours?</h3>
+      <p>Yes. Enter the number of days you work each week and Numviro multiplies the daily worked hours by that number.</p>
+    </div>
+  </section>
+
+  <section class="info-section" style="background:#f8fafc">
+    <div class="container">
+      <p class="eyebrow">RELATED TOOLS</p>
+      <h2>More Numviro work &amp; pay calculators</h2>
+
+      <div class="related-grid">
+        <article>
+          <h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3>
+          <p>Estimate overtime earnings using your hourly wage and overtime rate.</p>
+        </article>
+        <article>
+          <h3><a href="/hourly-to-salary-calculator/">Hourly to Salary Calculator</a></h3>
+          <p>Convert hourly pay into weekly, monthly, and annual salary.</p>
+        </article>
+        <article>
+          <h3><a href="/salary-to-hourly-calculator/">Salary to Hourly Calculator</a></h3>
+          <p>Convert annual salary back into an hourly wage.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      © <span id="year"></span> Numviro ·
+      <a href="/privacy.html">Privacy</a> ·
+      <a href="/terms.html">Terms</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  const $ = id => document.getElementById(id);
+
+  function minutesFromTime(value) {
+    const [h, m] = value.split(":").map(Number);
+    return h * 60 + m;
+  }
+
+  function formatMinutes(totalMinutes) {
+    const safe = Math.max(0, Math.round(totalMinutes));
+    const hours = Math.floor(safe / 60);
+    const minutes = safe % 60;
+    return `${hours}h ${minutes}m`;
+  }
+
+  function calculate() {
+    const start = minutesFromTime($("startTime").value || "09:00");
+    let end = minutesFromTime($("endTime").value || "17:30");
+    const breakMinutes = Math.max(0, parseFloat($("breakMinutes").value) || 0);
+    const daysPerWeek = Math.min(7, Math.max(1, parseFloat($("daysPerWeek").value) || 5));
+
+    if (end < start) end += 24 * 60;
+
+    const shiftMinutes = Math.max(0, end - start);
+    const workedMinutes = Math.max(0, shiftMinutes - breakMinutes);
+    const decimalHours = workedMinutes / 60;
+    const weeklyHours = decimalHours * daysPerWeek;
+
+    $("workedResult").textContent = formatMinutes(workedMinutes);
+    $("shiftLength").textContent = formatMinutes(shiftMinutes);
+    $("breakResult").textContent = `${Math.round(breakMinutes)}m`;
+    $("decimalResult").textContent = decimalHours.toFixed(2);
+    $("weeklyResult").textContent = weeklyHours.toFixed(2);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    $("year").textContent = new Date().getFullYear();
+    ["startTime", "endTime", "breakMinutes", "daysPerWeek"]
+      .forEach(id => $(id).addEventListener("input", calculate));
+    calculate();
+  });
+</script>
+</body>
+</html>
