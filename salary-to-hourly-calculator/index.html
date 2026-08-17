@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salary to Hourly Calculator | Numviro</title>
+
+  <meta name="description" content="Convert your annual salary into hourly, weekly, biweekly, monthly, and daily pay instantly with Numviro's free salary to hourly calculator.">
+
+  <link rel="canonical" href="https://numviro.com/salary-to-hourly-calculator/">
+  <meta name="robots" content="index,follow">
+
+  <meta property="og:title" content="Salary to Hourly Calculator | Numviro">
+  <meta property="og:description" content="Free salary to hourly calculator. Convert annual salary into hourly, weekly, biweekly, monthly, and daily pay.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://numviro.com/salary-to-hourly-calculator/">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .calculator-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .field input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 15px 16px;
+      border: 1px solid #dbe1ea;
+      border-radius: 12px;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    .field input:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 1px;
+    }
+
+    .result-card {
+      background: #111827;
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .result-card .eyebrow {
+      color: #60a5fa;
+    }
+
+    .big-result {
+      font-size: clamp(40px, 5vw, 58px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin: 10px 0 4px;
+    }
+
+    .result-sub {
+      color: #aeb8c8;
+      margin-bottom: 26px;
+    }
+
+    .result-grid {
+      border-top: 1px solid #2b3547;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .result-item {
+      padding: 20px 8px;
+      border-bottom: 1px solid #2b3547;
+    }
+
+    .result-item:nth-child(odd) {
+      border-right: 1px solid #2b3547;
+    }
+
+    .result-label {
+      display: block;
+      color: #aeb8c8;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .result-value {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 30px;
+    }
+
+    .example-card {
+      background: #111827;
+      color: white;
+      padding: 28px;
+      border-radius: 22px;
+      max-width: 370px;
+      margin-left: auto;
+    }
+
+    .example-card p {
+      color: #b8c2d3;
+    }
+
+    .example-number {
+      font-size: 38px;
+      font-weight: 800;
+      margin: 12px 0;
+    }
+
+    .info-section {
+      padding: 70px 0;
+    }
+
+    .info-section h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .info-section h3 {
+      margin-top: 28px;
+    }
+
+    .formula-box {
+      background: #f4f7fb;
+      border: 1px solid #e4e8ef;
+      padding: 20px;
+      border-radius: 14px;
+      margin: 20px 0;
+      font-weight: 700;
+    }
+
+    @media (max-width: 800px) {
+      .tool-grid,
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .example-card {
+        max-width: none;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Numviro home">
+      <span class="brand-mark">N</span>
+      <span>Numviro</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <p class="eyebrow">FREE WORK &amp; PAY TOOL</p>
+
+      <h1>Salary to Hourly Calculator</h1>
+
+      <p class="hero-copy">
+        Convert your annual salary into an hourly wage in seconds.
+      </p>
+
+      <div class="hero-badges">
+        <span>No signup</span>
+        <span>Instant results</span>
+        <span>Gross pay estimate</span>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <p class="eyebrow">EXAMPLE</p>
+
+      <div class="example-number">$60,000/year</div>
+
+      <p>40 hours/week · 52 weeks/year</p>
+
+      <hr style="border:0;border-top:1px solid #2b3547;margin:25px 0;">
+
+      <div style="display:flex;justify-content:space-between;align-items:end;">
+        <span style="color:#aeb8c8;">Hourly wage</span>
+        <strong style="font-size:24px;">$28.85</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="calculator">
+  <div class="container tool-grid">
+
+    <div class="calculator-card">
+
+      <p class="eyebrow">CALCULATOR</p>
+
+      <h2>Convert salary to hourly pay</h2>
+
+      <p>Enter your annual salary and work schedule.</p>
+
+      <form id="salaryForm">
+
+        <div class="calculator-grid">
+
+          <div class="field">
+            <label for="annualSalary">Annual salary</label>
+            <input
+              id="annualSalary"
+              type="number"
+              min="0"
+              step="100"
+              value="60000"
+            >
+          </div>
+
+          <div class="field">
+            <label for="hoursPerWeek">Hours per week</label>
+            <input
+              id="hoursPerWeek"
+              type="number"
+              min="1"
+              max="168"
+              step="0.5"
+              value="40"
+            >
+          </div>
+
+          <div class="field">
+            <label for="weeksPerYear">Weeks per year</label>
+            <input
+              id="weeksPerYear"
+              type="number"
+              min="1"
+              max="52"
+              step="1"
+              value="52"
+            >
+          </div>
+
+          <div class="field">
+            <label for="daysPerWeek">Workdays per week</label>
+            <input
+              id="daysPerWeek"
+              type="number"
+              min="1"
+              max="7"
+              step="1"
+              value="5"
+            >
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="result-card">
+
+      <p class="eyebrow">YOUR RESULTS</p>
+
+      <div class="big-result" id="hourlyResult">$28.85</div>
+
+      <div class="result-sub">Estimated hourly gross pay</div>
+
+      <div class="result-grid">
+
+        <div class="result-item">
+          <span class="result-label">Monthly average</span>
+          <span class="result-value" id="monthlyResult">$5,000</span>
+        </div>
+
+        <div class="result-item">
+          <span class="result-label">Biweekly</span>
+          <span class="result-value" id="biweeklyResult">$2,308</span>
+        </div>
+
+        <div class="result-item">
+          <span class="result-label">Weekly</span>
+          <span class="result-value" id="weeklyResult">$1,154</span>
+        </div>
+
+        <div class="result-item">
+          <span class="result-label">Daily</span>
+          <span class="result-value" id="dailyResult">$231</span>
+        </div>
+
+        <div class="result-item">
+          <span class="result-label">Hours per year</span>
+          <span class="result-value" id="hoursYearResult">2,080</span>
+        </div>
+
+        <div class="result-item">
+          <span class="result-label">Annual salary</span>
+          <span class="result-value" id="annualResult">$60,000</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="info-section" id="how-it-works">
+
+  <div class="container">
+
+    <h2>How to convert salary to hourly pay</h2>
+
+    <p>
+      To calculate your hourly wage from an annual salary,
+      divide your annual salary by the total number of hours
+      you work during the year.
+    </p>
+
+    <div class="formula-box">
+      Hourly wage = Annual salary ÷ (Hours per week × Weeks per year)
+    </div>
+
+    <h3>Example</h3>
+
+    <p>
+      If you earn $60,000 per year and work 40 hours per week
+      for 52 weeks:
+    </p>
+
+    <div class="formula-box">
+      $60,000 ÷ (40 × 52) = $28.85 per hour
+    </div>
+
+    <p>
+      This calculator estimates gross pay before taxes,
+      deductions, insurance, retirement contributions,
+      or other payroll adjustments.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="info-section" id="faq">
+
+  <div class="container">
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>How much is $50,000 a year per hour?</h3>
+    <p>
+      At 40 hours per week and 52 weeks per year,
+      a $50,000 annual salary is approximately $24.04 per hour.
+    </p>
+
+    <h3>How much is $60,000 a year per hour?</h3>
+    <p>
+      A $60,000 annual salary is approximately $28.85 per hour
+      when working 2,080 hours per year.
+    </p>
+
+    <h3>How much is $100,000 a year per hour?</h3>
+    <p>
+      At 40 hours per week and 52 weeks per year,
+      $100,000 per year is approximately $48.08 per hour.
+    </p>
+
+    <h3>Does this calculator include taxes?</h3>
+    <p>
+      No. The calculator estimates gross earnings before taxes
+      and payroll deductions.
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      © <span id="year"></span> Numviro ·
+      <a href="/privacy.html">Privacy</a> ·
+      <a href="/terms.html">Terms</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+
+  const $ = id => document.getElementById(id);
+
+  function money(value, decimals = 0) {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    }).format(value || 0);
+  }
+
+  function number(value) {
+    return new Intl.NumberFormat("en-US", {
+      maximumFractionDigits: 0
+    }).format(value || 0);
+  }
+
+  function calculate() {
+
+    const salary =
+      Math.max(0, parseFloat($("annualSalary").value) || 0);
+
+    const hoursPerWeek =
+      Math.max(1, parseFloat($("hoursPerWeek").value) || 40);
+
+    const weeksPerYear =
+      Math.min(
+        52,
+        Math.max(1, parseFloat($("weeksPerYear").value) || 52)
+      );
+
+    const daysPerWeek =
+      Math.min(
+        7,
+        Math.max(1, parseFloat($("daysPerWeek").value) || 5)
+      );
+
+    const hoursPerYear =
+      hoursPerWeek * weeksPerYear;
+
+    const hourly =
+      salary / hoursPerYear;
+
+    const weekly =
+      salary / weeksPerYear;
+
+    const monthly =
+      salary / 12;
+
+    const biweekly =
+      weekly * 2;
+
+    const daily =
+      weekly / daysPerWeek;
+
+    $("hourlyResult").textContent =
+      money(hourly, 2);
+
+    $("monthlyResult").textContent =
+      money(monthly);
+
+    $("biweeklyResult").textContent =
+      money(biweekly);
+
+    $("weeklyResult").textContent =
+      money(weekly);
+
+    $("dailyResult").textContent =
+      money(daily);
+
+    $("hoursYearResult").textContent =
+      number(hoursPerYear);
+
+    $("annualResult").textContent =
+      money(salary);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    $("year").textContent =
+      new Date().getFullYear();
+
+    [
+      "annualSalary",
+      "hoursPerWeek",
+      "weeksPerYear",
+      "daysPerWeek"
+    ].forEach(id => {
+
+      $(id).addEventListener(
+        "input",
+        calculate
+      );
+
+    });
+
+    calculate();
+
+  });
+
+</script>
+
+</body>
+</html>
