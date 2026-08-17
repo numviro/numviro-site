@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overtime Pay Calculator | Numviro</title>
+  <meta name="description" content="Calculate overtime pay, weekly earnings, and annual overtime income using your hourly wage, overtime hours, and overtime multiplier.">
+  <link rel="canonical" href="https://numviro.com/overtime-pay-calculator/">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Overtime Pay Calculator | Numviro">
+  <meta property="og:description" content="Free overtime calculator for hourly workers. Estimate overtime rate, weekly overtime pay, and annual overtime earnings.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://numviro.com/overtime-pay-calculator/">
+  <meta name="theme-color" content="#111827">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Numviro home">
+        <span class="brand-mark">N</span><span>Numviro</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#calculator">Calculator</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">FREE WORK & PAY TOOL</p>
+          <h1>Overtime Pay Calculator</h1>
+          <p class="hero-copy">Estimate your overtime rate, weekly overtime earnings, and annual overtime income in seconds.</p>
+          <div class="hero-pills">
+            <span>No signup</span><span>Instant results</span><span>Custom multiplier</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <span class="mini-label">Example</span>
+          <strong>$25/hour</strong>
+          <span>5 overtime hours at 1.5×</span>
+          <div class="mini-result"><small>Weekly overtime</small><b>$187.50</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+      <div class="container calc-layout">
+        <div class="calculator-card">
+          <div class="section-heading">
+            <p class="eyebrow">CALCULATOR</p>
+            <h2>Calculate overtime pay</h2>
+            <p>Enter your hourly wage, overtime hours, and overtime multiplier.</p>
+          </div>
+
+          <form id="otForm" class="calc-form">
+            <label>Hourly wage
+              <div class="input-wrap"><span>$</span><input id="hourlyWage" type="number" min="0" step="0.01" value="25" required></div>
+            </label>
+            <label>Overtime hours per week
+              <div class="input-wrap no-prefix"><input id="overtimeHours" type="number" min="0" max="168" step="0.25" value="5" required></div>
+            </label>
+            <label>Overtime multiplier
+              <div class="input-wrap no-prefix"><input id="multiplier" type="number" min="1" max="5" step="0.1" value="1.5" required></div>
+            </label>
+            <label>Weeks worked per year
+              <div class="input-wrap no-prefix"><input id="weeksPerYear" type="number" min="1" max="52" step="1" value="52" required></div>
+            </label>
+            <button class="primary-btn" type="submit">Calculate overtime</button>
+          </form>
+          <p class="form-note">This is a gross-pay estimate. Actual overtime eligibility and rules vary by employer, job classification, and location.</p>
+        </div>
+
+        <aside class="results-card" aria-live="polite">
+          <div class="results-top">
+            <p class="eyebrow">YOUR RESULTS</p>
+            <h2 id="weeklyOvertime">$187.50</h2>
+            <span>Estimated weekly overtime pay</span>
+          </div>
+          <div class="result-grid">
+            <div><span>Overtime rate</span><strong id="overtimeRate">$37.50/hr</strong></div>
+            <div><span>Monthly average</span><strong id="monthlyOvertime">$812.50</strong></div>
+            <div><span>Annual overtime</span><strong id="annualOvertime">$9,750</strong></div>
+            <div><span>Extra per OT hour</span><strong id="extraPerHour">$12.50</strong></div>
+          </div>
+          <div class="breakdown">
+            <div><span>Base hourly wage</span><strong id="baseHourly">$25.00</strong></div>
+            <div><span>Multiplier</span><strong id="multiplierResult">1.5×</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="content-section">
+      <div class="container narrow">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>How overtime pay is calculated</h2>
+        <p>The calculator multiplies your regular hourly wage by the overtime multiplier to estimate your overtime hourly rate.</p>
+        <div class="formula">Hourly wage × overtime multiplier = overtime hourly rate</div>
+        <p>Then it multiplies that overtime rate by the number of overtime hours you work.</p>
+        <div class="formula">Overtime rate × overtime hours = overtime pay</div>
+        <h3>Example</h3>
+        <p>If you earn <strong>$25 per hour</strong>, work <strong>5 overtime hours</strong>, and your overtime rate is <strong>1.5×</strong>, your overtime rate is $37.50 per hour and your weekly overtime pay is $187.50.</p>
+      </div>
+    </section>
+
+    <section class="content-section alt">
+      <div class="container narrow">
+        <p class="eyebrow">IMPORTANT</p>
+        <h2>Overtime rules can vary</h2>
+        <p>This calculator is a general estimate. Overtime laws and employer policies may differ based on your location, employment status, occupation, schedule, and other factors.</p>
+      </div>
+    </section>
+
+    <section id="faq" class="content-section">
+      <div class="container narrow">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently asked questions</h2>
+        <details><summary>What does 1.5× overtime mean?</summary><p>A 1.5× multiplier means the overtime hourly rate is one and a half times the regular hourly wage.</p></details>
+        <details><summary>Can I calculate double time?</summary><p>Yes. Enter 2.0 as the overtime multiplier.</p></details>
+        <details><summary>Does this include taxes?</summary><p>No. The calculator estimates gross overtime pay before taxes, deductions, and benefits.</p></details>
+      </div>
+    </section>
+
+    <section class="coming-section">
+      <div class="container">
+        <p class="eyebrow">RELATED TOOLS</p>
+        <h2>More Numviro calculators</h2>
+        <div class="tool-grid">
+          <article><span>01</span><h3><a href="/" style="color:inherit;text-decoration:none">Hourly Pay & Salary</a></h3><p>Convert hourly pay to weekly, monthly, and annual income.</p></article>
+          <article><span>02</span><h3>Salary to Hourly</h3><p>Coming soon.</p></article>
+          <article><span>03</span><h3>Work Hours Calculator</h3><p>Coming soon.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand footer-brand" href="/"><span class="brand-mark">N</span><span>Numviro</span></a>
+        <p>Simple tools for work & money.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="container copyright">© <span id="year"></span> Numviro. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const $ = id => document.getElementById(id);
+    function money(v){return new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:v%1===0?0:2}).format(v||0)}
+    function calculate(){
+      const hourly=Math.max(0,parseFloat($("hourlyWage").value)||0);
+      const hours=Math.max(0,parseFloat($("overtimeHours").value)||0);
+      const multiplier=Math.max(1,parseFloat($("multiplier").value)||1.5);
+      const weeks=Math.min(52,Math.max(1,parseFloat($("weeksPerYear").value)||52));
+      const rate=hourly*multiplier, weekly=rate*hours, annual=weekly*weeks, monthly=annual/12, extra=rate-hourly;
+      $("weeklyOvertime").textContent=money(weekly);
+      $("overtimeRate").textContent=money(rate)+"/hr";
+      $("monthlyOvertime").textContent=money(monthly);
+      $("annualOvertime").textContent=money(annual);
+      $("extraPerHour").textContent=money(extra);
+      $("baseHourly").textContent=money(hourly);
+      $("multiplierResult").textContent=multiplier.toFixed(1)+"×";
+    }
+    document.addEventListener("DOMContentLoaded",()=>{
+      $("year").textContent=new Date().getFullYear();
+      $("otForm").addEventListener("submit",e=>{e.preventDefault();calculate()});
+      ["hourlyWage","overtimeHours","multiplier","weeksPerYear"].forEach(id=>$(id).addEventListener("input",calculate));
+      calculate();
+    });
+  </script>
+</body>
+</html>
