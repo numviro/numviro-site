@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hourly to Salary Calculator | Numviro</title>
+  <meta name="description" content="Convert hourly pay to annual salary, monthly salary, weekly pay, and daily pay. Free hourly to salary calculator from Numviro.">
+  <link rel="canonical" href="https://numviro.com/hourly-to-salary-calculator/">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Hourly to Salary Calculator | Numviro">
+  <meta property="og:description" content="Convert hourly wage into annual, monthly, weekly, and daily pay instantly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://numviro.com/hourly-to-salary-calculator/">
+  <meta name="theme-color" content="#111827">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Numviro home">
+        <span class="brand-mark">N</span><span>Numviro</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#calculator">Calculator</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">FREE WORK & PAY TOOL</p>
+          <h1>Hourly to Salary Calculator</h1>
+          <p class="hero-copy">Convert your hourly wage into weekly, monthly, and annual salary in seconds.</p>
+          <div class="hero-pills">
+            <span>No signup</span>
+            <span>Instant results</span>
+            <span>Gross pay estimate</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <span class="mini-label">Example</span>
+          <strong>$30/hour</strong>
+          <span>40 hours/week · 52 weeks/year</span>
+          <div class="mini-result">
+            <small>Annual salary</small>
+            <b>$62,400</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+      <div class="container calc-layout">
+        <div class="calculator-card">
+          <div class="section-heading">
+            <p class="eyebrow">CALCULATOR</p>
+            <h2>Convert hourly pay to salary</h2>
+            <p>Enter your hourly wage and work schedule.</p>
+          </div>
+
+          <form id="salaryForm" class="calc-form">
+            <label>
+              Hourly wage
+              <div class="input-wrap">
+                <span>$</span>
+                <input id="hourlyWage" type="number" min="0" step="0.01" value="30" required>
+              </div>
+            </label>
+
+            <label>
+              Hours per week
+              <div class="input-wrap no-prefix">
+                <input id="hoursPerWeek" type="number" min="0" max="168" step="0.25" value="40" required>
+              </div>
+            </label>
+
+            <label>
+              Weeks per year
+              <div class="input-wrap no-prefix">
+                <input id="weeksPerYear" type="number" min="1" max="52" step="1" value="52" required>
+              </div>
+            </label>
+
+            <label>
+              Workdays per week
+              <div class="input-wrap no-prefix">
+                <input id="daysPerWeek" type="number" min="1" max="7" step="1" value="5" required>
+              </div>
+            </label>
+
+            <button class="primary-btn" type="submit">Calculate salary</button>
+          </form>
+
+          <p class="form-note">This calculator estimates gross pay before taxes, benefits, deductions, or unpaid time off.</p>
+        </div>
+
+        <aside class="results-card" aria-live="polite">
+          <div class="results-top">
+            <p class="eyebrow">YOUR RESULTS</p>
+            <h2 id="annualSalary">$62,400</h2>
+            <span>Estimated annual gross salary</span>
+          </div>
+
+          <div class="result-grid">
+            <div>
+              <span>Monthly average</span>
+              <strong id="monthlySalary">$5,200</strong>
+            </div>
+            <div>
+              <span>Biweekly</span>
+              <strong id="biweeklyPay">$2,400</strong>
+            </div>
+            <div>
+              <span>Weekly</span>
+              <strong id="weeklyPay">$1,200</strong>
+            </div>
+            <div>
+              <span>Daily</span>
+              <strong id="dailyPay">$240</strong>
+            </div>
+          </div>
+
+          <div class="breakdown">
+            <div>
+              <span>Hourly wage</span>
+              <strong id="hourlyResult">$30.00</strong>
+            </div>
+            <div>
+              <span>Hours per year</span>
+              <strong id="hoursPerYearResult">2,080</strong>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="content-section">
+      <div class="container narrow">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>How hourly pay converts to annual salary</h2>
+        <p>Annual salary is estimated by multiplying your hourly wage by your weekly hours and the number of weeks you work each year.</p>
+        <div class="formula">Hourly wage × hours per week × weeks per year = annual salary</div>
+        <p>For example, $30 per hour × 40 hours per week × 52 weeks equals <strong>$62,400 per year</strong>.</p>
+
+        <h3>How monthly salary is estimated</h3>
+        <p>Average monthly salary is calculated by dividing the annual salary by 12.</p>
+        <div class="formula">Annual salary ÷ 12 = average monthly salary</div>
+      </div>
+    </section>
+
+    <section class="content-section alt">
+      <div class="container narrow">
+        <p class="eyebrow">EXAMPLE</p>
+        <h2>$25 an hour: what salary is that?</h2>
+        <div class="example-table" role="table" aria-label="$25 per hour salary example">
+          <div role="row"><span role="cell">Weekly, 40 hours</span><strong role="cell">$1,000</strong></div>
+          <div role="row"><span role="cell">Biweekly</span><strong role="cell">$2,000</strong></div>
+          <div role="row"><span role="cell">Monthly average</span><strong role="cell">$4,333.33</strong></div>
+          <div role="row"><span role="cell">Annual, 52 weeks</span><strong role="cell">$52,000</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="content-section">
+      <div class="container narrow">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently asked questions</h2>
+
+        <details>
+          <summary>Does this calculator include taxes?</summary>
+          <p>No. The calculator estimates gross pay before taxes, deductions, and benefits.</p>
+        </details>
+
+        <details>
+          <summary>Why does monthly pay use an average?</summary>
+          <p>Months have different numbers of workdays and pay periods, so monthly pay is estimated by dividing annual pay by 12.</p>
+        </details>
+
+        <details>
+          <summary>Can I use fewer than 52 weeks?</summary>
+          <p>Yes. Change the weeks-per-year field to reflect unpaid leave, seasonal work, or other time off.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="coming-section">
+      <div class="container">
+        <p class="eyebrow">RELATED TOOLS</p>
+        <h2>More Numviro calculators</h2>
+        <div class="tool-grid">
+          <article>
+            <span>01</span>
+            <h3><a href="/overtime-pay-calculator/" style="color:inherit;text-decoration:none">Overtime Pay Calculator</a></h3>
+            <p>Estimate overtime rate and overtime earnings.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3><a href="/" style="color:inherit;text-decoration:none">Hourly Pay & Salary</a></h3>
+            <p>View weekly, monthly, and annual income with optional overtime.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Work Hours Calculator</h3>
+            <p>Coming soon.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand footer-brand" href="/">
+          <span class="brand-mark">N</span><span>Numviro</span>
+        </a>
+        <p>Simple tools for work & money.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="container copyright">© <span id="year"></span> Numviro. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const $ = id => document.getElementById(id);
+
+    function money(value) {
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: value % 1 === 0 ? 0 : 2
+      }).format(value || 0);
+    }
+
+    function number(value) {
+      return new Intl.NumberFormat("en-US", {
+        maximumFractionDigits: 2
+      }).format(value || 0);
+    }
+
+    function calculate() {
+      const hourly = Math.max(0, parseFloat($("hourlyWage").value) || 0);
+      const hoursPerWeek = Math.max(0, parseFloat($("hoursPerWeek").value) || 0);
+      const weeksPerYear = Math.min(52, Math.max(1, parseFloat($("weeksPerYear").value) || 52));
+      const daysPerWeek = Math.min(7, Math.max(1, parseFloat($("daysPerWeek").value) || 5));
+
+      const weekly = hourly * hoursPerWeek;
+      const annual = weekly * weeksPerYear;
+      const monthly = annual / 12;
+      const biweekly = weekly * 2;
+      const daily = weekly / daysPerWeek;
+      const hoursPerYear = hoursPerWeek * weeksPerYear;
+
+      $("annualSalary").textContent = money(annual);
+      $("monthlySalary").textContent = money(monthly);
+      $("biweeklyPay").textContent = money(biweekly);
+      $("weeklyPay").textContent = money(weekly);
+      $("dailyPay").textContent = money(daily);
+      $("hourlyResult").textContent = money(hourly);
+      $("hoursPerYearResult").textContent = number(hoursPerYear);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      $("year").textContent = new Date().getFullYear();
+
+      $("salaryForm").addEventListener("submit", event => {
+        event.preventDefault();
+        calculate();
+      });
+
+      ["hourlyWage", "hoursPerWeek", "weeksPerYear", "daysPerWeek"]
+        .forEach(id => $(id).addEventListener("input", calculate));
+
+      calculate();
+    });
+  </script>
+</body>
+</html>
