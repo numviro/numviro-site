@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-F3GZ1Q68KJ');
+  </script>
+
+  <title>Contractor vs Employee Cost Calculator | Compare Hiring Cost | Numviro</title>
+
+  <meta
+    name="description"
+    content="Compare the estimated annual cost of hiring an employee versus an independent contractor using salary, benefits, employer costs, contractor rate, hours, and fees."
+  >
+
+  <link
+    rel="canonical"
+    href="https://numviro.com/contractor-vs-employee-cost-calculator/"
+  >
+
+  <meta name="robots" content="index,follow">
+
+  <meta
+    property="og:title"
+    content="Contractor vs Employee Cost Calculator | Numviro"
+  >
+  <meta
+    property="og:description"
+    content="Compare estimated employee and contractor costs side by side using your own compensation and overhead assumptions."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:url"
+    content="https://numviro.com/contractor-vs-employee-cost-calculator/"
+  >
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .calculator-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .field input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 15px;
+      border: 1px solid #dbe1ea;
+      border-radius: 12px;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    .inline-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .subhead {
+      margin-top: 28px;
+      margin-bottom: 14px;
+    }
+
+    .result-card {
+      background: #111827;
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .result-card .eyebrow {
+      color: #60a5fa;
+    }
+
+    .big-result {
+      font-size: clamp(40px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin: 8px 0;
+    }
+
+    .result-sub {
+      color: #aeb8c8;
+      margin-bottom: 24px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid #2b3547;
+    }
+
+    .result-item {
+      padding: 18px 8px;
+      border-bottom: 1px solid #2b3547;
+    }
+
+    .result-item:nth-child(odd) {
+      border-right: 1px solid #2b3547;
+    }
+
+    .result-label {
+      display: block;
+      color: #aeb8c8;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .result-value {
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .info-section {
+      padding: 70px 0;
+    }
+
+    .formula-box {
+      background: #f4f7fb;
+      border: 1px solid #e4e8ef;
+      padding: 20px;
+      border-radius: 14px;
+      margin: 20px 0;
+      font-weight: 700;
+    }
+
+    .notice {
+      background: #fff8e6;
+      border: 1px solid #f2dfac;
+      border-radius: 14px;
+      padding: 18px;
+      margin: 24px 0;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .related-grid article {
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .related-grid a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    @media (max-width: 850px) {
+      .tool-grid,
+      .inline-grid,
+      .related-grid,
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-item:nth-child(odd) {
+        border-right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Numviro home">
+        <span class="brand-mark">N</span>
+        <span>Numviro</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#calculator">Calculator</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">FREE HIRING COST TOOL</p>
+          <h1>Contractor vs Employee Cost Calculator</h1>
+
+          <p class="hero-copy">
+            Compare the estimated annual business cost of hiring an employee
+            versus using an independent contractor for the same workload.
+          </p>
+
+          <div class="hero-pills">
+            <span>Employee total cost</span>
+            <span>Contractor annual cost</span>
+            <span>Cost difference</span>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <span class="mini-label">Example</span>
+          <strong>$80,000 employee salary</strong>
+          <span>vs. $55/hour contractor</span>
+
+          <div class="mini-result">
+            <small>Compare full annual cost</small>
+            <b>Side by side</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+      <div class="container tool-grid">
+
+        <div class="calculator-card">
+          <p class="eyebrow">CALCULATOR</p>
+          <h2>Compare hiring costs</h2>
+
+          <h3 class="subhead">Employee cost</h3>
+
+          <div class="inline-grid">
+            <div class="field">
+              <label for="salary">Annual salary</label>
+              <input
+                id="salary"
+                type="number"
+                min="0"
+                step="500"
+                value="80000"
+              >
+            </div>
+
+            <div class="field">
+              <label for="employerPercent">Employer payroll / statutory cost (%)</label>
+              <input
+                id="employerPercent"
+                type="number"
+                min="0"
+                step="0.1"
+                value="8"
+              >
+            </div>
+          </div>
+
+          <div class="inline-grid">
+            <div class="field">
+              <label for="benefits">Annual benefits value / cost</label>
+              <input
+                id="benefits"
+                type="number"
+                min="0"
+                step="100"
+                value="12000"
+              >
+            </div>
+
+            <div class="field">
+              <label for="employeeOverhead">Equipment, insurance & overhead</label>
+              <input
+                id="employeeOverhead"
+                type="number"
+                min="0"
+                step="100"
+                value="5000"
+              >
+            </div>
+          </div>
+
+          <h3 class="subhead">Contractor cost</h3>
+
+          <div class="inline-grid">
+            <div class="field">
+              <label for="contractorRate">Contractor hourly rate</label>
+              <input
+                id="contractorRate"
+                type="number"
+                min="0"
+                step="0.01"
+                value="55"
+              >
+            </div>
+
+            <div class="field">
+              <label for="contractorHours">Contractor hours per year</label>
+              <input
+                id="contractorHours"
+                type="number"
+                min="0"
+                step="1"
+                value="1600"
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="contractorFees">Annual contractor-specific fees / overhead</label>
+            <input
+              id="contractorFees"
+              type="number"
+              min="0"
+              step="100"
+              value="0"
+            >
+          </div>
+
+          <p class="form-note">
+            Cost-planning estimate only. This calculator does not determine worker classification,
+            tax treatment, employment status, or legal compliance. Enter the actual cost assumptions
+            that apply to your organization and jurisdiction.
+          </p>
+        </div>
+
+        <aside class="result-card" aria-live="polite">
+          <p class="eyebrow">YOUR RESULTS</p>
+
+          <div class="big-result" id="difference">$15,400</div>
+
+          <div class="result-sub" id="summary">
+            Contractor estimated lower by $15,400/year
+          </div>
+
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-label">Employee total annual cost</span>
+              <span class="result-value" id="employeeTotal">$103,400</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Contractor total annual cost</span>
+              <span class="result-value" id="contractorTotal">$88,000</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Employer payroll/statutory cost</span>
+              <span class="result-value" id="employerCost">$6,400</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Benefits + employee overhead</span>
+              <span class="result-value" id="benefitOverhead">$17,000</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Employee cost per comparable hour</span>
+              <span class="result-value" id="employeeHourly">$64.63/hr</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Contractor effective hourly cost</span>
+              <span class="result-value" id="contractorHourly">$55.00/hr</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <section class="info-section" id="how-it-works">
+      <div class="container">
+        <h2>How to compare contractor vs employee cost</h2>
+
+        <p>
+          Salary alone does not represent the full business cost of an employee.
+          A simple cost comparison adds employer-side payroll or statutory costs,
+          benefits, equipment, insurance, and other overhead.
+        </p>
+
+        <div class="formula-box">
+          Employee cost =
+          Salary + Employer-side costs + Benefits + Employee overhead
+        </div>
+
+        <p>
+          Contractor cost can be estimated by multiplying the contractor hourly rate
+          by the number of hours required, then adding any contractor-specific fees.
+        </p>
+
+        <div class="formula-box">
+          Contractor cost =
+          Contractor hourly rate × Contractor hours + Contractor-specific fees
+        </div>
+
+        <h3>Example employee cost</h3>
+
+        <p>
+          An $80,000 salary with 8% employer-side costs, $12,000 in benefits,
+          and $5,000 in additional overhead produces an estimated annual employee
+          cost of $103,400.
+        </p>
+
+        <h3>Example contractor cost</h3>
+
+        <p>
+          A contractor charging $55 per hour for 1,600 hours costs $88,000 before
+          any additional contractor-specific fees.
+        </p>
+
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Employee side</th>
+              <th>Contractor side</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Salary or wages</td>
+              <td>Hourly or project billing</td>
+            </tr>
+            <tr>
+              <td>Employer payroll/statutory costs</td>
+              <td>Contractor fees or agency markup</td>
+            </tr>
+            <tr>
+              <td>Benefits</td>
+              <td>Usually included in contractor pricing assumptions</td>
+            </tr>
+            <tr>
+              <td>Equipment and overhead</td>
+              <td>Depends on the contract arrangement</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="notice">
+          <strong>Classification note:</strong>
+          cost does not determine whether a worker is legally an employee or an independent contractor.
+          Worker classification depends on applicable law and the facts of the working relationship.
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section" id="faq">
+      <div class="container">
+        <h2>Contractor vs employee cost calculator FAQ</h2>
+
+        <h3>Are contractors always cheaper than employees?</h3>
+        <p>
+          No. The result depends on contractor rates, workload, benefits,
+          employer costs, overhead, and how many hours of work are required.
+        </p>
+
+        <h3>What costs should I add to employee salary?</h3>
+        <p>
+          Common planning inputs include employer-side payroll or statutory costs,
+          benefits, insurance, equipment, workspace, training, and other overhead.
+        </p>
+
+        <h3>How do I annualize contractor cost?</h3>
+        <p>
+          Multiply the contractor rate by expected annual contractor hours,
+          then add any contractor-specific fees or agency charges.
+        </p>
+
+        <h3>Is this a 1099 vs W-2 tax calculator?</h3>
+        <p>
+          No. It is a business cost comparison tool and does not calculate worker
+          take-home pay, self-employment taxes, or personal income taxes.
+        </p>
+
+        <h3>Does the cheaper option determine worker classification?</h3>
+        <p>
+          No. Legal worker classification is separate from cost comparison.
+        </p>
+      </div>
+    </section>
+
+    <section class="info-section" style="background:#f8fafc">
+      <div class="container">
+        <p class="eyebrow">RELATED TOOLS</p>
+        <h2>More Numviro work & compensation calculators</h2>
+
+        <div class="related-grid">
+          <article>
+            <h3>
+              <a href="/freelance-rate-calculator/">
+                Freelance Rate Calculator
+              </a>
+            </h3>
+            <p>
+              Estimate a sustainable freelance hourly and day rate.
+            </p>
+          </article>
+
+          <article>
+            <h3>
+              <a href="/gross-pay-calculator/">
+                Gross Pay Calculator
+              </a>
+            </h3>
+            <p>
+              Calculate gross employee earnings before deductions.
+            </p>
+          </article>
+
+          <article>
+            <h3>
+              <a href="/annual-income-calculator/">
+                Annual Income Calculator
+              </a>
+            </h3>
+            <p>
+              Convert common pay frequencies into estimated annual income.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        © <span id="year"></span> Numviro ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/terms.html">Terms</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const $ = id => document.getElementById(id);
+
+    function money(value, digits = 0) {
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: digits,
+        maximumFractionDigits: digits
+      }).format(value || 0);
+    }
+
+    function calculate() {
+      const salary = Math.max(0, +$("salary").value || 0);
+      const employerPercent = Math.max(
+        0,
+        +$("employerPercent").value || 0
+      );
+      const benefits = Math.max(0, +$("benefits").value || 0);
+      const employeeOverhead = Math.max(
+        0,
+        +$("employeeOverhead").value || 0
+      );
+
+      const contractorRate = Math.max(
+        0,
+        +$("contractorRate").value || 0
+      );
+      const contractorHours = Math.max(
+        0,
+        +$("contractorHours").value || 0
+      );
+      const contractorFees = Math.max(
+        0,
+        +$("contractorFees").value || 0
+      );
+
+      const employerCost = salary * (employerPercent / 100);
+      const employeeTotal =
+        salary +
+        employerCost +
+        benefits +
+        employeeOverhead;
+
+      const contractorTotal =
+        contractorRate * contractorHours +
+        contractorFees;
+
+      const diff = Math.abs(employeeTotal - contractorTotal);
+
+      const employeeHourly =
+        contractorHours > 0
+          ? employeeTotal / contractorHours
+          : 0;
+
+      const contractorHourly =
+        contractorHours > 0
+          ? contractorTotal / contractorHours
+          : 0;
+
+      $("employeeTotal").textContent = money(employeeTotal);
+      $("contractorTotal").textContent = money(contractorTotal);
+      $("employerCost").textContent = money(employerCost);
+      $("benefitOverhead").textContent =
+        money(benefits + employeeOverhead);
+
+      $("employeeHourly").textContent =
+        money(employeeHourly, 2) + "/hr";
+
+      $("contractorHourly").textContent =
+        money(contractorHourly, 2) + "/hr";
+
+      $("difference").textContent = money(diff);
+
+      if (employeeTotal > contractorTotal) {
+        $("summary").textContent =
+          "Contractor estimated lower by " +
+          money(diff) +
+          "/year";
+      } else if (contractorTotal > employeeTotal) {
+        $("summary").textContent =
+          "Employee estimated lower by " +
+          money(diff) +
+          "/year";
+      } else {
+        $("summary").textContent =
+          "Estimated annual costs are equal";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      $("year").textContent = new Date().getFullYear();
+
+      document.querySelectorAll("input").forEach(input => {
+        input.addEventListener("input", calculate);
+      });
+
+      calculate();
+    });
+  </script>
+</body>
+</html>

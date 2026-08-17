@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-F3GZ1Q68KJ');
+</script>
+
+<title>Holiday Pay Calculator | Time-and-a-Half & Double Time | Numviro</title>
+<meta name="description" content="Calculate holiday work pay using regular, time-and-a-half, double-time, or custom premium rates. Include paid holiday hours and estimate total gross holiday compensation.">
+<link rel="canonical" href="https://numviro.com/holiday-pay-calculator/">
+<meta name="robots" content="index,follow">
+
+<meta property="og:title" content="Holiday Pay Calculator | Numviro">
+<meta property="og:description" content="Estimate holiday work pay, paid holiday hours, premium pay, and total gross holiday compensation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://numviro.com/holiday-pay-calculator/">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+
+<style>
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}
+.field{margin-bottom:18px}
+.field label{display:block;font-weight:700;margin-bottom:8px;color:#111827}
+.field input,.field select{width:100%;box-sizing:border-box;padding:14px 15px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff}
+.inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}
+.result-card .eyebrow{color:#60a5fa}
+.big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0}
+.result-sub{color:#aeb8c8;margin-bottom:24px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}
+.result-item{padding:18px 8px;border-bottom:1px solid #2b3547}
+.result-item:nth-child(odd){border-right:1px solid #2b3547}
+.result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}
+.result-value{font-size:19px;font-weight:800}
+.info-section{padding:70px 0}
+.formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}
+.related-grid a{color:#111827;text-decoration:none}
+.compare-table{width:100%;border-collapse:collapse;margin:24px 0}
+.compare-table th,.compare-table td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left}
+.notice{background:#fff8e6;border:1px solid #f2dfac;border-radius:14px;padding:18px;margin:24px 0}
+@media(max-width:850px){
+  .tool-grid,.inline-grid,.related-grid,.result-grid{grid-template-columns:1fr}
+  .result-item:nth-child(odd){border-right:0}
+}
+</style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Numviro home"><span class="brand-mark">N</span><span>Numviro</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">FREE HOLIDAY PAY TOOL</p>
+      <h1>Holiday Pay Calculator</h1>
+      <p class="hero-copy">Estimate gross holiday compensation using regular, time-and-a-half, double-time, or custom premium rates — with optional paid holiday hours.</p>
+      <div class="hero-pills">
+        <span>1× / 1.5× / 2×</span>
+        <span>Paid holiday hours</span>
+        <span>Gross pay estimate</span>
+      </div>
+    </div>
+
+    <div class="hero-card" aria-hidden="true">
+      <span class="mini-label">Example</span>
+      <strong>$25/hour</strong>
+      <span>8 holiday work hours · 1.5×</span>
+      <div class="mini-result"><small>Holiday work pay</small><b>$300</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="calculator" class="calculator-section">
+<div class="container tool-grid">
+
+  <div class="calculator-card">
+    <p class="eyebrow">CALCULATOR</p>
+    <h2>Calculate holiday pay</h2>
+
+    <div class="inline-grid">
+      <div class="field">
+        <label for="rate">Regular hourly rate</label>
+        <input id="rate" type="number" min="0" step=".01" value="25">
+      </div>
+
+      <div class="field">
+        <label for="workHours">Hours worked on holiday</label>
+        <input id="workHours" type="number" min="0" step=".25" value="8">
+      </div>
+    </div>
+
+    <div class="inline-grid">
+      <div class="field">
+        <label for="premiumPreset">Holiday work rate</label>
+        <select id="premiumPreset">
+          <option value="1">Regular rate (1×)</option>
+          <option value="1.5" selected>Time-and-a-half (1.5×)</option>
+          <option value="2">Double time (2×)</option>
+          <option value="custom">Custom multiplier</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="customMultiplier">Custom multiplier</label>
+        <input id="customMultiplier" type="number" min="0" step=".05" value="1.5">
+      </div>
+    </div>
+
+    <div class="inline-grid">
+      <div class="field">
+        <label for="paidHolidayHours">Paid holiday hours not worked</label>
+        <input id="paidHolidayHours" type="number" min="0" step=".25" value="0">
+      </div>
+
+      <div class="field">
+        <label for="paidHolidayRate">Paid holiday rate multiplier</label>
+        <input id="paidHolidayRate" type="number" min="0" step=".05" value="1">
+      </div>
+    </div>
+
+    <p class="form-note">This is a planning estimate. Holiday pay rules can depend on employer policy, contracts, state or local law, and other jurisdiction-specific requirements.</p>
+  </div>
+
+  <aside class="result-card" aria-live="polite">
+    <p class="eyebrow">YOUR RESULTS</p>
+    <div class="big-result" id="totalPay">$300</div>
+    <div class="result-sub">Estimated total gross holiday compensation</div>
+
+    <div class="result-grid">
+      <div class="result-item">
+        <span class="result-label">Holiday work rate</span>
+        <span class="result-value" id="holidayRate">$37.50/hr</span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Holiday work pay</span>
+        <span class="result-value" id="workPay">$300</span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Base portion of work pay</span>
+        <span class="result-value" id="basePortion">$200</span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Holiday premium portion</span>
+        <span class="result-value" id="premiumPortion">$100</span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Paid holiday pay</span>
+        <span class="result-value" id="paidHolidayPay">$0</span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Total holiday hours paid</span>
+        <span class="result-value" id="totalHoursPaid">8.00 hrs</span>
+      </div>
+    </div>
+  </aside>
+
+</div>
+</section>
+
+<section class="info-section" id="how-it-works">
+<div class="container">
+  <h2>How to calculate holiday pay</h2>
+  <p>If your employer pays a premium for working on a holiday, multiply your regular hourly rate by the holiday multiplier and then by the number of holiday hours worked.</p>
+
+  <div class="formula-box">
+    Holiday work pay = Regular hourly rate × Holiday multiplier × Holiday hours worked
+  </div>
+
+  <h3>Example: time-and-a-half holiday pay</h3>
+  <p>At $25 per hour with an 8-hour holiday shift paid at 1.5×, the holiday work rate is $37.50 per hour and gross holiday work pay is $300.</p>
+
+  <div class="formula-box">
+    $25 × 1.5 × 8 hours = $300
+  </div>
+
+  <h3>Holiday premium vs. total holiday rate</h3>
+  <p>A 1.5× rate includes the normal 1× base wage plus an additional 0.5× premium. At $25 per hour, that means $25 of base pay plus $12.50 of premium pay for each qualifying hour.</p>
+
+  <table class="compare-table">
+    <thead><tr><th>Holiday multiplier</th><th>Rate at $25/hour</th></tr></thead>
+    <tbody>
+      <tr><td>1× regular rate</td><td>$25.00/hour</td></tr>
+      <tr><td>1.5× time-and-a-half</td><td>$37.50/hour</td></tr>
+      <tr><td>2× double time</td><td>$50.00/hour</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Paid holiday hours when you do not work</h3>
+  <p>Some employers provide paid holiday hours even when an employee does not work. If your policy provides this benefit, enter those hours separately so the calculator can add them to the total holiday compensation.</p>
+
+  <div class="notice">
+    <strong>U.S. federal-law note:</strong> the Fair Labor Standards Act does not generally require employers to pay for time not worked on holidays, and it does not require premium pay merely because work occurs on a holiday. Covered nonexempt employees may still be entitled to overtime when their total workweek hours trigger overtime requirements.
+  </div>
+</div>
+</section>
+
+<section class="info-section" id="faq">
+<div class="container">
+  <h2>Holiday pay calculator FAQ</h2>
+
+  <h3>Is holiday pay always time-and-a-half?</h3>
+  <p>No. Holiday premiums vary by employer policy, contract, and applicable law. Use the multiplier that actually applies to your situation.</p>
+
+  <h3>How much is time-and-a-half on a holiday?</h3>
+  <p>Multiply the regular hourly rate by 1.5. For example, $20 per hour becomes $30 per hour.</p>
+
+  <h3>How much is double-time holiday pay?</h3>
+  <p>Multiply the regular hourly rate by 2. For example, $20 per hour becomes $40 per hour.</p>
+
+  <h3>Does federal law require holiday premium pay in the United States?</h3>
+  <p>Generally, the FLSA does not require extra pay solely because an employee works on a holiday. Employer agreements and state or local rules may differ.</p>
+
+  <h3>Does paid holiday time count as hours worked for federal overtime?</h3>
+  <p>Under the FLSA, paid holiday time when no work is performed generally does not have to be counted as hours worked for overtime calculations.</p>
+</div>
+</section>
+
+<section class="info-section" style="background:#f8fafc">
+<div class="container">
+  <p class="eyebrow">RELATED TOOLS</p>
+  <h2>More Numviro work & pay calculators</h2>
+
+  <div class="related-grid">
+    <article>
+      <h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3>
+      <p>Calculate overtime rates and earnings separately.</p>
+    </article>
+
+    <article>
+      <h3><a href="/shift-differential-calculator/">Shift Differential Calculator</a></h3>
+      <p>Estimate evening, night, weekend, or other shift premiums.</p>
+    </article>
+
+    <article>
+      <h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3>
+      <p>Combine regular wages, overtime, bonuses, commissions, and other earnings.</p>
+    </article>
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Numviro · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+
+function money(v,d=2){
+  return new Intl.NumberFormat("en-US",{
+    style:"currency",
+    currency:"USD",
+    maximumFractionDigits:d
+  }).format(v||0);
+}
+
+function calculate(){
+  const rate=Math.max(0,+$("rate").value||0);
+  const workHours=Math.max(0,+$("workHours").value||0);
+  const preset=$("premiumPreset").value;
+  const custom=Math.max(0,+$("customMultiplier").value||0);
+  const multiplier=preset==="custom" ? custom : +preset;
+
+  const paidHours=Math.max(0,+$("paidHolidayHours").value||0);
+  const paidMultiplier=Math.max(0,+$("paidHolidayRate").value||0);
+
+  $("customMultiplier").disabled=preset!=="custom";
+
+  const holidayRate=rate*multiplier;
+  const workPay=holidayRate*workHours;
+  const basePortion=rate*workHours;
+  const premiumPortion=Math.max(0,workPay-basePortion);
+  const paidHolidayPay=rate*paidMultiplier*paidHours;
+  const total=workPay+paidHolidayPay;
+  const totalHours=workHours+paidHours;
+
+  $("holidayRate").textContent=money(holidayRate)+"/hr";
+  $("workPay").textContent=money(workPay);
+  $("basePortion").textContent=money(basePortion);
+  $("premiumPortion").textContent=money(premiumPortion);
+  $("paidHolidayPay").textContent=money(paidHolidayPay);
+  $("totalPay").textContent=money(total);
+  $("totalHoursPaid").textContent=totalHours.toFixed(2)+" hrs";
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  $("year").textContent=new Date().getFullYear();
+
+  document.querySelectorAll("input,select").forEach(e=>{
+    e.addEventListener("input",calculate);
+    e.addEventListener("change",calculate);
+  });
+
+  calculate();
+});
+</script>
+</body>
+</html>

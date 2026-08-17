@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-F3GZ1Q68KJ');
+</script>
+
+<title>Bonus Calculator | Salary Percentage & Gross Bonus | Numviro</title>
+<meta name="description" content="Calculate a gross bonus from annual salary, target bonus percentage, performance multiplier, or fixed bonus amount. Compare bonus value and total compensation.">
+<link rel="canonical" href="https://numviro.com/bonus-calculator/">
+<meta name="robots" content="index,follow">
+
+<meta property="og:title" content="Bonus Calculator | Numviro">
+<meta property="og:description" content="Estimate a gross salary bonus from percentage, performance multiplier, or fixed amount.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://numviro.com/bonus-calculator/">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+
+<style>
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}
+.field{margin-bottom:18px}
+.field label{display:block;font-weight:700;margin-bottom:8px;color:#111827}
+.field input,.field select{width:100%;box-sizing:border-box;padding:14px 15px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff}
+.inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}
+.result-card .eyebrow{color:#60a5fa}
+.big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0}
+.result-sub{color:#aeb8c8;margin-bottom:24px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}
+.result-item{padding:18px 8px;border-bottom:1px solid #2b3547}
+.result-item:nth-child(odd){border-right:1px solid #2b3547}
+.result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}
+.result-value{font-size:19px;font-weight:800}
+.info-section{padding:70px 0}
+.formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}
+.related-grid a{color:#111827;text-decoration:none}
+.compare-table{width:100%;border-collapse:collapse;margin:24px 0}
+.compare-table th,.compare-table td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left}
+@media(max-width:850px){
+  .tool-grid,.inline-grid,.related-grid,.result-grid{grid-template-columns:1fr}
+  .result-item:nth-child(odd){border-right:0}
+}
+</style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Numviro home"><span class="brand-mark">N</span><span>Numviro</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">FREE COMPENSATION TOOL</p>
+      <h1>Bonus Calculator</h1>
+      <p class="hero-copy">Estimate a gross employee bonus from salary, target bonus percentage, performance multiplier, or a fixed bonus amount.</p>
+      <div class="hero-pills">
+        <span>Salary percentage bonus</span>
+        <span>Performance multiplier</span>
+        <span>Gross compensation</span>
+      </div>
+    </div>
+
+    <div class="hero-card" aria-hidden="true">
+      <span class="mini-label">Example</span>
+      <strong>$80,000 salary</strong>
+      <span>10% target · 100% performance</span>
+      <div class="mini-result"><small>Gross bonus</small><b>$8,000</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="calculator" class="calculator-section">
+<div class="container tool-grid">
+
+  <div class="calculator-card">
+    <p class="eyebrow">CALCULATOR</p>
+    <h2>Calculate your gross bonus</h2>
+
+    <div class="inline-grid">
+      <div class="field">
+        <label for="mode">Bonus method</label>
+        <select id="mode">
+          <option value="percentage">Salary percentage</option>
+          <option value="fixed">Fixed bonus amount</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="salary">Annual base salary</label>
+        <input id="salary" type="number" min="0" step="100" value="80000">
+      </div>
+    </div>
+
+    <div id="percentageFields">
+      <div class="inline-grid">
+        <div class="field">
+          <label for="targetPercent">Target bonus (%)</label>
+          <input id="targetPercent" type="number" min="0" step=".1" value="10">
+        </div>
+
+        <div class="field">
+          <label for="performance">Performance payout (%)</label>
+          <input id="performance" type="number" min="0" step="1" value="100">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="proration">Eligible / prorated portion of year (%)</label>
+        <input id="proration" type="number" min="0" max="100" step="1" value="100">
+      </div>
+    </div>
+
+    <div id="fixedFields" style="display:none">
+      <div class="field">
+        <label for="fixedBonus">Fixed gross bonus</label>
+        <input id="fixedBonus" type="number" min="0" step="100" value="5000">
+      </div>
+    </div>
+
+    <p class="form-note">This calculator estimates gross bonus compensation before taxes, withholding, deductions, vesting conditions, caps, clawbacks, or employer-specific plan rules.</p>
+  </div>
+
+  <aside class="result-card" aria-live="polite">
+    <p class="eyebrow">YOUR RESULTS</p>
+    <div class="big-result" id="bonus">$8,000</div>
+    <div class="result-sub">Estimated gross bonus</div>
+
+    <div class="result-grid">
+      <div class="result-item">
+        <span class="result-label">Target bonus at 100%</span>
+        <span class="result-value" id="targetBonus">$8,000</span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Effective bonus % of salary</span>
+        <span class="result-value" id="effectivePercent">10.00%</span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Total gross compensation</span>
+        <span class="result-value" id="totalComp">$88,000</span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Bonus as monthly equivalent</span>
+        <span class="result-value" id="monthlyBonus">$666.67</span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Bonus as weekly equivalent</span>
+        <span class="result-value" id="weeklyBonus">$153.85</span>
+      </div>
+
+      <div class="result-item">
+        <span class="result-label">Performance payout</span>
+        <span class="result-value" id="performanceOut">100%</span>
+      </div>
+    </div>
+  </aside>
+
+</div>
+</section>
+
+<section class="info-section" id="how-it-works">
+<div class="container">
+  <h2>How to calculate a salary bonus</h2>
+  <p>For a percentage-based bonus, multiply annual base salary by the target bonus percentage. If the bonus plan uses a performance payout, multiply the target bonus by that performance factor.</p>
+
+  <div class="formula-box">
+    Gross bonus = Base salary × Target bonus % × Performance payout % × Eligible-year %
+  </div>
+
+  <h3>Example: 10% bonus on an $80,000 salary</h3>
+  <p>An employee with an $80,000 base salary and a 10% target bonus has an $8,000 target bonus at a 100% performance payout.</p>
+
+  <div class="formula-box">
+    $80,000 × 10% = $8,000
+  </div>
+
+  <h3>What does a performance multiplier do?</h3>
+  <p>If a plan pays 120% of target for above-target performance, an $8,000 target bonus becomes $9,600 before any other plan adjustments. A 75% payout would reduce the same target bonus to $6,000.</p>
+
+  <table class="compare-table">
+    <thead><tr><th>Performance payout</th><th>$8,000 target bonus</th></tr></thead>
+    <tbody>
+      <tr><td>75%</td><td>$6,000</td></tr>
+      <tr><td>100%</td><td>$8,000</td></tr>
+      <tr><td>120%</td><td>$9,600</td></tr>
+      <tr><td>150%</td><td>$12,000</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Prorated bonus calculation</h3>
+  <p>Some plans prorate bonuses for employees who worked only part of the performance year. The eligible-year field lets you estimate that adjustment without assuming every plan uses the same rule.</p>
+
+  <h3>Bonus calculator vs. bonus tax calculator</h3>
+  <p>This page calculates the gross bonus amount and total gross compensation. It intentionally does not estimate federal, state, or local tax withholding because tax treatment depends on current rules and individual circumstances.</p>
+</div>
+</section>
+
+<section class="info-section" id="faq">
+<div class="container">
+  <h2>Bonus calculator FAQ</h2>
+
+  <h3>How much is a 10% bonus?</h3>
+  <p>Multiply annual salary by 10%. For example, a 10% target bonus on an $80,000 salary is $8,000 before performance or proration adjustments.</p>
+
+  <h3>How much is a 5% bonus on salary?</h3>
+  <p>A 5% bonus on a $60,000 salary is $3,000.</p>
+
+  <h3>What is a target bonus percentage?</h3>
+  <p>It is the bonus amount expressed as a percentage of base salary that an employee may receive when target conditions are met.</p>
+
+  <h3>Can a bonus be prorated?</h3>
+  <p>Some employer plans prorate bonuses based on eligible service time or other plan terms. This calculator includes a proration field for estimation.</p>
+
+  <h3>Does this calculator show bonus after tax?</h3>
+  <p>No. It calculates gross bonus compensation before tax withholding and deductions.</p>
+</div>
+</section>
+
+<section class="info-section" style="background:#f8fafc">
+<div class="container">
+  <p class="eyebrow">RELATED TOOLS</p>
+  <h2>More Numviro compensation calculators</h2>
+
+  <div class="related-grid">
+    <article>
+      <h3><a href="/sales-commission-calculator/">Sales Commission Calculator</a></h3>
+      <p>Estimate commission-only, base-plus-commission, and tiered sales compensation.</p>
+    </article>
+
+    <article>
+      <h3><a href="/pay-raise-calculator/">Pay Raise Calculator</a></h3>
+      <p>Calculate a new salary or hourly wage after a raise.</p>
+    </article>
+
+    <article>
+      <h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3>
+      <p>Combine regular wages, overtime, bonuses, commissions, tips, and other earnings.</p>
+    </article>
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Numviro · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+
+function money(v,d=2){
+  return new Intl.NumberFormat("en-US",{
+    style:"currency",
+    currency:"USD",
+    maximumFractionDigits:d
+  }).format(v||0);
+}
+
+function calculate(){
+  const mode=$("mode").value;
+  const salary=Math.max(0,+$("salary").value||0);
+  const targetPct=Math.max(0,+$("targetPercent").value||0);
+  const performance=Math.max(0,+$("performance").value||0);
+  const proration=Math.min(100,Math.max(0,+$("proration").value||0));
+  const fixed=Math.max(0,+$("fixedBonus").value||0);
+
+  $("percentageFields").style.display=mode==="percentage" ? "" : "none";
+  $("fixedFields").style.display=mode==="fixed" ? "" : "none";
+
+  let targetBonus=0;
+  let bonus=0;
+  let performanceDisplay=100;
+
+  if(mode==="percentage"){
+    targetBonus=salary*(targetPct/100);
+    bonus=targetBonus*(performance/100)*(proration/100);
+    performanceDisplay=performance;
+  }else{
+    targetBonus=fixed;
+    bonus=fixed;
+    performanceDisplay=100;
+  }
+
+  const effectivePct=salary>0 ? (bonus/salary)*100 : 0;
+  const total=salary+bonus;
+
+  $("bonus").textContent=money(bonus);
+  $("targetBonus").textContent=money(targetBonus);
+  $("effectivePercent").textContent=effectivePct.toFixed(2)+"%";
+  $("totalComp").textContent=money(total);
+  $("monthlyBonus").textContent=money(bonus/12);
+  $("weeklyBonus").textContent=money(bonus/52);
+  $("performanceOut").textContent=performanceDisplay.toFixed(0)+"%";
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  $("year").textContent=new Date().getFullYear();
+
+  document.querySelectorAll("input,select").forEach(e=>{
+    e.addEventListener("input",calculate);
+    e.addEventListener("change",calculate);
+  });
+
+  calculate();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-F3GZ1Q68KJ');
+  </script>
+
+  <title>Per Diem Calculator | Lodging, Meals & Travel Days | Numviro</title>
+
+  <meta
+    name="description"
+    content="Calculate business travel per diem from lodging, meals and incidentals, trip length, and first/last-day meal percentages using your own daily rates."
+  >
+
+  <link
+    rel="canonical"
+    href="https://numviro.com/per-diem-calculator/"
+  >
+
+  <meta name="robots" content="index,follow">
+
+  <meta
+    property="og:title"
+    content="Per Diem Calculator | Numviro"
+  >
+  <meta
+    property="og:description"
+    content="Estimate lodging and meal per diem for business travel using custom daily rates and travel-day adjustments."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:url"
+    content="https://numviro.com/per-diem-calculator/"
+  >
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .calculator-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .field input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 15px;
+      border: 1px solid #dbe1ea;
+      border-radius: 12px;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    .inline-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .result-card {
+      background: #111827;
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .result-card .eyebrow {
+      color: #60a5fa;
+    }
+
+    .big-result {
+      font-size: clamp(42px, 5vw, 60px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin: 8px 0;
+    }
+
+    .result-sub {
+      color: #aeb8c8;
+      margin-bottom: 24px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid #2b3547;
+    }
+
+    .result-item {
+      padding: 18px 8px;
+      border-bottom: 1px solid #2b3547;
+    }
+
+    .result-item:nth-child(odd) {
+      border-right: 1px solid #2b3547;
+    }
+
+    .result-label {
+      display: block;
+      color: #aeb8c8;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .result-value {
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .info-section {
+      padding: 70px 0;
+    }
+
+    .formula-box {
+      background: #f4f7fb;
+      border: 1px solid #e4e8ef;
+      padding: 20px;
+      border-radius: 14px;
+      margin: 20px 0;
+      font-weight: 700;
+    }
+
+    .notice {
+      background: #fff8e6;
+      border: 1px solid #f2dfac;
+      border-radius: 14px;
+      padding: 18px;
+      margin: 24px 0;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .related-grid article {
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .related-grid a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    @media (max-width: 850px) {
+      .tool-grid,
+      .inline-grid,
+      .related-grid,
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-item:nth-child(odd) {
+        border-right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Numviro home">
+        <span class="brand-mark">N</span>
+        <span>Numviro</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#calculator">Calculator</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">FREE BUSINESS TRAVEL TOOL</p>
+          <h1>Per Diem Calculator</h1>
+
+          <p class="hero-copy">
+            Estimate lodging and meals-and-incidentals allowances for a business trip
+            using your own daily rates and first/last travel-day percentage.
+          </p>
+
+          <div class="hero-pills">
+            <span>Lodging allowance</span>
+            <span>Meals & incidentals</span>
+            <span>Travel-day adjustment</span>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <span class="mini-label">Example</span>
+          <strong>3-day trip</strong>
+          <span>$180 lodging · $80 meals/day</span>
+
+          <div class="mini-result">
+            <small>Estimated allowance</small>
+            <b>$600</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+      <div class="container tool-grid">
+
+        <div class="calculator-card">
+          <p class="eyebrow">CALCULATOR</p>
+          <h2>Calculate per diem</h2>
+
+          <div class="inline-grid">
+            <div class="field">
+              <label for="days">Trip days</label>
+              <input
+                id="days"
+                type="number"
+                min="1"
+                step="1"
+                value="3"
+              >
+            </div>
+
+            <div class="field">
+              <label for="lodgingNights">Lodging nights</label>
+              <input
+                id="lodgingNights"
+                type="number"
+                min="0"
+                step="1"
+                value="2"
+              >
+            </div>
+          </div>
+
+          <div class="inline-grid">
+            <div class="field">
+              <label for="lodgingRate">Lodging rate per night</label>
+              <input
+                id="lodgingRate"
+                type="number"
+                min="0"
+                step="0.01"
+                value="180"
+              >
+            </div>
+
+            <div class="field">
+              <label for="mieRate">Meals & incidentals rate per full day</label>
+              <input
+                id="mieRate"
+                type="number"
+                min="0"
+                step="0.01"
+                value="80"
+              >
+            </div>
+          </div>
+
+          <div class="inline-grid">
+            <div class="field">
+              <label for="travelPercent">First/last travel-day meal percentage</label>
+              <input
+                id="travelPercent"
+                type="number"
+                min="0"
+                max="100"
+                step="1"
+                value="75"
+              >
+            </div>
+
+            <div class="field">
+              <label for="other">Other daily/approved allowance</label>
+              <input
+                id="other"
+                type="number"
+                min="0"
+                step="0.01"
+                value="0"
+              >
+            </div>
+          </div>
+
+          <p class="form-note">
+            Enter the rates that apply to your employer, agency, destination, and travel dates.
+            Official per diem rates can vary by location and year, so Numviro does not hard-code a single government rate.
+          </p>
+        </div>
+
+        <aside class="result-card" aria-live="polite">
+          <p class="eyebrow">YOUR RESULTS</p>
+
+          <div class="big-result" id="total">$600.00</div>
+
+          <div class="result-sub">
+            Estimated total per diem allowance
+          </div>
+
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-label">Lodging allowance</span>
+              <span class="result-value" id="lodgingTotal">$360.00</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Meals & incidentals</span>
+              <span class="result-value" id="mieTotal">$240.00</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">First-day M&IE</span>
+              <span class="result-value" id="firstDay">$60.00</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Last-day M&IE</span>
+              <span class="result-value" id="lastDay">$60.00</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Full-day M&IE</span>
+              <span class="result-value" id="fullDayTotal">$80.00</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Other allowance</span>
+              <span class="result-value" id="otherTotal">$0.00</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <section class="info-section" id="how-it-works">
+      <div class="container">
+        <h2>How to calculate per diem</h2>
+
+        <p>
+          Per diem commonly separates lodging from meals and incidental expenses.
+          Start with the daily rates that apply to your trip, then multiply lodging by
+          the number of eligible nights and meals-and-incidentals by the applicable travel days.
+        </p>
+
+        <div class="formula-box">
+          Total per diem =
+          (Lodging rate × Lodging nights) +
+          Meals & incidentals allowance +
+          Other approved allowances
+        </div>
+
+        <h3>First and last travel days</h3>
+
+        <p>
+          Some travel policies reduce the meals-and-incidentals allowance on the
+          first and last day of travel. Numviro lets you set that percentage yourself
+          instead of assuming one universal rule.
+        </p>
+
+        <div class="formula-box">
+          Travel-day M&IE =
+          Full-day M&IE rate × Travel-day percentage
+        </div>
+
+        <h3>Why this calculator uses custom rates</h3>
+
+        <p>
+          Per diem amounts can vary by destination, month, employer, government agency,
+          and travel policy. Using custom inputs keeps the calculator useful for both
+          employer travel policies and official-rate planning.
+        </p>
+
+        <div class="notice">
+          <strong>Rate lookup note:</strong>
+          U.S. federal travel rates are location-specific and are published by agencies such as
+          the General Services Administration for many domestic destinations.
+          Always verify the official rate that applies to the location and travel dates before using this estimate for reimbursement.
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section" id="faq">
+      <div class="container">
+        <h2>Per diem calculator FAQ</h2>
+
+        <h3>What is per diem?</h3>
+        <p>
+          Per diem is a daily allowance used to cover eligible travel costs such as lodging,
+          meals, and incidental expenses during business or official travel.
+        </p>
+
+        <h3>How do I calculate lodging per diem?</h3>
+        <p>
+          Multiply the eligible lodging rate by the number of qualifying nights.
+        </p>
+
+        <h3>How do I calculate meals and incidentals?</h3>
+        <p>
+          Apply the full daily M&IE rate to full travel days and any reduced percentage
+          required by the applicable policy to the first and last travel days.
+        </p>
+
+        <h3>Are per diem rates the same everywhere?</h3>
+        <p>
+          No. Rates can vary by destination, date, employer, agency, and travel policy.
+        </p>
+
+        <h3>Does this calculator automatically use the current GSA rate?</h3>
+        <p>
+          No. Enter the official or employer rate that applies to your trip.
+          This avoids silently using a stale or incorrect rate.
+        </p>
+      </div>
+    </section>
+
+    <section class="info-section" style="background:#f8fafc">
+      <div class="container">
+        <p class="eyebrow">RELATED TOOLS</p>
+        <h2>More Numviro work & travel calculators</h2>
+
+        <div class="related-grid">
+          <article>
+            <h3>
+              <a href="/mileage-reimbursement-calculator/">
+                Mileage Reimbursement Calculator
+              </a>
+            </h3>
+            <p>
+              Estimate reimbursement for business miles using a custom per-mile rate.
+            </p>
+          </article>
+
+          <article>
+            <h3>
+              <a href="/freelance-rate-calculator/">
+                Freelance Rate Calculator
+              </a>
+            </h3>
+            <p>
+              Estimate a sustainable hourly and day rate from income goals and expenses.
+            </p>
+          </article>
+
+          <article>
+            <h3>
+              <a href="/gross-pay-calculator/">
+                Gross Pay Calculator
+              </a>
+            </h3>
+            <p>
+              Calculate gross earnings before taxes and deductions.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        © <span id="year"></span> Numviro ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/terms.html">Terms</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const $ = id => document.getElementById(id);
+
+    function money(value) {
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(value || 0);
+    }
+
+    function calculate() {
+      const days = Math.max(1, +$("days").value || 1);
+      const nights = Math.max(0, +$("lodgingNights").value || 0);
+      const lodgingRate = Math.max(0, +$("lodgingRate").value || 0);
+      const mieRate = Math.max(0, +$("mieRate").value || 0);
+      const travelPercent = Math.min(
+        100,
+        Math.max(0, +$("travelPercent").value || 0)
+      );
+      const other = Math.max(0, +$("other").value || 0);
+
+      const lodgingTotal = nights * lodgingRate;
+
+      let firstDay = 0;
+      let lastDay = 0;
+      let fullDays = 0;
+
+      if (days === 1) {
+        firstDay = mieRate * (travelPercent / 100);
+      } else {
+        firstDay = mieRate * (travelPercent / 100);
+        lastDay = mieRate * (travelPercent / 100);
+        fullDays = Math.max(0, days - 2) * mieRate;
+      }
+
+      const mieTotal = firstDay + lastDay + fullDays;
+      const otherTotal = other * days;
+      const total = lodgingTotal + mieTotal + otherTotal;
+
+      $("lodgingTotal").textContent = money(lodgingTotal);
+      $("mieTotal").textContent = money(mieTotal);
+      $("firstDay").textContent = money(firstDay);
+      $("lastDay").textContent = money(lastDay);
+      $("fullDayTotal").textContent = money(fullDays);
+      $("otherTotal").textContent = money(otherTotal);
+      $("total").textContent = money(total);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      $("year").textContent = new Date().getFullYear();
+
+      document.querySelectorAll("input").forEach(input => {
+        input.addEventListener("input", calculate);
+      });
+
+      calculate();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-F3GZ1Q68KJ');
+  </script>
+
+  <title>Tip Income Calculator | Tips Per Hour & Total Earnings | Numviro</title>
+
+  <meta
+    name="description"
+    content="Calculate tips per hour, tips after tip-out, base wages, and total gross earnings for a shift or pay period."
+  >
+
+  <link
+    rel="canonical"
+    href="https://numviro.com/tip-income-calculator/"
+  >
+
+  <meta name="robots" content="index,follow">
+
+  <meta
+    property="og:title"
+    content="Tip Income Calculator | Numviro"
+  >
+  <meta
+    property="og:description"
+    content="Estimate tips per hour, tips kept after tip-out, and effective gross hourly earnings."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:url"
+    content="https://numviro.com/tip-income-calculator/"
+  >
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .calculator-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .field input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #dbe1ea;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+
+    .inline-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .result-card {
+      background: #111827;
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .result-card .eyebrow {
+      color: #60a5fa;
+    }
+
+    .big-result {
+      font-size: clamp(42px, 5vw, 60px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin: 8px 0;
+    }
+
+    .result-sub {
+      color: #aeb8c8;
+      margin-bottom: 24px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid #2b3547;
+    }
+
+    .result-item {
+      padding: 18px 8px;
+      border-bottom: 1px solid #2b3547;
+    }
+
+    .result-item:nth-child(odd) {
+      border-right: 1px solid #2b3547;
+    }
+
+    .result-label {
+      display: block;
+      color: #aeb8c8;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .result-value {
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .info-section {
+      padding: 70px 0;
+    }
+
+    .formula-box {
+      background: #f4f7fb;
+      border: 1px solid #e4e8ef;
+      padding: 20px;
+      border-radius: 14px;
+      margin: 20px 0;
+      font-weight: 700;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .related-grid article {
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .related-grid a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .notice {
+      background: #fff8e6;
+      border: 1px solid #f2dfac;
+      border-radius: 14px;
+      padding: 18px;
+      margin: 24px 0;
+    }
+
+    @media (max-width: 850px) {
+      .tool-grid,
+      .inline-grid,
+      .related-grid,
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-item:nth-child(odd) {
+        border-right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Numviro home">
+        <span class="brand-mark">N</span>
+        <span>Numviro</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#calculator">Calculator</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">FREE TIPPED INCOME TOOL</p>
+          <h1>Tip Income Calculator</h1>
+
+          <p class="hero-copy">
+            Calculate tips per hour, tip-out, base wages, and your effective
+            gross hourly earnings for a shift or pay period.
+          </p>
+
+          <div class="hero-pills">
+            <span>Tips per hour</span>
+            <span>Tip-out</span>
+            <span>Effective hourly earnings</span>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <span class="mini-label">Example</span>
+          <strong>$180 tips · 6 hours</strong>
+          <span>$10 base wage · 10% tip-out</span>
+
+          <div class="mini-result">
+            <small>Effective gross hourly</small>
+            <b>$37/hr</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+      <div class="container tool-grid">
+
+        <div class="calculator-card">
+          <p class="eyebrow">CALCULATOR</p>
+          <h2>Calculate tip income</h2>
+
+          <div class="inline-grid">
+            <div class="field">
+              <label for="wage">Base hourly wage</label>
+              <input
+                id="wage"
+                type="number"
+                min="0"
+                step="0.01"
+                value="10"
+              >
+            </div>
+
+            <div class="field">
+              <label for="hours">Hours worked</label>
+              <input
+                id="hours"
+                type="number"
+                min="0"
+                step="0.25"
+                value="6"
+              >
+            </div>
+          </div>
+
+          <div class="inline-grid">
+            <div class="field">
+              <label for="tips">Gross tips received</label>
+              <input
+                id="tips"
+                type="number"
+                min="0"
+                step="0.01"
+                value="180"
+              >
+            </div>
+
+            <div class="field">
+              <label for="tipout">Tip-out / tip-share (%)</label>
+              <input
+                id="tipout"
+                type="number"
+                min="0"
+                max="100"
+                step="0.1"
+                value="10"
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="service">
+              Service-charge wages or other tipped-period earnings
+            </label>
+
+            <input
+              id="service"
+              type="number"
+              min="0"
+              step="0.01"
+              value="0"
+            >
+          </div>
+
+          <p class="form-note">
+            Gross earnings estimate only. This calculator does not determine
+            minimum-wage compliance, tip-credit eligibility, taxes, or other
+            legal payroll obligations.
+          </p>
+        </div>
+
+        <aside class="result-card" aria-live="polite">
+          <p class="eyebrow">YOUR RESULTS</p>
+
+          <div class="big-result" id="effective">$37.00/hr</div>
+
+          <div class="result-sub">
+            Effective gross hourly earnings
+          </div>
+
+          <div class="result-grid">
+            <div class="result-item">
+              <span class="result-label">Tips kept</span>
+              <span class="result-value" id="kept">$162.00</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Tips kept per hour</span>
+              <span class="result-value" id="tph">$27.00/hr</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Base wage earnings</span>
+              <span class="result-value" id="base">$60.00</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Tip-out amount</span>
+              <span class="result-value" id="out">$18.00</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Total gross earnings</span>
+              <span class="result-value" id="total">$222.00</span>
+            </div>
+
+            <div class="result-item">
+              <span class="result-label">Gross tips per hour</span>
+              <span class="result-value" id="grossph">$30.00/hr</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <section class="info-section" id="how-it-works">
+      <div class="container">
+        <h2>How to calculate tip income per hour</h2>
+
+        <p>
+          Start with the tips you received, subtract any tip-out or tip-share
+          you pass to others, and divide the tips you keep by hours worked.
+        </p>
+
+        <div class="formula-box">
+          Tips kept per hour = (Gross tips − Tip-out) ÷ Hours worked
+        </div>
+
+        <h3>How to calculate effective hourly earnings with tips</h3>
+
+        <p>
+          Add base wage earnings, tips kept, and any additional
+          service-charge wages or similar earnings for the same period.
+          Divide that total by hours worked.
+        </p>
+
+        <div class="formula-box">
+          Effective hourly earnings =
+          (Base wage × Hours + Tips kept + Other earnings) ÷ Hours
+        </div>
+
+        <h3>Example</h3>
+
+        <p>
+          At a $10 base wage for 6 hours, base earnings are $60. If gross tips
+          are $180 and a 10% tip-out removes $18, you keep $162 in tips.
+          Total gross earnings are $222, or $37 per hour.
+        </p>
+
+        <div class="notice">
+          <strong>Important:</strong>
+          tipped-wage and tip-credit rules vary by jurisdiction. In the U.S.,
+          state requirements can differ substantially from the federal
+          baseline, so this tool intentionally does not make a legal
+          minimum-wage determination.
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section" id="faq">
+      <div class="container">
+        <h2>Tip income calculator FAQ</h2>
+
+        <h3>How do I calculate tips per hour?</h3>
+        <p>
+          Divide the tips you keep after tip-out by the hours worked.
+        </p>
+
+        <h3>How do I include my base wage?</h3>
+        <p>
+          Multiply base hourly wage by hours worked, add tips kept and other
+          qualifying earnings, then divide by hours for an effective gross
+          hourly rate.
+        </p>
+
+        <h3>What is tip-out?</h3>
+        <p>
+          Tip-out is the portion of tips distributed to other workers or a
+          tip pool. Enter the percentage you actually give up.
+        </p>
+
+        <h3>Can I use this for one shift or a full week?</h3>
+        <p>
+          Yes. Keep the wage, hours, tips, and other earnings inputs within
+          the same time period.
+        </p>
+
+        <h3>Does this calculate taxes or minimum-wage make-up?</h3>
+        <p>
+          No. It focuses on gross earnings and tip productivity rather than
+          jurisdiction-specific payroll compliance.
+        </p>
+      </div>
+    </section>
+
+    <section class="info-section" style="background:#f8fafc">
+      <div class="container">
+        <p class="eyebrow">RELATED TOOLS</p>
+        <h2>More Numviro pay calculators</h2>
+
+        <div class="related-grid">
+          <article>
+            <h3>
+              <a href="/hourly-to-salary-calculator/">
+                Hourly to Salary Calculator
+              </a>
+            </h3>
+            <p>
+              Convert hourly pay into annual salary and other pay periods.
+            </p>
+          </article>
+
+          <article>
+            <h3>
+              <a href="/gross-pay-calculator/">
+                Gross Pay Calculator
+              </a>
+            </h3>
+            <p>
+              Combine wages and other gross earnings.
+            </p>
+          </article>
+
+          <article>
+            <h3>
+              <a href="/shift-differential-calculator/">
+                Shift Differential Calculator
+              </a>
+            </h3>
+            <p>
+              Estimate evening, night, weekend, or other shift premiums.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        © <span id="year"></span> Numviro ·
+        <a href="/privacy.html">Privacy</a> ·
+        <a href="/terms.html">Terms</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const $ = id => document.getElementById(id);
+
+    function money(value) {
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(value || 0);
+    }
+
+    function calculate() {
+      const wage = Math.max(0, +$("wage").value || 0);
+      const hours = Math.max(0, +$("hours").value || 0);
+      const tips = Math.max(0, +$("tips").value || 0);
+      const tipout = Math.min(
+        100,
+        Math.max(0, +$("tipout").value || 0)
+      );
+      const service = Math.max(0, +$("service").value || 0);
+
+      const tipOutAmount = tips * tipout / 100;
+      const tipsKept = tips - tipOutAmount;
+      const basePay = wage * hours;
+      const totalPay = basePay + tipsKept + service;
+
+      $("kept").textContent = money(tipsKept);
+      $("out").textContent = money(tipOutAmount);
+      $("base").textContent = money(basePay);
+      $("total").textContent = money(totalPay);
+
+      $("tph").textContent =
+        money(hours ? tipsKept / hours : 0) + "/hr";
+
+      $("grossph").textContent =
+        money(hours ? tips / hours : 0) + "/hr";
+
+      $("effective").textContent =
+        money(hours ? totalPay / hours : 0) + "/hr";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      $("year").textContent = new Date().getFullYear();
+
+      document.querySelectorAll("input").forEach(input => {
+        input.addEventListener("input", calculate);
+      });
+
+      calculate();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-F3GZ1Q68KJ');</script>
+<title>Piece Rate Calculator | Pay Per Unit & Effective Hourly Rate | Numviro</title>
+<meta name="description" content="Calculate piece-rate earnings from units completed and pay per unit. See total piece pay, effective hourly rate, units per hour, and target unit rate.">
+<link rel="canonical" href="https://numviro.com/piece-rate-calculator/"><meta name="robots" content="index,follow">
+<meta property="og:title" content="Piece Rate Calculator | Numviro"><meta property="og:description" content="Estimate piecework earnings, effective hourly pay, productivity, and a target rate per unit."><meta property="og:type" content="website"><meta property="og:url" content="https://numviro.com/piece-rate-calculator/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css">
+<style>
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}.field{margin-bottom:18px}.field label{display:block;font-weight:700;margin-bottom:8px}.field input{width:100%;box-sizing:border-box;padding:14px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px}.inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}.result-card .eyebrow{color:#60a5fa}.big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0}.result-sub{color:#aeb8c8;margin-bottom:24px}.result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}.result-item{padding:18px 8px;border-bottom:1px solid #2b3547}.result-item:nth-child(odd){border-right:1px solid #2b3547}.result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}.result-value{font-size:19px;font-weight:800}.info-section{padding:70px 0}.formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}.related-grid a{color:#111827;text-decoration:none}.notice{background:#fff8e6;border:1px solid #f2dfac;border-radius:14px;padding:18px;margin:24px 0}@media(max-width:850px){.tool-grid,.inline-grid,.related-grid,.result-grid{grid-template-columns:1fr}.result-item:nth-child(odd){border-right:0}}
+</style></head>
+<body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/"><span class="brand-mark">N</span><span>Numviro</span></a><nav class="main-nav"><a href="#calculator">Calculator</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a><a href="/about.html">About</a></nav></div></header>
+<main>
+<section class="hero"><div class="container hero-grid"><div><p class="eyebrow">FREE PIECEWORK PAY TOOL</p><h1>Piece Rate Calculator</h1><p class="hero-copy">Calculate earnings from units completed and pay per unit, then compare your piecework pay with an effective hourly rate.</p><div class="hero-pills"><span>Pay per unit</span><span>Effective hourly rate</span><span>Target unit rate</span></div></div><div class="hero-card" aria-hidden="true"><span class="mini-label">Example</span><strong>300 units × $1.50</strong><span>20 hours worked</span><div class="mini-result"><small>Total piece pay</small><b>$450</b></div></div></div></section>
+
+<section id="calculator" class="calculator-section"><div class="container tool-grid">
+<div class="calculator-card"><p class="eyebrow">CALCULATOR</p><h2>Calculate piece-rate pay</h2>
+<div class="inline-grid"><div class="field"><label for="units">Units completed</label><input id="units" type="number" min="0" step="1" value="300"></div><div class="field"><label for="rate">Rate per unit ($)</label><input id="rate" type="number" min="0" step=".01" value="1.50"></div></div>
+<div class="inline-grid"><div class="field"><label for="hours">Hours worked</label><input id="hours" type="number" min="0" step=".25" value="20"></div><div class="field"><label for="target">Target hourly earnings ($)</label><input id="target" type="number" min="0" step=".01" value="25"></div></div>
+<p class="form-note">This calculator estimates piecework earnings and productivity from your inputs. It does not determine minimum-wage, overtime, or other legal pay requirements.</p></div>
+
+<aside class="result-card" aria-live="polite"><p class="eyebrow">YOUR RESULTS</p><div class="big-result" id="total">$450.00</div><div class="result-sub">Estimated piece-rate earnings</div><div class="result-grid">
+<div class="result-item"><span class="result-label">Effective hourly rate</span><span class="result-value" id="hourly">$22.50/hr</span></div>
+<div class="result-item"><span class="result-label">Units per hour</span><span class="result-value" id="uph">15.00</span></div>
+<div class="result-item"><span class="result-label">Current rate per unit</span><span class="result-value" id="unitRate">$1.50</span></div>
+<div class="result-item"><span class="result-label">Rate/unit for target hourly pay</span><span class="result-value" id="targetRate">$1.67</span></div>
+<div class="result-item"><span class="result-label">Pay gap to target</span><span class="result-value" id="gap">$50.00</span></div>
+<div class="result-item"><span class="result-label">Target earnings for hours</span><span class="result-value" id="targetPay">$500.00</span></div>
+</div></aside></div></section>
+
+<section class="info-section" id="how-it-works"><div class="container">
+<h2>How to calculate piece-rate pay</h2><p>Piece-rate or piecework pay is based on output rather than simply multiplying hours by an hourly wage. The basic calculation multiplies completed units by the rate paid for each unit.</p>
+<div class="formula-box">Piece-rate earnings = Units completed × Rate per unit</div>
+<h3>Example: 300 units at $1.50 each</h3><p>Completing 300 units at $1.50 per unit produces $450 in piece-rate earnings. If the work took 20 hours, the effective hourly rate is $22.50.</p>
+<div class="formula-box">$450 ÷ 20 hours = $22.50/hour effective rate</div>
+<h3>How to calculate units per hour</h3><p>Divide completed units by hours worked. Productivity is useful when working backward from a desired hourly income to the unit rate needed.</p>
+<div class="formula-box">Target rate per unit = Target hourly earnings ÷ Units per hour</div>
+<div class="notice"><strong>Important:</strong> wage-and-hour rules can apply to piece-rate workers. This tool intentionally does not decide whether additional minimum-wage, overtime, rest-period, or other compensation is required in a particular jurisdiction.</div>
+</div></section>
+
+<section class="info-section" id="faq"><div class="container"><h2>Piece rate calculator FAQ</h2>
+<h3>How do I calculate pay per piece?</h3><p>Multiply the number of completed units by the agreed rate per unit.</p>
+<h3>How do I convert piece-rate pay to an hourly rate?</h3><p>Divide total piece-rate earnings by the hours worked.</p>
+<h3>How do I calculate the unit rate needed for a target hourly income?</h3><p>Divide the target hourly income by the number of units you typically complete per hour.</p>
+<h3>What counts as a unit?</h3><p>A unit can be a piece, item, task, delivery, box, assembly, or another measurable unit used by the pay arrangement.</p>
+<h3>Does this calculator include overtime or minimum-wage adjustments?</h3><p>No. It provides arithmetic estimates only; applicable compensation requirements depend on the work arrangement and law.</p>
+</div></section>
+
+<section class="info-section" style="background:#f8fafc"><div class="container"><p class="eyebrow">RELATED TOOLS</p><h2>More Numviro pay calculators</h2><div class="related-grid">
+<article><h3><a href="/hourly-pay-calculator/">Hourly Pay Calculator</a></h3><p>Estimate earnings from hourly wages and work hours.</p></article>
+<article><h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3><p>Calculate gross earnings before taxes and deductions.</p></article>
+<article><h3><a href="/freelance-rate-calculator/">Freelance Rate Calculator</a></h3><p>Work backward from an income goal to a sustainable client rate.</p></article>
+</div></div></section>
+</main>
+<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Numviro · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>
+<script>
+const $=id=>document.getElementById(id),money=v=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2}).format(v||0);
+function calc(){const u=Math.max(0,+$("units").value||0),r=Math.max(0,+$("rate").value||0),h=Math.max(0,+$("hours").value||0),t=Math.max(0,+$("target").value||0);const total=u*r,hourly=h?total/h:0,uph=h?u/h:0,targetRate=uph?t/uph:0,targetPay=t*h,gap=Math.max(0,targetPay-total);$("total").textContent=money(total);$("hourly").textContent=money(hourly)+"/hr";$("uph").textContent=uph.toFixed(2);$("unitRate").textContent=money(r);$("targetRate").textContent=money(targetRate);$("targetPay").textContent=money(targetPay);$("gap").textContent=money(gap)}
+document.addEventListener("DOMContentLoaded",()=>{$("year").textContent=new Date().getFullYear();document.querySelectorAll("input").forEach(e=>e.addEventListener("input",calc));calc()});
+</script></body></html>

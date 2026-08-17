@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-F3GZ1Q68KJ');</script>
+<title>Shift Differential Calculator | Night & Weekend Pay | Numviro</title>
+<meta name="description" content="Calculate shift differential pay for night, evening, weekend, or other premium shifts. Compare percentage and flat-dollar premiums and estimate total gross pay.">
+<link rel="canonical" href="https://numviro.com/shift-differential-calculator/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Shift Differential Calculator | Numviro">
+<meta property="og:description" content="Estimate extra shift pay using percentage or flat hourly differentials.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://numviro.com/shift-differential-calculator/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css">
+<style>
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}.field{margin-bottom:18px}.field label{display:block;font-weight:700;margin-bottom:8px}.field input,.field select{width:100%;box-sizing:border-box;padding:14px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff}.inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}.result-card .eyebrow{color:#60a5fa}.big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0}.result-sub{color:#aeb8c8;margin-bottom:24px}.result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}.result-item{padding:18px 8px;border-bottom:1px solid #2b3547}.result-item:nth-child(odd){border-right:1px solid #2b3547}.result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}.result-value{font-size:19px;font-weight:800}.info-section{padding:70px 0}.formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}.related-grid a{color:#111827;text-decoration:none}@media(max-width:850px){.tool-grid,.inline-grid,.related-grid,.result-grid{grid-template-columns:1fr}.result-item:nth-child(odd){border-right:0}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/"><span class="brand-mark">N</span><span>Numviro</span></a><nav class="main-nav"><a href="#calculator">Calculator</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a><a href="/about.html">About</a></nav></div></header>
+<main>
+<section class="hero"><div class="container hero-grid">
+<div><p class="eyebrow">FREE SHIFT PAY TOOL</p><h1>Shift Differential Calculator</h1><p class="hero-copy">Estimate extra pay for night, evening, weekend, or other premium shifts using a percentage or flat-dollar differential.</p><div class="hero-pills"><span>Night shift pay</span><span>% or $/hour premium</span><span>Gross pay estimate</span></div></div>
+<div class="hero-card" aria-hidden="true"><span class="mini-label">Example</span><strong>$30/hour</strong><span>12 hours · 15% differential</span><div class="mini-result"><small>Extra shift pay</small><b>$54</b></div></div>
+</div></section>
+<section id="calculator" class="calculator-section"><div class="container tool-grid">
+<div class="calculator-card"><p class="eyebrow">CALCULATOR</p><h2>Calculate differential pay</h2>
+<div class="inline-grid"><div class="field"><label for="rate">Base hourly rate</label><input id="rate" type="number" min="0" step=".01" value="30"></div><div class="field"><label for="hours">Differential hours</label><input id="hours" type="number" min="0" step=".25" value="12"></div></div>
+<div class="inline-grid"><div class="field"><label for="type">Differential type</label><select id="type"><option value="percent">Percentage (%)</option><option value="flat">Flat amount ($/hour)</option></select></div><div class="field"><label for="diff">Differential amount</label><input id="diff" type="number" min="0" step=".01" value="15"></div></div>
+<div class="inline-grid"><div class="field"><label for="regularHours">Other regular hours</label><input id="regularHours" type="number" min="0" step=".25" value="28"></div><div class="field"><label for="shiftsMonth">Differential shifts/month</label><input id="shiftsMonth" type="number" min="0" step="1" value="12"></div></div>
+<p class="form-note">Estimate only. Shift premiums and overtime treatment depend on employer policy, contracts, and applicable law.</p></div>
+<aside class="result-card" aria-live="polite"><p class="eyebrow">YOUR RESULTS</p><div class="big-result" id="total">$1,254</div><div class="result-sub">Estimated gross pay for entered hours</div><div class="result-grid">
+<div class="result-item"><span class="result-label">Premium per hour</span><span class="result-value" id="premiumRate">$4.50</span></div>
+<div class="result-item"><span class="result-label">Effective shift rate</span><span class="result-value" id="effective">$34.50</span></div>
+<div class="result-item"><span class="result-label">Base pay</span><span class="result-value" id="basePay">$1,200</span></div>
+<div class="result-item"><span class="result-label">Extra differential pay</span><span class="result-value" id="extra">$54</span></div>
+<div class="result-item"><span class="result-label">Extra per month</span><span class="result-value" id="monthly">$648</span></div>
+<div class="result-item"><span class="result-label">Extra per year</span><span class="result-value" id="annual">$7,776</span></div>
+</div></aside></div></section>
+<section class="info-section" id="how-it-works"><div class="container">
+<h2>What is shift differential pay?</h2><p>Shift differential is extra compensation an employer may offer for working particular schedules such as evenings, nights, weekends, or other less desirable shifts. It is commonly expressed as a percentage of base pay or as an extra dollar amount per hour.</p>
+<div class="formula-box">Percentage premium per hour = Base hourly rate × Differential %<br>Flat premium per hour = Entered dollar premium</div>
+<h2>How to calculate night shift differential</h2><p>For a percentage differential, multiply your base hourly rate by the differential percentage, then multiply that premium by the number of qualifying hours. Add the premium to base earnings to estimate total gross pay.</p>
+<h3>Example: $30/hour with a 15% night differential</h3><p>A 15% differential on $30 per hour adds $4.50 per qualifying hour. For a 12-hour qualifying shift, the additional differential is $54, making the effective rate for those hours $34.50 per hour.</p>
+<h3>Percentage vs. flat-rate shift differential</h3><p>A percentage premium increases as the base wage increases. A flat differential adds a fixed amount, such as $2.00 per hour, regardless of the base hourly wage.</p>
+</div></section>
+<section class="info-section" id="faq"><div class="container"><h2>Shift differential FAQ</h2>
+<h3>Is shift differential the same as overtime?</h3><p>No. Shift differential is a premium associated with certain shifts or schedules, while overtime generally relates to hours worked beyond an applicable threshold. Rules can vary.</p>
+<h3>How much is a 10% shift differential?</h3><p>Multiply the base hourly rate by 10%. For example, 10% of $20 is $2, giving an effective rate of $22 for qualifying hours.</p>
+<h3>Can a shift differential be a flat dollar amount?</h3><p>Yes. Some employers use a fixed hourly premium rather than a percentage. Select the flat-dollar option in this calculator.</p>
+<h3>Does this calculator include taxes?</h3><p>No. Results are gross-pay estimates before taxes and deductions.</p>
+</div></section>
+<section class="info-section" style="background:#f8fafc"><div class="container"><p class="eyebrow">RELATED TOOLS</p><h2>More Numviro work & pay calculators</h2><div class="related-grid">
+<article><h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3><p>Calculate overtime earnings separately.</p></article>
+<article><h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3><p>Combine wages, overtime, bonuses, and other earnings.</p></article>
+<article><h3><a href="/time-card-calculator/">Time Card Calculator</a></h3><p>Calculate hours worked from clock-in, clock-out, and breaks.</p></article>
+</div></div></section>
+</main>
+<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Numviro · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>
+<script>
+const $=id=>document.getElementById(id);const money=(v,d=2)=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:d}).format(v||0);
+function calc(){const r=Math.max(0,+$("rate").value||0),h=Math.max(0,+$("hours").value||0),rh=Math.max(0,+$("regularHours").value||0),d=Math.max(0,+$("diff").value||0),sm=Math.max(0,+$("shiftsMonth").value||0);const p=$("type").value==="percent"?r*d/100:d,e=r+p,extra=p*h,base=r*(h+rh),total=base+extra;$("premiumRate").textContent=money(p);$("effective").textContent=money(e);$("extra").textContent=money(extra);$("basePay").textContent=money(base);$("total").textContent=money(total);$("monthly").textContent=money(extra*sm);$("annual").textContent=money(extra*sm*12)}
+document.addEventListener("DOMContentLoaded",()=>{$("year").textContent=new Date().getFullYear();document.querySelectorAll("input,select").forEach(x=>{x.addEventListener("input",calc);x.addEventListener("change",calc)});calc()});
+</script></body></html>

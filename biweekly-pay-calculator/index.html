@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F3GZ1Q68KJ');
+  </script>
+
+  <title>Biweekly Pay Calculator | Numviro</title>
+  <meta name="description" content="Calculate biweekly pay from hourly wage or annual salary. Include overtime and compare weekly, monthly, hourly, and annual gross income with Numviro.">
+  <link rel="canonical" href="https://numviro.com/biweekly-pay-calculator/">
+  <meta name="robots" content="index,follow">
+
+  <meta property="og:title" content="Biweekly Pay Calculator | Numviro">
+  <meta property="og:description" content="Convert hourly wage or annual salary into biweekly gross pay with optional overtime.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://numviro.com/biweekly-pay-calculator/">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+    .calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}
+    .field{margin-bottom:18px}
+    .field label{display:block;font-weight:700;margin-bottom:8px;color:#111827}
+    .field input,.field select{width:100%;box-sizing:border-box;padding:14px 15px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff}
+    .inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}
+    .result-card .eyebrow{color:#60a5fa}
+    .big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0}
+    .result-sub{color:#aeb8c8;margin-bottom:24px}
+    .result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}
+    .result-item{padding:18px 8px;border-bottom:1px solid #2b3547}
+    .result-item:nth-child(odd){border-right:1px solid #2b3547}
+    .result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}
+    .result-value{font-size:19px;font-weight:800}
+    .info-section{padding:70px 0}
+    .formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}
+    .related-grid a{color:#111827;text-decoration:none}
+    .hidden{display:none}
+    @media(max-width:850px){
+      .tool-grid,.inline-grid,.related-grid,.result-grid{grid-template-columns:1fr}
+      .result-item:nth-child(odd){border-right:0}
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Numviro home">
+      <span class="brand-mark">N</span><span>Numviro</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">FREE WORK &amp; PAY TOOL</p>
+        <h1>Biweekly Pay Calculator</h1>
+        <p class="hero-copy">Convert hourly wage or annual salary into biweekly gross pay, with optional overtime and pay-frequency comparisons.</p>
+        <div class="hero-pills">
+          <span>Hourly or salary</span>
+          <span>Overtime option</span>
+          <span>26-paycheck view</span>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-hidden="true">
+        <span class="mini-label">Example</span>
+        <strong>$25/hour</strong>
+        <span>40 hours/week · no overtime</span>
+        <div class="mini-result">
+          <small>Biweekly gross pay</small>
+          <b>$2,000</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculator" class="calculator-section">
+    <div class="container tool-grid">
+      <div class="calculator-card">
+        <p class="eyebrow">CALCULATOR</p>
+        <h2>Calculate biweekly pay</h2>
+
+        <div class="field">
+          <label for="mode">Calculate from</label>
+          <select id="mode">
+            <option value="hourly">Hourly wage</option>
+            <option value="salary">Annual salary</option>
+          </select>
+        </div>
+
+        <div id="hourlyFields">
+          <div class="field">
+            <label for="hourlyRate">Hourly wage</label>
+            <input id="hourlyRate" type="number" min="0" step="0.01" value="25">
+          </div>
+
+          <div class="inline-grid">
+            <div class="field">
+              <label for="regularHours">Regular hours/week</label>
+              <input id="regularHours" type="number" min="0" max="168" step="0.25" value="40">
+            </div>
+            <div class="field">
+              <label for="overtimeHours">Overtime hours/week</label>
+              <input id="overtimeHours" type="number" min="0" max="168" step="0.25" value="0">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="otMultiplier">Overtime multiplier</label>
+            <input id="otMultiplier" type="number" min="1" max="5" step="0.1" value="1.5">
+          </div>
+        </div>
+
+        <div id="salaryFields" class="hidden">
+          <div class="field">
+            <label for="annualSalary">Annual salary</label>
+            <input id="annualSalary" type="number" min="0" step="100" value="60000">
+          </div>
+        </div>
+
+        <div class="inline-grid">
+          <div class="field">
+            <label for="payPeriods">Biweekly pay periods/year</label>
+            <input id="payPeriods" type="number" min="1" max="30" step="1" value="26">
+          </div>
+          <div class="field">
+            <label for="weeksPerYear">Paid weeks/year</label>
+            <input id="weeksPerYear" type="number" min="1" max="52" step="1" value="52">
+          </div>
+        </div>
+
+        <p class="form-note">Gross-pay estimate only. Taxes, deductions, benefits, and payroll-specific rules are not included.</p>
+      </div>
+
+      <aside class="result-card" aria-live="polite">
+        <p class="eyebrow">YOUR RESULTS</p>
+        <div class="big-result" id="biweeklyPay">$2,000</div>
+        <div class="result-sub">Estimated gross pay every two weeks</div>
+
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-label">Weekly pay</span>
+            <span class="result-value" id="weeklyPay">$1,000</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Monthly average</span>
+            <span class="result-value" id="monthlyPay">$4,333.33</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Annual gross</span>
+            <span class="result-value" id="annualPay">$52,000</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Hourly equivalent</span>
+            <span class="result-value" id="hourlyEquivalent">$25.00/hr</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Regular biweekly pay</span>
+            <span class="result-value" id="regularBiweekly">$2,000</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Overtime biweekly pay</span>
+            <span class="result-value" id="overtimeBiweekly">$0</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="info-section" id="how-it-works">
+    <div class="container">
+      <h2>How to calculate biweekly pay</h2>
+      <p>Biweekly pay means pay received every two weeks. A typical year has 26 biweekly pay periods.</p>
+
+      <div class="formula-box">
+        Hourly biweekly pay = Hourly rate × Weekly hours × 2
+      </div>
+
+      <p>If overtime applies, overtime earnings are calculated separately using the overtime multiplier and added to regular pay.</p>
+
+      <div class="formula-box">
+        Salary biweekly pay = Annual salary ÷ Number of biweekly pay periods
+      </div>
+
+      <h3>Example</h3>
+      <p>At $25 per hour and 40 regular hours per week, regular biweekly gross pay is $25 × 40 × 2 = $2,000.</p>
+    </div>
+  </section>
+
+  <section class="info-section" id="faq">
+    <div class="container">
+      <h2>Frequently asked questions</h2>
+
+      <h3>How many biweekly paychecks are there in a year?</h3>
+      <p>Most biweekly schedules use 26 pay periods per year. Some calendar years or employer schedules may result in 27 paychecks.</p>
+
+      <h3>Is biweekly the same as twice a month?</h3>
+      <p>No. Biweekly means every two weeks, while semimonthly typically means twice per month.</p>
+
+      <h3>Does this calculator include overtime?</h3>
+      <p>Yes, in hourly mode you can enter weekly overtime hours and choose an overtime multiplier.</p>
+
+      <h3>Does this calculate take-home pay?</h3>
+      <p>No. It estimates gross pay before taxes and deductions.</p>
+    </div>
+  </section>
+
+  <section class="info-section" style="background:#f8fafc">
+    <div class="container">
+      <p class="eyebrow">RELATED TOOLS</p>
+      <h2>More Numviro pay calculators</h2>
+      <div class="related-grid">
+        <article>
+          <h3><a href="/hourly-to-salary-calculator/">Hourly to Salary Calculator</a></h3>
+          <p>Convert hourly pay into weekly, monthly, and annual salary.</p>
+        </article>
+        <article>
+          <h3><a href="/salary-to-hourly-calculator/">Salary to Hourly Calculator</a></h3>
+          <p>Convert annual salary into an hourly wage.</p>
+        </article>
+        <article>
+          <h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3>
+          <p>Estimate overtime rate and overtime earnings.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Numviro · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+  const $ = id => document.getElementById(id);
+
+  function money(value, digits = 2) {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: digits
+    }).format(value || 0);
+  }
+
+  function calculate() {
+    const mode = $("mode").value;
+    const periods = Math.max(1, parseFloat($("payPeriods").value) || 26);
+    const weeks = Math.max(1, parseFloat($("weeksPerYear").value) || 52);
+
+    let biweekly = 0;
+    let annual = 0;
+    let weekly = 0;
+    let hourlyEquivalent = 0;
+    let regularBiweekly = 0;
+    let overtimeBiweekly = 0;
+
+    if (mode === "hourly") {
+      const rate = Math.max(0, parseFloat($("hourlyRate").value) || 0);
+      const regularHours = Math.max(0, parseFloat($("regularHours").value) || 0);
+      const otHours = Math.max(0, parseFloat($("overtimeHours").value) || 0);
+      const otMultiplier = Math.max(1, parseFloat($("otMultiplier").value) || 1.5);
+
+      regularBiweekly = rate * regularHours * 2;
+      overtimeBiweekly = rate * otMultiplier * otHours * 2;
+      biweekly = regularBiweekly + overtimeBiweekly;
+
+      weekly = biweekly / 2;
+      annual = weekly * weeks;
+      const totalHours = (regularHours + otHours) * weeks;
+      hourlyEquivalent = totalHours > 0 ? annual / totalHours : rate;
+    } else {
+      const salary = Math.max(0, parseFloat($("annualSalary").value) || 0);
+      annual = salary;
+      biweekly = salary / periods;
+      weekly = salary / weeks;
+      hourlyEquivalent = salary / (40 * weeks);
+      regularBiweekly = biweekly;
+      overtimeBiweekly = 0;
+    }
+
+    const monthly = annual / 12;
+
+    $("biweeklyPay").textContent = money(biweekly);
+    $("weeklyPay").textContent = money(weekly);
+    $("monthlyPay").textContent = money(monthly);
+    $("annualPay").textContent = money(annual, 0);
+    $("hourlyEquivalent").textContent = money(hourlyEquivalent) + "/hr";
+    $("regularBiweekly").textContent = money(regularBiweekly);
+    $("overtimeBiweekly").textContent = money(overtimeBiweekly);
+  }
+
+  function toggleMode() {
+    const hourly = $("mode").value === "hourly";
+    $("hourlyFields").classList.toggle("hidden", !hourly);
+    $("salaryFields").classList.toggle("hidden", hourly);
+    calculate();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    $("year").textContent = new Date().getFullYear();
+    document.querySelectorAll("input, select").forEach(el => {
+      el.addEventListener("input", calculate);
+      el.addEventListener("change", calculate);
+    });
+    $("mode").addEventListener("change", toggleMode);
+    toggleMode();
+  });
+</script>
+</body>
+</html>

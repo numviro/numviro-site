@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://numviro.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://numviro.com/about.html</loc><priority>0.5</priority></url>
-  <url><loc>https://numviro.com/privacy.html</loc><priority>0.3</priority></url>
-  <url><loc>https://numviro.com/terms.html</loc><priority>0.3</priority></url>
-    <url><loc>https://numviro.com/overtime-pay-calculator/</loc><priority>0.8</priority></url>
-  <url><loc>https://numviro.com/hourly-to-salary-calculator/</loc><priority>0.8</priority></url>
-  <url><loc>https://numviro.com/salary-to-hourly-calculator/</loc><priority>0.8</priority></url>
-  <url><loc>https://numviro.com/work-hours-calculator/</loc><priority>0.8</priority></url>
-  <url><loc>https://numviro.com/time-card-calculator/</loc><priority>0.8</priority></url>
+
+  <url><loc>https://numviro.com/</loc></url>
+  <url><loc>https://numviro.com/calculators/</loc></url>
+
+  <url><loc>https://numviro.com/about.html</loc></url>
+  <url><loc>https://numviro.com/privacy.html</loc></url>
+  <url><loc>https://numviro.com/terms.html</loc></url>
+
+  <url><loc>https://numviro.com/overtime-pay-calculator/</loc></url>
+  <url><loc>https://numviro.com/hourly-to-salary-calculator/</loc></url>
+  <url><loc>https://numviro.com/salary-to-hourly-calculator/</loc></url>
+  <url><loc>https://numviro.com/work-hours-calculator/</loc></url>
+  <url><loc>https://numviro.com/time-card-calculator/</loc></url>
+  <url><loc>https://numviro.com/pay-raise-calculator/</loc></url>
+  <url><loc>https://numviro.com/biweekly-pay-calculator/</loc></url>
+  <url><loc>https://numviro.com/annual-income-calculator/</loc></url>
+  <url><loc>https://numviro.com/monthly-income-calculator/</loc></url>
+  <url><loc>https://numviro.com/semi-monthly-pay-calculator/</loc></url>
+  <url><loc>https://numviro.com/weekly-pay-calculator/</loc></url>
+  <url><loc>https://numviro.com/gross-pay-calculator/</loc></url>
+  <url><loc>https://numviro.com/shift-differential-calculator/</loc></url>
+  <url><loc>https://numviro.com/sales-commission-calculator/</loc></url>
+  <url><loc>https://numviro.com/pto-accrual-calculator/</loc></url>
+  <url><loc>https://numviro.com/holiday-pay-calculator/</loc></url>
+  <url><loc>https://numviro.com/pto-payout-calculator/</loc></url>
+  <url><loc>https://numviro.com/bonus-calculator/</loc></url>
+  <url><loc>https://numviro.com/freelance-rate-calculator/</loc></url>
+  <url><loc>https://numviro.com/mileage-reimbursement-calculator/</loc></url>
+  <url><loc>https://numviro.com/piece-rate-calculator/</loc></url>
+  <url><loc>https://numviro.com/tip-income-calculator/</loc></url>
+  <url><loc>https://numviro.com/per-diem-calculator/</loc></url>
+  <url><loc>https://numviro.com/contractor-vs-employee-cost-calculator/</loc></url>
+
 </urlset>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-F3GZ1Q68KJ');</script>
+
+<title>Freelance Rate Calculator | Hourly & Day Rate | Numviro</title>
+<meta name="description" content="Calculate a sustainable freelance hourly rate from your income goal, business expenses, billable hours, weeks worked, and optional profit buffer.">
+<link rel="canonical" href="https://numviro.com/freelance-rate-calculator/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Freelance Rate Calculator | Numviro">
+<meta property="og:description" content="Estimate the hourly and day rate needed to cover your income goal, expenses, non-billable time, and profit buffer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://numviro.com/freelance-rate-calculator/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css">
+
+<style>
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}.field{margin-bottom:18px}.field label{display:block;font-weight:700;margin-bottom:8px;color:#111827}.field input{width:100%;box-sizing:border-box;padding:14px 15px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff}.inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}.result-card .eyebrow{color:#60a5fa}.big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0}.result-sub{color:#aeb8c8;margin-bottom:24px}.result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}.result-item{padding:18px 8px;border-bottom:1px solid #2b3547}.result-item:nth-child(odd){border-right:1px solid #2b3547}.result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}.result-value{font-size:19px;font-weight:800}.info-section{padding:70px 0}.formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}.related-grid a{color:#111827;text-decoration:none}.compare-table{width:100%;border-collapse:collapse;margin:24px 0}.compare-table th,.compare-table td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left}@media(max-width:850px){.tool-grid,.inline-grid,.related-grid,.result-grid{grid-template-columns:1fr}.result-item:nth-child(odd){border-right:0}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Numviro home"><span class="brand-mark">N</span><span>Numviro</span></a><nav class="main-nav"><a href="#calculator">Calculator</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a><a href="/about.html">About</a></nav></div></header>
+
+<main>
+<section class="hero"><div class="container hero-grid">
+<div><p class="eyebrow">FREE FREELANCE PRICING TOOL</p><h1>Freelance Rate Calculator</h1><p class="hero-copy">Work backward from your annual income goal and business costs to estimate a sustainable freelance hourly rate, day rate, and revenue target.</p><div class="hero-pills"><span>Income goal</span><span>Billable hours</span><span>Expenses & buffer</span></div></div>
+<div class="hero-card" aria-hidden="true"><span class="mini-label">Example</span><strong>$80,000 income goal</strong><span>$10,000 expenses · 25 billable hrs/week</span><div class="mini-result"><small>Break-even hourly rate</small><b>$72/hr</b></div></div>
+</div></section>
+
+<section id="calculator" class="calculator-section"><div class="container tool-grid">
+<div class="calculator-card"><p class="eyebrow">CALCULATOR</p><h2>Calculate your freelance rate</h2>
+
+<div class="inline-grid">
+<div class="field"><label for="income">Target annual income</label><input id="income" type="number" min="0" step="500" value="80000"></div>
+<div class="field"><label for="expenses">Annual business expenses</label><input id="expenses" type="number" min="0" step="100" value="10000"></div>
+</div>
+
+<div class="inline-grid">
+<div class="field"><label for="hours">Billable hours per week</label><input id="hours" type="number" min=".1" max="168" step=".5" value="25"></div>
+<div class="field"><label for="weeks">Working weeks per year</label><input id="weeks" type="number" min="1" max="52" step="1" value="50"></div>
+</div>
+
+<div class="inline-grid">
+<div class="field"><label for="dayHours">Billable hours per day</label><input id="dayHours" type="number" min=".1" max="24" step=".5" value="8"></div>
+<div class="field"><label for="buffer">Profit / risk buffer (%)</label><input id="buffer" type="number" min="0" step="1" value="20"></div>
+</div>
+
+<p class="form-note">Planning estimate only. This version does not calculate personal or business taxes; add any tax reserve you want to recover through pricing to your income goal or business-cost assumptions.</p>
+</div>
+
+<aside class="result-card" aria-live="polite">
+<p class="eyebrow">YOUR RESULTS</p><div class="big-result" id="recommended">$86.40/hr</div><div class="result-sub">Recommended hourly rate including your selected buffer</div>
+<div class="result-grid">
+<div class="result-item"><span class="result-label">Break-even hourly rate</span><span class="result-value" id="breakEven">$72.00/hr</span></div>
+<div class="result-item"><span class="result-label">Recommended day rate</span><span class="result-value" id="dayRate">$691.20</span></div>
+<div class="result-item"><span class="result-label">Billable hours/year</span><span class="result-value" id="annualHours">1,250 hrs</span></div>
+<div class="result-item"><span class="result-label">Break-even revenue</span><span class="result-value" id="revenue">$90,000</span></div>
+<div class="result-item"><span class="result-label">Revenue with buffer</span><span class="result-value" id="bufferedRevenue">$108,000</span></div>
+<div class="result-item"><span class="result-label">Monthly revenue target</span><span class="result-value" id="monthly">$9,000</span></div>
+</div></aside>
+</div></section>
+
+<section class="info-section" id="how-it-works"><div class="container">
+<h2>How to calculate a freelance hourly rate</h2>
+<p>A practical freelance rate starts with the annual income you want to earn, adds the business expenses your client revenue must cover, and divides that total by the hours you can realistically bill.</p>
+<div class="formula-box">Break-even hourly rate = (Target annual income + Annual business expenses) ÷ Annual billable hours</div>
+
+<h3>Why billable hours matter</h3>
+<p>Freelancers usually cannot invoice every hour they work. Proposals, marketing, bookkeeping, client communication, learning, and administrative work can reduce the number of hours available to bill clients. Using realistic billable hours prevents your rate from being based on an unrealistic 40 billable hours every week.</p>
+
+<h3>Example freelance rate calculation</h3>
+<p>Suppose your annual income goal is $80,000, annual business expenses are $10,000, and you expect to bill 25 hours per week for 50 weeks. That gives 1,250 annual billable hours and a break-even rate of $72 per hour.</p>
+<div class="formula-box">($80,000 + $10,000) ÷ (25 × 50) = $72/hour</div>
+
+<h3>Adding a profit or risk buffer</h3>
+<p>A buffer can help account for slow periods, scope changes, unexpected expenses, or profit beyond your minimum income target. Numviro applies the selected percentage to the break-even rate.</p>
+
+<table class="compare-table"><thead><tr><th>Rate type</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>Break-even rate</td><td>Covers the entered income goal and business expenses</td></tr>
+<tr><td>Recommended rate</td><td>Adds your selected profit or risk buffer</td></tr>
+<tr><td>Day rate</td><td>Recommended hourly rate × billable hours per day</td></tr>
+</tbody></table>
+
+<h3>Freelance rate vs. employee hourly wage</h3>
+<p>A freelance billing rate is not the same as an employee wage. Freelancers may need their client revenue to cover business expenses, unpaid administrative time, time off, equipment, insurance, and other costs that an employee may not pay directly from an hourly wage.</p>
+</div></section>
+
+<section class="info-section" id="faq"><div class="container">
+<h2>Freelance rate calculator FAQ</h2>
+<h3>How do I calculate what to charge per hour as a freelancer?</h3><p>Add your target annual income and annual business expenses, then divide by realistic annual billable hours. Add a buffer if you want your rate to include additional profit or protection against downtime.</p>
+<h3>What are billable hours?</h3><p>Billable hours are the hours you can actually charge to clients. Administrative work, marketing, proposals, and other internal work are often non-billable.</p>
+<h3>How do I calculate a freelance day rate?</h3><p>Multiply your hourly freelance rate by the number of billable hours you plan to include in a day.</p>
+<h3>Should business expenses be included in my freelance rate?</h3><p>If client revenue needs to cover those expenses, including them in the rate calculation helps prevent them from reducing your target income.</p>
+<h3>Does this calculator include taxes?</h3><p>No. Tax obligations vary significantly by location and circumstances, so this calculator focuses on income, expenses, billable time, and an adjustable pricing buffer.</p>
+</div></section>
+
+<section class="info-section" style="background:#f8fafc"><div class="container"><p class="eyebrow">RELATED TOOLS</p><h2>More Numviro income calculators</h2><div class="related-grid">
+<article><h3><a href="/annual-income-calculator/">Annual Income Calculator</a></h3><p>Convert common pay frequencies into annual gross income.</p></article>
+<article><h3><a href="/salary-to-hourly-calculator/">Salary to Hourly Calculator</a></h3><p>Compare an annual salary with its hourly equivalent.</p></article>
+<article><h3><a href="/sales-commission-calculator/">Sales Commission Calculator</a></h3><p>Estimate commission and total sales compensation.</p></article>
+</div></div></section>
+</main>
+
+<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Numviro · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function money(v,d=2){return new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:d}).format(v||0)}
+function calc(){
+ const income=Math.max(0,+$("income").value||0),expenses=Math.max(0,+$("expenses").value||0);
+ const hours=Math.max(.1,+$("hours").value||.1),weeks=Math.max(1,+$("weeks").value||1);
+ const dayHours=Math.max(.1,+$("dayHours").value||.1),buffer=Math.max(0,+$("buffer").value||0);
+ const annualHours=hours*weeks,revenue=income+expenses,breakEven=revenue/annualHours;
+ const recommended=breakEven*(1+buffer/100),buffered=recommended*annualHours;
+ $("breakEven").textContent=money(breakEven)+"/hr";
+ $("recommended").textContent=money(recommended)+"/hr";
+ $("dayRate").textContent=money(recommended*dayHours);
+ $("annualHours").textContent=new Intl.NumberFormat("en-US",{maximumFractionDigits:1}).format(annualHours)+" hrs";
+ $("revenue").textContent=money(revenue,0);
+ $("bufferedRevenue").textContent=money(buffered,0);
+ $("monthly").textContent=money(buffered/12,0);
+}
+document.addEventListener("DOMContentLoaded",()=>{$("year").textContent=new Date().getFullYear();document.querySelectorAll("input").forEach(e=>e.addEventListener("input",calc));calc()});
+</script>
+</body>
+</html>

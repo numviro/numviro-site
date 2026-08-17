@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-F3GZ1Q68KJ');</script>
+<title>Sales Commission Calculator | Base Salary & Tiered Pay | Numviro</title>
+<meta name="description" content="Calculate sales commission from revenue, commission rate, base salary, and tiered targets. Estimate total commission and gross compensation with Numviro.">
+<link rel="canonical" href="https://numviro.com/sales-commission-calculator/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Sales Commission Calculator | Numviro">
+<meta property="og:description" content="Estimate sales commission, tiered commission, and total compensation with optional base salary.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://numviro.com/sales-commission-calculator/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css">
+<style>
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}.field{margin-bottom:18px}.field label{display:block;font-weight:700;margin-bottom:8px}.field input,.field select{width:100%;box-sizing:border-box;padding:14px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff}.inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}.result-card .eyebrow{color:#60a5fa}.big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0}.result-sub{color:#aeb8c8;margin-bottom:24px}.result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}.result-item{padding:18px 8px;border-bottom:1px solid #2b3547}.result-item:nth-child(odd){border-right:1px solid #2b3547}.result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}.result-value{font-size:19px;font-weight:800}.info-section{padding:70px 0}.formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}.related-grid a{color:#111827;text-decoration:none}.tier-table{width:100%;border-collapse:collapse;margin:24px 0}.tier-table th,.tier-table td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left}@media(max-width:850px){.tool-grid,.inline-grid,.related-grid,.result-grid{grid-template-columns:1fr}.result-item:nth-child(odd){border-right:0}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/"><span class="brand-mark">N</span><span>Numviro</span></a><nav class="main-nav"><a href="#calculator">Calculator</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a><a href="/about.html">About</a></nav></div></header>
+<main>
+<section class="hero"><div class="container hero-grid"><div><p class="eyebrow">FREE SALES PAY TOOL</p><h1>Sales Commission Calculator</h1><p class="hero-copy">Estimate commission from sales revenue, commission rate, optional base salary, and tiered targets.</p><div class="hero-pills"><span>Commission only</span><span>Base + commission</span><span>Tiered rates</span></div></div><div class="hero-card" aria-hidden="true"><span class="mini-label">Example</span><strong>$50,000 sales</strong><span>8% commission rate</span><div class="mini-result"><small>Commission earned</small><b>$4,000</b></div></div></div></section>
+
+<section id="calculator" class="calculator-section"><div class="container tool-grid">
+<div class="calculator-card"><p class="eyebrow">CALCULATOR</p><h2>Calculate sales commission</h2>
+
+<div class="inline-grid">
+<div class="field"><label for="sales">Sales revenue</label><input id="sales" type="number" min="0" step="100" value="50000"></div>
+<div class="field"><label for="baseRate">Base commission rate (%)</label><input id="baseRate" type="number" min="0" max="100" step=".1" value="8"></div>
+</div>
+
+<div class="inline-grid">
+<div class="field"><label for="baseSalary">Base salary for period</label><input id="baseSalary" type="number" min="0" step="100" value="0"></div>
+<div class="field"><label for="periods">Pay periods per year</label><input id="periods" type="number" min="1" max="52" step="1" value="12"></div>
+</div>
+
+<h3>Optional tiered commission</h3>
+<div class="inline-grid">
+<div class="field"><label for="tier1">Tier 1 threshold</label><input id="tier1" type="number" min="0" step="100" value="25000"></div>
+<div class="field"><label for="tier1Rate">Tier 1 rate (%)</label><input id="tier1Rate" type="number" min="0" max="100" step=".1" value="8"></div>
+</div>
+
+<div class="inline-grid">
+<div class="field"><label for="tier2">Tier 2 threshold</label><input id="tier2" type="number" min="0" step="100" value="50000"></div>
+<div class="field"><label for="tier2Rate">Tier 2 rate (%)</label><input id="tier2Rate" type="number" min="0" max="100" step=".1" value="10"></div>
+</div>
+
+<div class="field"><label for="tier3Rate">Rate above Tier 2 (%)</label><input id="tier3Rate" type="number" min="0" max="100" step=".1" value="12"></div>
+
+<p class="form-note">This is a compensation estimate. Actual commission plans may use quotas, draws, clawbacks, caps, accelerators, gross margin, product-specific rates, or other rules.</p>
+</div>
+
+<aside class="result-card" aria-live="polite">
+<p class="eyebrow">YOUR RESULTS</p><div class="big-result" id="commission">$4,500</div><div class="result-sub">Estimated commission for this period</div>
+<div class="result-grid">
+<div class="result-item"><span class="result-label">Effective commission rate</span><span class="result-value" id="effectiveRate">9.00%</span></div>
+<div class="result-item"><span class="result-label">Base salary</span><span class="result-value" id="baseSalaryOut">$0</span></div>
+<div class="result-item"><span class="result-label">Total compensation</span><span class="result-value" id="totalComp">$4,500</span></div>
+<div class="result-item"><span class="result-label">Annualized commission</span><span class="result-value" id="annualCommission">$54,000</span></div>
+<div class="result-item"><span class="result-label">Annualized total comp</span><span class="result-value" id="annualComp">$54,000</span></div>
+<div class="result-item"><span class="result-label">Sales after Tier 2</span><span class="result-value" id="aboveTier2">$0</span></div>
+</div>
+</aside>
+</div></section>
+
+<section class="info-section" id="how-it-works"><div class="container">
+<h2>How to calculate sales commission</h2><p>A basic sales commission is sales revenue multiplied by a commission rate.</p>
+<div class="formula-box">Commission = Sales revenue × Commission rate</div>
+<h3>Example: 8% commission on $50,000 in sales</h3><p>A flat 8% commission on $50,000 equals $4,000. Tiered plans can pay different rates on different portions of sales, so the effective rate may be higher or lower than the first tier.</p>
+<h2>How tiered commission works</h2><p>Tiered plans apply different commission percentages as sales cross defined thresholds. This calculator treats each tier incrementally, so only the sales within each tier receive that tier's rate.</p>
+<table class="tier-table"><thead><tr><th>Sales portion</th><th>Rate used</th></tr></thead><tbody><tr><td>Up to Tier 1 threshold</td><td>Tier 1 rate</td></tr><tr><td>Tier 1 to Tier 2</td><td>Tier 2 rate</td></tr><tr><td>Above Tier 2</td><td>Top tier rate</td></tr></tbody></table>
+<h3>Base salary plus commission</h3><p>Many sales compensation plans combine a fixed base salary with variable commission. Enter the base salary for the same pay period as your sales figures to estimate total compensation.</p>
+</div></section>
+
+<section class="info-section" id="faq"><div class="container">
+<h2>Sales commission calculator FAQ</h2>
+<h3>How do I calculate commission percentage?</h3><p>Multiply eligible sales by the commission percentage expressed as a decimal. For example, 5% is 0.05.</p>
+<h3>What is tiered commission?</h3><p>Tiered commission uses different rates at different sales levels. Higher sales can unlock higher commission rates on the portion above a target.</p>
+<h3>What is base salary plus commission?</h3><p>It is a compensation structure that combines guaranteed base pay with variable commission tied to sales performance.</p>
+<h3>Does this calculator support commission-only pay?</h3><p>Yes. Enter zero for base salary.</p>
+<h3>Does this calculate taxes?</h3><p>No. Results are gross compensation estimates before taxes and deductions.</p>
+</div></section>
+
+<section class="info-section" style="background:#f8fafc"><div class="container"><p class="eyebrow">RELATED TOOLS</p><h2>More Numviro pay calculators</h2><div class="related-grid">
+<article><h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3><p>Combine wages, overtime, bonuses, commissions, and other earnings.</p></article>
+<article><h3><a href="/annual-income-calculator/">Annual Income Calculator</a></h3><p>Estimate yearly gross income across common pay frequencies.</p></article>
+<article><h3><a href="/pay-raise-calculator/">Pay Raise Calculator</a></h3><p>Calculate new pay after a percentage or fixed raise.</p></article>
+</div></div></section>
+</main>
+<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Numviro · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const money=(v,d=2)=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:d}).format(v||0);
+
+function calculate(){
+  const sales=Math.max(0,+$("sales").value||0);
+  const baseSalary=Math.max(0,+$("baseSalary").value||0);
+  const periods=Math.max(1,+$("periods").value||12);
+  const t1=Math.max(0,+$("tier1").value||0);
+  const t2=Math.max(t1,+$("tier2").value||0);
+  const r1=Math.max(0,+$("tier1Rate").value||0)/100;
+  const r2=Math.max(0,+$("tier2Rate").value||0)/100;
+  const r3=Math.max(0,+$("tier3Rate").value||0)/100;
+
+  let commission=0;
+  const first=Math.min(sales,t1);
+  const second=Math.max(0,Math.min(sales,t2)-t1);
+  const third=Math.max(0,sales-t2);
+  commission=first*r1+second*r2+third*r3;
+
+  if(t1===0 && t2===0){
+    commission=sales*(Math.max(0,+$("baseRate").value||0)/100);
+  }
+
+  const total=baseSalary+commission;
+  const eff=sales>0?commission/sales*100:0;
+
+  $("commission").textContent=money(commission);
+  $("effectiveRate").textContent=eff.toFixed(2)+"%";
+  $("baseSalaryOut").textContent=money(baseSalary);
+  $("totalComp").textContent=money(total);
+  $("annualCommission").textContent=money(commission*periods,0);
+  $("annualComp").textContent=money(total*periods,0);
+  $("aboveTier2").textContent=money(third,0);
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  $("year").textContent=new Date().getFullYear();
+  document.querySelectorAll("input").forEach(e=>e.addEventListener("input",calculate));
+  calculate();
+});
+</script>
+</body>
+</html>

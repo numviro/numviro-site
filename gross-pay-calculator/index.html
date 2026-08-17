@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-F3GZ1Q68KJ');</script>
+
+<title>Gross Pay Calculator | Hourly, Overtime & Bonus | Numviro</title>
+<meta name="description" content="Calculate gross pay before taxes from hourly wages, regular hours, overtime, double time, bonuses, commissions, tips, and other earnings.">
+<link rel="canonical" href="https://numviro.com/gross-pay-calculator/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Gross Pay Calculator | Numviro">
+<meta property="og:description" content="Estimate total gross pay before deductions from regular hours, overtime, bonuses, commissions, tips, and other earnings.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://numviro.com/gross-pay-calculator/">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+
+<style>
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}.field{margin-bottom:18px}.field label{display:block;font-weight:700;margin-bottom:8px;color:#111827}.field input,.field select{width:100%;box-sizing:border-box;padding:14px 15px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff}.inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}.result-card .eyebrow{color:#60a5fa}.big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0}.result-sub{color:#aeb8c8;margin-bottom:24px}.result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}.result-item{padding:18px 8px;border-bottom:1px solid #2b3547}.result-item:nth-child(odd){border-right:1px solid #2b3547}.result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}.result-value{font-size:19px;font-weight:800}.info-section{padding:70px 0}.formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}.related-grid a{color:#111827;text-decoration:none}.breakdown{width:100%;border-collapse:collapse;margin:24px 0}.breakdown th,.breakdown td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left}@media(max-width:850px){.tool-grid,.inline-grid,.related-grid,.result-grid{grid-template-columns:1fr}.result-item:nth-child(odd){border-right:0}}
+</style>
+</head>
+<body>
+
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Numviro home"><span class="brand-mark">N</span><span>Numviro</span></a><nav class="main-nav" aria-label="Main navigation"><a href="#calculator">Calculator</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a><a href="/about.html">About</a></nav></div></header>
+
+<main>
+<section class="hero"><div class="container hero-grid">
+<div><p class="eyebrow">FREE PAYROLL TOOL</p><h1>Gross Pay Calculator</h1><p class="hero-copy">Calculate total gross pay before taxes and deductions from regular hours, overtime, double time, bonuses, commissions, tips, and other earnings.</p><div class="hero-pills"><span>Regular + overtime</span><span>Bonus & commission</span><span>Pay-period breakdown</span></div></div>
+<div class="hero-card" aria-hidden="true"><span class="mini-label">Example</span><strong>$25/hour</strong><span>40 regular + 5 overtime hours</span><div class="mini-result"><small>Gross pay</small><b>$1,187.50</b></div></div>
+</div></section>
+
+<section id="calculator" class="calculator-section"><div class="container tool-grid">
+<div class="calculator-card">
+<p class="eyebrow">CALCULATOR</p><h2>Calculate gross pay</h2>
+
+<div class="inline-grid">
+<div class="field"><label for="rate">Hourly rate</label><input id="rate" type="number" min="0" step="0.01" value="25"></div>
+<div class="field"><label for="period">Pay period</label><select id="period"><option value="weekly">Weekly</option><option value="biweekly">Biweekly</option><option value="semimonthly">Semi-monthly</option><option value="monthly">Monthly</option></select></div>
+</div>
+
+<div class="inline-grid">
+<div class="field"><label for="regularHours">Regular hours in pay period</label><input id="regularHours" type="number" min="0" step="0.25" value="40"></div>
+<div class="field"><label for="otHours">Overtime hours</label><input id="otHours" type="number" min="0" step="0.25" value="5"></div>
+</div>
+
+<div class="inline-grid">
+<div class="field"><label for="otMultiplier">Overtime multiplier</label><input id="otMultiplier" type="number" min="1" max="5" step="0.1" value="1.5"></div>
+<div class="field"><label for="doubleHours">Double-time hours</label><input id="doubleHours" type="number" min="0" step="0.25" value="0"></div>
+</div>
+
+<div class="inline-grid">
+<div class="field"><label for="bonus">Bonus</label><input id="bonus" type="number" min="0" step="0.01" value="0"></div>
+<div class="field"><label for="commission">Commission</label><input id="commission" type="number" min="0" step="0.01" value="0"></div>
+</div>
+
+<div class="inline-grid">
+<div class="field"><label for="tips">Tips</label><input id="tips" type="number" min="0" step="0.01" value="0"></div>
+<div class="field"><label for="other">Other earnings</label><input id="other" type="number" min="0" step="0.01" value="0"></div>
+</div>
+
+<p class="form-note">Gross pay is earnings before taxes, insurance, retirement contributions, and other deductions. Overtime eligibility and rates can vary by job and jurisdiction.</p>
+</div>
+
+<aside class="result-card" aria-live="polite">
+<p class="eyebrow">YOUR RESULTS</p><div class="big-result" id="gross">$1,187.50</div><div class="result-sub">Total gross pay for this pay period</div>
+<div class="result-grid">
+<div class="result-item"><span class="result-label">Regular pay</span><span class="result-value" id="regularPay">$1,000</span></div>
+<div class="result-item"><span class="result-label">Overtime pay</span><span class="result-value" id="otPay">$187.50</span></div>
+<div class="result-item"><span class="result-label">Double-time pay</span><span class="result-value" id="doublePay">$0</span></div>
+<div class="result-item"><span class="result-label">Bonus + commission</span><span class="result-value" id="bonusCommission">$0</span></div>
+<div class="result-item"><span class="result-label">Tips + other</span><span class="result-value" id="tipsOther">$0</span></div>
+<div class="result-item"><span class="result-label">Annualized estimate</span><span class="result-value" id="annualized">$61,750</span></div>
+</div>
+</aside>
+</div></section>
+
+<section class="info-section" id="how-it-works"><div class="container">
+<h2>What is gross pay?</h2>
+<p>Gross pay is the total amount earned before payroll deductions. Depending on the job, it can include regular wages, overtime, bonuses, commissions, tips, and other eligible earnings.</p>
+
+<div class="formula-box">Gross pay = Regular pay + Overtime pay + Double-time pay + Bonuses + Commissions + Tips + Other earnings</div>
+
+<h2>How to calculate gross pay for hourly employees</h2>
+<p>Start by multiplying the hourly rate by regular hours worked. Calculate overtime separately using the applicable overtime multiplier, then add any additional earnings.</p>
+
+<div class="formula-box">Regular pay = Hourly rate × Regular hours<br>Overtime pay = Hourly rate × Overtime multiplier × Overtime hours</div>
+
+<h3>Example: $25/hour with 5 overtime hours</h3>
+<p>At $25 per hour for 40 regular hours, regular pay is $1,000. Five overtime hours at 1.5 times the regular rate add $187.50, producing $1,187.50 in gross pay before any additional earnings.</p>
+
+<h3>What can be included in gross pay?</h3>
+<table class="breakdown"><thead><tr><th>Earning</th><th>How this calculator handles it</th></tr></thead><tbody>
+<tr><td>Regular wages</td><td>Hourly rate × regular hours</td></tr>
+<tr><td>Overtime</td><td>Hourly rate × selected multiplier × overtime hours</td></tr>
+<tr><td>Double time</td><td>Hourly rate × 2 × double-time hours</td></tr>
+<tr><td>Bonus</td><td>Added to gross earnings</td></tr>
+<tr><td>Commission</td><td>Added to gross earnings</td></tr>
+<tr><td>Tips / other earnings</td><td>Added to the pay-period total</td></tr>
+</tbody></table>
+
+<h3>Gross pay vs. net pay</h3>
+<p>Gross pay is your earnings before deductions. Net pay, often called take-home pay, is what remains after applicable taxes and other deductions. This calculator intentionally focuses on gross pay so it does not duplicate a tax or take-home-pay calculator.</p>
+</div></section>
+
+<section class="info-section" id="faq"><div class="container">
+<h2>Gross pay calculator FAQ</h2>
+<h3>Does gross pay include overtime?</h3><p>Yes. Overtime earnings are generally part of gross earnings. Enter overtime hours and the multiplier that applies to your situation.</p>
+<h3>Does gross pay include bonuses and commissions?</h3><p>They can be part of gross earnings. This calculator lets you add bonuses and commissions separately so you can see the breakdown.</p>
+<h3>Is gross pay before or after taxes?</h3><p>Gross pay is before taxes and payroll deductions.</p>
+<h3>How do I calculate gross pay from hourly wages?</h3><p>Multiply the hourly rate by regular hours, add overtime earnings, and then add bonuses, commissions, tips, or other earnings for the pay period.</p>
+<h3>Is gross pay the same as take-home pay?</h3><p>No. Take-home or net pay is the amount remaining after applicable deductions.</p>
+</div></section>
+
+<section class="info-section" style="background:#f8fafc"><div class="container">
+<p class="eyebrow">RELATED TOOLS</p><h2>More Numviro pay calculators</h2>
+<div class="related-grid">
+<article><h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3><p>Focus specifically on overtime rates and overtime earnings.</p></article>
+<article><h3><a href="/weekly-pay-calculator/">Weekly Pay Calculator</a></h3><p>Convert hourly wages or salary into weekly gross pay.</p></article>
+<article><h3><a href="/annual-income-calculator/">Annual Income Calculator</a></h3><p>Estimate yearly gross income across common pay frequencies.</p></article>
+</div></div></section>
+</main>
+
+<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Numviro · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function money(v,d=2){return new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:d}).format(v||0)}
+function calculate(){
+ const rate=Math.max(0,+$("rate").value||0);
+ const regularHours=Math.max(0,+$("regularHours").value||0);
+ const otHours=Math.max(0,+$("otHours").value||0);
+ const otM=Math.max(1,+$("otMultiplier").value||1.5);
+ const doubleHours=Math.max(0,+$("doubleHours").value||0);
+ const bonus=Math.max(0,+$("bonus").value||0);
+ const commission=Math.max(0,+$("commission").value||0);
+ const tips=Math.max(0,+$("tips").value||0);
+ const other=Math.max(0,+$("other").value||0);
+
+ const regular=rate*regularHours;
+ const overtime=rate*otM*otHours;
+ const doublePay=rate*2*doubleHours;
+ const gross=regular+overtime+doublePay+bonus+commission+tips+other;
+
+ const period=$("period").value;
+ const periods=period==="weekly"?52:period==="biweekly"?26:period==="semimonthly"?24:12;
+ const annual=gross*periods;
+
+ $("gross").textContent=money(gross);
+ $("regularPay").textContent=money(regular);
+ $("otPay").textContent=money(overtime);
+ $("doublePay").textContent=money(doublePay);
+ $("bonusCommission").textContent=money(bonus+commission);
+ $("tipsOther").textContent=money(tips+other);
+ $("annualized").textContent=money(annual,0);
+}
+document.addEventListener("DOMContentLoaded",()=>{
+ $("year").textContent=new Date().getFullYear();
+ document.querySelectorAll("input,select").forEach(e=>{e.addEventListener("input",calculate);e.addEventListener("change",calculate)});
+ calculate();
+});
+</script>
+</body>
+</html>
