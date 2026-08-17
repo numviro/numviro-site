@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F3GZ1Q68KJ');
+  </script>
+
+  <title>Time Card Calculator | Numviro</title>
+  <meta name="description" content="Calculate weekly work hours, regular hours, overtime hours, and estimated pay with Numviro's free time card calculator.">
+  <link rel="canonical" href="https://numviro.com/time-card-calculator/">
+  <meta name="robots" content="index,follow">
+
+  <meta property="og:title" content="Time Card Calculator | Numviro">
+  <meta property="og:description" content="Free weekly time card calculator with breaks, overtime, and pay estimates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://numviro.com/time-card-calculator/">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .tc-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
+    .tc-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}
+    .days{display:grid;gap:12px;margin-top:22px}
+    .day-row{display:grid;grid-template-columns:90px 1fr 1fr 1fr 90px;gap:10px;align-items:end}
+    .day-row strong{padding-bottom:12px}
+    .mini-label{display:block;font-size:12px;color:#6b7280;margin-bottom:5px;font-weight:700}
+    .day-row input{width:100%;box-sizing:border-box;padding:11px 10px;border:1px solid #dbe1ea;border-radius:10px;font-size:14px}
+    .day-total{font-weight:800;padding-bottom:10px;text-align:right}
+    .pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+    .pay-grid label{font-weight:700;color:#111827}
+    .pay-grid input{margin-top:7px;width:100%;box-sizing:border-box;padding:12px;border:1px solid #dbe1ea;border-radius:10px;font-size:15px}
+    .result-card{background:#111827;color:#fff;border-radius:24px;padding:30px;position:sticky;top:90px}
+    .result-card .eyebrow{color:#60a5fa}
+    .big-result{font-size:clamp(42px,5vw,58px);font-weight:800;letter-spacing:-2px;margin:8px 0}
+    .result-sub{color:#aeb8c8;margin-bottom:24px}
+    .result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}
+    .result-item{padding:18px 8px;border-bottom:1px solid #2b3547}
+    .result-item:nth-child(odd){border-right:1px solid #2b3547}
+    .result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}
+    .result-value{font-size:19px;font-weight:800}
+    .info-section{padding:70px 0}
+    .formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}
+    .related-grid a{color:#111827;text-decoration:none}
+    @media(max-width:950px){
+      .tc-wrap{grid-template-columns:1fr}
+      .result-card{position:static}
+    }
+    @media(max-width:760px){
+      .day-row{grid-template-columns:1fr 1fr}
+      .day-row strong{grid-column:1/-1;padding-bottom:0}
+      .day-total{grid-column:1/-1;text-align:left}
+      .pay-grid,.related-grid,.result-grid{grid-template-columns:1fr}
+      .result-item:nth-child(odd){border-right:0}
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Numviro home">
+      <span class="brand-mark">N</span>
+      <span>Numviro</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">FREE WORK &amp; PAY TOOL</p>
+        <h1>Time Card Calculator</h1>
+        <p class="hero-copy">Track a full week of clock-in, clock-out, and break times — then estimate regular hours, overtime, and gross pay.</p>
+        <div class="hero-pills">
+          <span>7-day time card</span>
+          <span>Overtime included</span>
+          <span>Instant pay estimate</span>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-hidden="true">
+        <span class="mini-label">Example week</span>
+        <strong>42.5 hours</strong>
+        <span>40 regular + 2.5 overtime</span>
+        <div class="mini-result">
+          <small>At $25/hour</small>
+          <b>$1,093.75</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculator" class="calculator-section">
+    <div class="container tc-wrap">
+
+      <div class="tc-card">
+        <p class="eyebrow">CALCULATOR</p>
+        <h2>Enter your weekly time card</h2>
+        <p>Leave unused days blank. Breaks are entered in minutes.</p>
+
+        <div class="days" id="days"></div>
+
+        <div class="pay-grid">
+          <label>
+            Hourly wage
+            <input id="hourlyWage" type="number" min="0" step="0.01" value="25">
+          </label>
+
+          <label>
+            Overtime multiplier
+            <input id="otMultiplier" type="number" min="1" max="5" step="0.1" value="1.5">
+          </label>
+
+          <label>
+            Overtime after weekly hours
+            <input id="otThreshold" type="number" min="1" max="168" step="0.25" value="40">
+          </label>
+        </div>
+
+        <p class="form-note">This calculator provides a general estimate only. Overtime laws and payroll rules can vary by location, employer, and job classification.</p>
+      </div>
+
+      <aside class="result-card" aria-live="polite">
+        <p class="eyebrow">YOUR RESULTS</p>
+        <div class="big-result" id="totalHours">0.00</div>
+        <div class="result-sub">Total weekly hours</div>
+
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-label">Regular hours</span>
+            <span class="result-value" id="regularHours">0.00</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Overtime hours</span>
+            <span class="result-value" id="overtimeHours">0.00</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Regular pay</span>
+            <span class="result-value" id="regularPay">$0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Overtime pay</span>
+            <span class="result-value" id="overtimePay">$0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Overtime rate</span>
+            <span class="result-value" id="overtimeRate">$37.50/hr</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Estimated total pay</span>
+            <span class="result-value" id="totalPay">$0</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <section class="info-section" id="how-it-works">
+    <div class="container">
+      <h2>How the time card calculator works</h2>
+      <p>For each day, Numviro calculates the time between your clock-in and clock-out entries and subtracts the unpaid break you enter.</p>
+
+      <div class="formula-box">
+        Daily work hours = Clock-out − Clock-in − Break time
+      </div>
+
+      <p>Weekly hours are the sum of all daily work hours. Hours above your selected weekly overtime threshold are separated as overtime hours.</p>
+
+      <div class="formula-box">
+        Estimated pay = Regular hours × hourly wage + Overtime hours × overtime rate
+      </div>
+
+      <h3>Example</h3>
+      <p>If you work 42.5 hours in a week at $25 per hour with overtime paid at 1.5× after 40 hours, the first 40 hours are paid at $25 and the remaining 2.5 hours are estimated at $37.50 per hour.</p>
+    </div>
+  </section>
+
+  <section class="info-section" id="faq">
+    <div class="container">
+      <h2>Frequently asked questions</h2>
+
+      <h3>Can I leave days blank?</h3>
+      <p>Yes. Days without both a start and end time are ignored.</p>
+
+      <h3>Does the calculator support overnight shifts?</h3>
+      <p>Yes. If the end time is earlier than the start time, Numviro treats the end time as occurring the next day.</p>
+
+      <h3>Can I change the overtime threshold?</h3>
+      <p>Yes. The default is 40 weekly hours, but you can enter another threshold for estimation purposes.</p>
+
+      <h3>Does this calculate take-home pay?</h3>
+      <p>No. Results are estimated gross pay before taxes, benefits, deductions, and other payroll adjustments.</p>
+    </div>
+  </section>
+
+  <section class="info-section" style="background:#f8fafc">
+    <div class="container">
+      <p class="eyebrow">RELATED TOOLS</p>
+      <h2>More Numviro work &amp; pay calculators</h2>
+      <div class="related-grid">
+        <article>
+          <h3><a href="/work-hours-calculator/">Work Hours Calculator</a></h3>
+          <p>Calculate a single shift after breaks.</p>
+        </article>
+        <article>
+          <h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3>
+          <p>Estimate overtime rate and overtime earnings.</p>
+        </article>
+        <article>
+          <h3><a href="/hourly-to-salary-calculator/">Hourly to Salary Calculator</a></h3>
+          <p>Convert hourly pay into weekly, monthly, and annual income.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      © <span id="year"></span> Numviro ·
+      <a href="/privacy.html">Privacy</a> ·
+      <a href="/terms.html">Terms</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  const dayNames = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+  const defaults = [
+    ["09:00","17:30",30],
+    ["09:00","17:30",30],
+    ["09:00","17:30",30],
+    ["09:00","17:30",30],
+    ["09:00","17:30",30],
+    ["","",0],
+    ["","",0]
+  ];
+
+  const $ = id => document.getElementById(id);
+
+  function money(value) {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: value % 1 === 0 ? 0 : 2
+    }).format(value || 0);
+  }
+
+  function minutesFromTime(value) {
+    if (!value) return null;
+    const [h,m] = value.split(":").map(Number);
+    return h * 60 + m;
+  }
+
+  function dayHours(startValue, endValue, breakMinutes) {
+    const start = minutesFromTime(startValue);
+    let end = minutesFromTime(endValue);
+    if (start === null || end === null) return 0;
+    if (end < start) end += 1440;
+    const worked = Math.max(0, end - start - Math.max(0, breakMinutes || 0));
+    return worked / 60;
+  }
+
+  function buildRows() {
+    const holder = $("days");
+    dayNames.forEach((day, i) => {
+      const row = document.createElement("div");
+      row.className = "day-row";
+      row.innerHTML = `
+        <strong>${day}</strong>
+        <label>
+          <span class="mini-label">Start</span>
+          <input id="start-${i}" type="time" value="${defaults[i][0]}">
+        </label>
+        <label>
+          <span class="mini-label">End</span>
+          <input id="end-${i}" type="time" value="${defaults[i][1]}">
+        </label>
+        <label>
+          <span class="mini-label">Break</span>
+          <input id="break-${i}" type="number" min="0" step="1" value="${defaults[i][2]}">
+        </label>
+        <div class="day-total" id="total-${i}">0.00h</div>
+      `;
+      holder.appendChild(row);
+    });
+  }
+
+  function calculate() {
+    let total = 0;
+
+    dayNames.forEach((_, i) => {
+      const hours = dayHours(
+        $(`start-${i}`).value,
+        $(`end-${i}`).value,
+        parseFloat($(`break-${i}`).value) || 0
+      );
+      total += hours;
+      $(`total-${i}`).textContent = `${hours.toFixed(2)}h`;
+    });
+
+    const hourly = Math.max(0, parseFloat($("hourlyWage").value) || 0);
+    const multiplier = Math.max(1, parseFloat($("otMultiplier").value) || 1.5);
+    const threshold = Math.max(0, parseFloat($("otThreshold").value) || 40);
+
+    const regularHours = Math.min(total, threshold);
+    const overtimeHours = Math.max(0, total - threshold);
+    const overtimeRate = hourly * multiplier;
+    const regularPay = regularHours * hourly;
+    const overtimePay = overtimeHours * overtimeRate;
+    const totalPay = regularPay + overtimePay;
+
+    $("totalHours").textContent = total.toFixed(2);
+    $("regularHours").textContent = regularHours.toFixed(2);
+    $("overtimeHours").textContent = overtimeHours.toFixed(2);
+    $("regularPay").textContent = money(regularPay);
+    $("overtimePay").textContent = money(overtimePay);
+    $("overtimeRate").textContent = money(overtimeRate) + "/hr";
+    $("totalPay").textContent = money(totalPay);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    $("year").textContent = new Date().getFullYear();
+    buildRows();
+
+    document.querySelectorAll("input").forEach(input => {
+      input.addEventListener("input", calculate);
+    });
+
+    calculate();
+  });
+</script>
+</body>
+</html>
