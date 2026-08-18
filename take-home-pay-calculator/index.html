@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1914228668102308" crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-F3GZ1Q68KJ');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Take-Home Pay Calculator: Gross to Net Pay Estimator | Numviro</title>
+<meta name="description" content="Estimate take-home pay from gross pay using known tax withholding, benefits, retirement contributions, and other deductions. See gross-to-net paycheck breakdowns instantly.">
+
+<link rel="canonical" href="https://numviro.com/take-home-pay-calculator/">
+<meta name="robots" content="index,follow">
+
+<meta property="og:title" content="Take-Home Pay Calculator: Gross to Net Pay Estimator | Numviro">
+<meta property="og:description" content="Estimate take-home pay by subtracting known taxes, benefits, retirement contributions, and other deductions from gross pay.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://numviro.com/take-home-pay-calculator/">
+
+<meta name="theme-color" content="#111827">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+
+<style>
+.page-hero{padding:78px 0 54px;background:linear-gradient(180deg,#f7f9fc 0%,#fff 100%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.page-hero h1{font-size:clamp(40px,6vw,68px);line-height:1.04;letter-spacing:-2px;margin:12px 0 18px}
+.lead{font-size:19px;line-height:1.7;color:#4b5563}
+.hero-card{background:#111827;color:#fff;border-radius:24px;padding:28px}
+.hero-card span{display:block;color:#93c5fd;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.hero-card strong{display:block;font-size:36px;margin:8px 0}
+.hero-card p{color:#cbd5e1;margin:0}
+.section{padding:66px 0}
+.section.alt{background:#f8fafc}
+.narrow{max-width:980px}
+.calc-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.calc-card,.result-card{background:#fff;border:1px solid #e5e7eb;border-radius:22px;padding:26px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;color:#374151;margin-bottom:8px}
+.input-wrap{display:flex;align-items:center;border:1px solid #d1d5db;border-radius:12px;overflow:hidden;background:#fff}
+.input-wrap span{padding-left:14px;color:#6b7280}
+.input-wrap input{width:100%;border:0;outline:0;padding:14px;font:inherit;background:transparent}
+.primary-btn{width:100%;border:0;border-radius:12px;padding:14px 18px;background:#111827;color:#fff;font-weight:800;cursor:pointer}
+.result-main{font-size:46px;letter-spacing:-1.5px;margin:8px 0}
+.result-list{margin-top:20px}
+.result-row{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid #e5e7eb;padding:12px 0}
+.result-row:last-child{border-bottom:0}
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}
+.compare-card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:20px}
+.compare-card span{display:block;color:#6b7280;font-size:12px;font-weight:800;letter-spacing:.06em;margin-bottom:6px}
+.compare-card strong{font-size:24px}
+.formula{background:#eef4ff;border:1px solid #cfe0ff;border-radius:14px;padding:18px 20px;font-weight:800;color:#1e3a8a;margin:22px 0}
+.table-wrap{overflow-x:auto;border:1px solid #e5e7eb;border-radius:18px;background:#fff;margin:26px 0}
+.data-table{width:100%;border-collapse:collapse;min-width:720px}
+.data-table th,.data-table td{padding:14px 16px;border-bottom:1px solid #e5e7eb;text-align:left}
+.data-table th{background:#f8fafc;color:#374151}
+.data-table tr:last-child td{border-bottom:0}
+.callout{border-left:4px solid #111827;padding:18px 20px;background:#f8fafc;border-radius:10px;margin:24px 0}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}
+.related-grid a{color:#111827;text-decoration:none}
+details{border-bottom:1px solid #e5e7eb;padding:16px 0}
+summary{font-weight:800;cursor:pointer}
+.note{font-size:14px;color:#6b7280;line-height:1.6}
+.warning{background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:16px 18px;color:#9a3412;margin-top:18px}
+@media(max-width:820px){
+.hero-grid,.calc-layout,.related-grid,.compare-grid{grid-template-columns:1fr}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Take-Home Pay Calculator",
+  "url":"https://numviro.com/take-home-pay-calculator/",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "description":"Estimate take-home pay by subtracting known payroll taxes, benefits, retirement contributions, and other deductions from gross pay.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"What is take-home pay?",
+      "acceptedAnswer":{"@type":"Answer","text":"Take-home pay is the amount left from gross pay after payroll taxes, benefits, retirement contributions, and other deductions are subtracted. It is also called net pay."}
+    },
+    {
+      "@type":"Question",
+      "name":"Is take-home pay the same as net pay?",
+      "acceptedAnswer":{"@type":"Answer","text":"Yes. Take-home pay and net pay generally refer to the amount an employee receives after payroll deductions."}
+    },
+    {
+      "@type":"Question",
+      "name":"How do you calculate take-home pay?",
+      "acceptedAnswer":{"@type":"Answer","text":"At a basic level, take-home pay equals gross pay minus taxes withheld, benefit deductions, retirement contributions, and other payroll deductions."}
+    },
+    {
+      "@type":"Question",
+      "name":"Does this calculator automatically calculate federal and state taxes?",
+      "acceptedAnswer":{"@type":"Answer","text":"No. This calculator uses the tax and deduction amounts you enter. It does not automatically calculate federal, state, or local tax withholding."}
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Numviro home"><span class="brand-mark">N</span><span>Numviro</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/calculators/">Calculators</a>
+      <a href="/gross-pay-calculator/">Gross Pay</a>
+      <a href="/gross-pay-vs-net-pay/">Gross vs Net</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">GROSS TO NET PAY</p>
+      <h1>Take-Home Pay Calculator</h1>
+      <p class="lead">
+        Estimate your <strong>net pay</strong> by starting with gross pay and subtracting
+        the taxes, benefits, retirement contributions, and other payroll deductions you already know.
+      </p>
+    </div>
+
+    <aside class="hero-card">
+      <span>Simple formula</span>
+      <strong>Gross Pay − Deductions = Take-Home Pay</strong>
+      <p>This estimator uses the deduction amounts you enter. It does not guess your tax rate.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section alt" id="calculator">
+  <div class="container">
+    <div class="calc-layout">
+      <div class="calc-card">
+        <p class="eyebrow">CALCULATOR</p>
+        <h2>Estimate your take-home pay</h2>
+        <p>Enter your gross pay for one paycheck and the deductions shown or expected on that paycheck.</p>
+
+        <div class="field">
+          <label for="gross">Gross pay</label>
+          <div class="input-wrap"><span>$</span><input id="gross" type="number" min="0" step="0.01" value="2500"></div>
+        </div>
+
+        <div class="field">
+          <label for="federal">Federal income tax withheld</label>
+          <div class="input-wrap"><span>$</span><input id="federal" type="number" min="0" step="0.01" value="250"></div>
+        </div>
+
+        <div class="field">
+          <label for="state">State / local income tax withheld</label>
+          <div class="input-wrap"><span>$</span><input id="state" type="number" min="0" step="0.01" value="100"></div>
+        </div>
+
+        <div class="field">
+          <label for="fica">Social Security & Medicare withholding</label>
+          <div class="input-wrap"><span>$</span><input id="fica" type="number" min="0" step="0.01" value="190"></div>
+        </div>
+
+        <div class="field">
+          <label for="benefits">Insurance / benefit deductions</label>
+          <div class="input-wrap"><span>$</span><input id="benefits" type="number" min="0" step="0.01" value="75"></div>
+        </div>
+
+        <div class="field">
+          <label for="retirement">Retirement contributions</label>
+          <div class="input-wrap"><span>$</span><input id="retirement" type="number" min="0" step="0.01" value="100"></div>
+        </div>
+
+        <div class="field">
+          <label for="other">Other deductions</label>
+          <div class="input-wrap"><span>$</span><input id="other" type="number" min="0" step="0.01" value="35"></div>
+        </div>
+
+        <button class="primary-btn" id="calcBtn" type="button">Calculate take-home pay</button>
+
+        <div class="warning">
+          <strong>Important:</strong> This is not an automatic tax-withholding calculator.
+          For tax accuracy, use the actual withholding amounts from your pay stub or an official payroll/tax estimator.
+        </div>
+      </div>
+
+      <aside class="result-card" aria-live="polite">
+        <p class="eyebrow">YOUR RESULT</p>
+        <h2 class="result-main" id="takeHome">$1,750.00</h2>
+        <p>Estimated take-home pay after the deductions entered.</p>
+
+        <div class="result-list">
+          <div class="result-row"><span>Gross pay</span><strong id="grossOut">$2,500.00</strong></div>
+          <div class="result-row"><span>Total taxes entered</span><strong id="taxesOut">$540.00</strong></div>
+          <div class="result-row"><span>Benefits & retirement</span><strong id="benefitsOut">$175.00</strong></div>
+          <div class="result-row"><span>Other deductions</span><strong id="otherOut">$35.00</strong></div>
+          <div class="result-row"><span>Total deductions</span><strong id="deductionsOut">$750.00</strong></div>
+          <div class="result-row"><span>Take-home pay</span><strong id="netOut">$1,750.00</strong></div>
+          <div class="result-row"><span>Take-home % of gross</span><strong id="percentOut">70.0%</strong></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <p class="eyebrow">HOW IT WORKS</p>
+    <h2>How take-home pay is calculated</h2>
+
+    <div class="formula">Take-Home Pay = Gross Pay − Taxes − Benefits − Retirement − Other Deductions</div>
+
+    <p>
+      Gross pay is your earnings before payroll deductions. Take-home pay is the amount that remains after those deductions.
+      On a pay stub, this final amount is usually shown as <strong>net pay</strong>.
+    </p>
+
+    <p>
+      If you are still learning the difference between these terms, see
+      <a href="/gross-pay-vs-net-pay/">Gross Pay vs Net Pay</a>.
+    </p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container narrow">
+    <p class="eyebrow">COMMON PAYCHECK DEDUCTIONS</p>
+    <h2>What can reduce your take-home pay?</h2>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Category</th><th>Common examples</th><th>Effect on take-home pay</th></tr></thead>
+        <tbody>
+          <tr><td>Federal income tax</td><td>Federal income-tax withholding</td><td>Reduces net pay</td></tr>
+          <tr><td>State / local tax</td><td>State or local income-tax withholding where applicable</td><td>Reduces net pay</td></tr>
+          <tr><td>Payroll taxes</td><td>Social Security and Medicare withholding</td><td>Reduces net pay</td></tr>
+          <tr><td>Insurance / benefits</td><td>Medical, dental, vision, life, or other benefits</td><td>May reduce net pay</td></tr>
+          <tr><td>Retirement</td><td>Employee retirement-plan contributions</td><td>Reduces current take-home pay</td></tr>
+          <tr><td>Other deductions</td><td>Other voluntary or required payroll deductions</td><td>Reduces net pay</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">The exact deductions on a paycheck vary by employee, employer, location, tax elections, benefits, and payroll rules.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <p class="eyebrow">EXAMPLE</p>
+    <h2>Take-home pay example</h2>
+
+    <p>Suppose one paycheck has <strong>$2,500 in gross pay</strong> and the following deductions:</p>
+
+    <div class="compare-grid">
+      <div class="compare-card"><span>INCOME TAX</span><strong>$350</strong><p>Federal + state/local withholding</p></div>
+      <div class="compare-card"><span>PAYROLL TAX</span><strong>$190</strong><p>Social Security + Medicare</p></div>
+      <div class="compare-card"><span>OTHER DEDUCTIONS</span><strong>$210</strong><p>Benefits, retirement, and other deductions</p></div>
+    </div>
+
+    <div class="formula">$2,500 − $750 = $1,750 estimated take-home pay</div>
+
+    <p>The specific deduction amounts above are only an example. Your actual paycheck can be very different.</p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container narrow">
+    <p class="eyebrow">GROSS VS NET</p>
+    <h2>Why gross salary is not the amount you take home</h2>
+
+    <p>
+      Job postings and salary offers typically describe <strong>gross compensation</strong>.
+      That amount is useful for comparing jobs, but it does not tell you exactly how much cash will arrive in each paycheck.
+    </p>
+
+    <p>
+      Your actual take-home pay depends on payroll withholding and deductions. That is why two employees with the same gross salary can receive different net pay.
+    </p>
+
+    <div class="callout">
+      Need to calculate earnings before deductions first?
+      Use the <a href="/gross-pay-calculator/"><strong>Gross Pay Calculator</strong></a>.
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <p class="eyebrow">PAY FREQUENCY</p>
+    <h2>Take-home pay depends on the paycheck period</h2>
+
+    <p>
+      This calculator works with one paycheck at a time. Enter the gross pay and deductions for the same pay period.
+      For example, if you are entering a biweekly gross paycheck, enter biweekly deductions too.
+    </p>
+
+    <p>
+      If you need to compare paycheck schedules first, see
+      <a href="/biweekly-vs-semi-monthly/">Biweekly vs Semi-Monthly Pay</a>.
+    </p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container narrow">
+    <p class="eyebrow">ACCURACY</p>
+    <h2>Why this calculator does not guess your tax withholding</h2>
+
+    <p>
+      U.S. paycheck withholding can depend on filing status, Form W-4 elections, income level, state and local rules,
+      benefits, retirement contributions, and other payroll details.
+    </p>
+
+    <p>
+      Because of that, Numviro does not apply a single guessed tax percentage. This page is designed for users who already know
+      or want to test specific withholding and deduction amounts.
+    </p>
+
+    <div class="callout">
+      For federal withholding guidance, use the IRS Tax Withholding Estimator or your employer's payroll information.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container narrow">
+    <p class="eyebrow">FAQ</p>
+    <h2>Take-home pay FAQ</h2>
+
+    <details>
+      <summary>What is take-home pay?</summary>
+      <p>Take-home pay is the amount remaining after payroll taxes, benefits, retirement contributions, and other deductions are subtracted from gross pay.</p>
+    </details>
+
+    <details>
+      <summary>Is take-home pay the same as net pay?</summary>
+      <p>Yes. Take-home pay and net pay generally refer to the final paycheck amount after deductions.</p>
+    </details>
+
+    <details>
+      <summary>How do I calculate take-home pay?</summary>
+      <p>Start with gross pay, then subtract taxes withheld, benefit deductions, retirement contributions, and any other payroll deductions.</p>
+    </details>
+
+    <details>
+      <summary>Does this calculator automatically calculate federal taxes?</summary>
+      <p>No. It uses the tax withholding amounts you enter. Federal income-tax withholding depends on individual payroll and tax information.</p>
+    </details>
+
+    <details>
+      <summary>Does this calculate state income tax?</summary>
+      <p>No. Enter your known state or local withholding amount if it applies to your paycheck.</p>
+    </details>
+
+    <details>
+      <summary>Can two people with the same salary have different take-home pay?</summary>
+      <p>Yes. Taxes, benefits, retirement contributions, and other deductions can differ even when gross salary is the same.</p>
+    </details>
+
+    <details>
+      <summary>Should I use gross pay or take-home pay for budgeting?</summary>
+      <p>Take-home pay is generally more useful for household budgeting because it is closer to the amount actually available after payroll deductions.</p>
+    </details>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <p class="eyebrow">RELATED TOOLS</p>
+    <h2>More Numviro pay tools</h2>
+
+    <div class="related-grid">
+      <article><h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3><p>Calculate earnings before payroll deductions.</p></article>
+      <article><h3><a href="/gross-pay-vs-net-pay/">Gross Pay vs Net Pay</a></h3><p>Learn how gross earnings differ from take-home pay.</p></article>
+      <article><h3><a href="/annual-income-calculator/">Annual Income Calculator</a></h3><p>Convert common pay frequencies into annual gross income.</p></article>
+      <article><h3><a href="/salary-to-hourly-calculator/">Salary to Hourly Calculator</a></h3><p>Convert annual salary into an equivalent hourly rate.</p></article>
+      <article><h3><a href="/biweekly-pay-calculator/">Biweekly Pay Calculator</a></h3><p>Estimate gross earnings every two weeks.</p></article>
+      <article><h3><a href="/monthly-income-calculator/">Monthly Income Calculator</a></h3><p>Estimate average monthly gross income.</p></article>
+    </div>
+
+    <p style="margin-top:28px"><a href="/calculators/">Browse all Numviro calculators</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Numviro · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+
+function money(v){
+  return new Intl.NumberFormat("en-US",{
+    style:"currency",
+    currency:"USD",
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  }).format(Math.max(0,v||0));
+}
+
+function calculate(){
+  const gross=Math.max(0,parseFloat($("gross").value)||0);
+  const federal=Math.max(0,parseFloat($("federal").value)||0);
+  const state=Math.max(0,parseFloat($("state").value)||0);
+  const fica=Math.max(0,parseFloat($("fica").value)||0);
+  const benefits=Math.max(0,parseFloat($("benefits").value)||0);
+  const retirement=Math.max(0,parseFloat($("retirement").value)||0);
+  const other=Math.max(0,parseFloat($("other").value)||0);
+
+  const taxes=federal+state+fica;
+  const benefitRetirement=benefits+retirement;
+  const deductions=taxes+benefitRetirement+other;
+  const net=Math.max(0,gross-deductions);
+  const pct=gross>0?(net/gross)*100:0;
+
+  $("takeHome").textContent=money(net);
+  $("grossOut").textContent=money(gross);
+  $("taxesOut").textContent=money(taxes);
+  $("benefitsOut").textContent=money(benefitRetirement);
+  $("otherOut").textContent=money(other);
+  $("deductionsOut").textContent=money(deductions);
+  $("netOut").textContent=money(net);
+  $("percentOut").textContent=pct.toFixed(1)+"%";
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  $("year").textContent=new Date().getFullYear();
+  $("calcBtn").addEventListener("click",calculate);
+  ["gross","federal","state","fica","benefits","retirement","other"].forEach(id=>$(id).addEventListener("input",calculate));
+  calculate();
+});
+</script>
+</body>
+</html>
