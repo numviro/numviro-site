@@ -6,20 +6,47 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3GZ1Q68KJ"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-F3GZ1Q68KJ');</script>
-<title>Sales Commission Calculator | Base Salary & Tiered Pay | Numviro</title>
-<meta name="description" content="Calculate sales commission from revenue, commission rate, base salary, and tiered targets. Estimate total commission and gross compensation with Numviro.">
+<title>Sales Commission Calculator – Rate, Tiered & Base Pay | Numviro</title>
+<meta name="description" content="Free sales commission calculator. Calculate flat or tiered commission from sales revenue and commission rates, then add base salary to estimate total compensation.">
 <link rel="canonical" href="https://numviro.com/sales-commission-calculator/">
 <meta name="robots" content="index,follow">
-<meta property="og:title" content="Sales Commission Calculator | Numviro">
+<meta property="og:title" content="Sales Commission Calculator – Rate, Tiered & Base Pay | Numviro">
 <meta property="og:description" content="Estimate sales commission, tiered commission, and total compensation with optional base salary.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://numviro.com/sales-commission-calculator/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css">
 <style>
 .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}.field{margin-bottom:18px}.field label{display:block;font-weight:700;margin-bottom:8px}.field input,.field select{width:100%;box-sizing:border-box;padding:14px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff}.inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}.result-card .eyebrow{color:#60a5fa}.big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0}.result-sub{color:#aeb8c8;margin-bottom:24px}.result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}.result-item{padding:18px 8px;border-bottom:1px solid #2b3547}.result-item:nth-child(odd){border-right:1px solid #2b3547}.result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}.result-value{font-size:19px;font-weight:800}.info-section{padding:70px 0}.formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}.related-grid a{color:#111827;text-decoration:none}.tier-table{width:100%;border-collapse:collapse;margin:24px 0}.tier-table th,.tier-table td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left}@media(max-width:850px){.tool-grid,.inline-grid,.related-grid,.result-grid{grid-template-columns:1fr}.result-item:nth-child(odd){border-right:0}}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Sales Commission Calculator",
+  "url":"https://numviro.com/sales-commission-calculator/",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "description":"Calculate flat or tiered sales commission and estimate total compensation with optional base salary.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How do I calculate sales commission?","acceptedAnswer":{"@type":"Answer","text":"For a flat commission, multiply eligible sales revenue by the commission rate expressed as a decimal."}},
+    {"@type":"Question","name":"How much is 5% commission on $10,000?","acceptedAnswer":{"@type":"Answer","text":"Five percent of $10,000 is $500 in commission."}},
+    {"@type":"Question","name":"How much is 10% commission on $50,000?","acceptedAnswer":{"@type":"Answer","text":"Ten percent of $50,000 is $5,000 in commission."}},
+    {"@type":"Question","name":"What is tiered commission?","acceptedAnswer":{"@type":"Answer","text":"Tiered commission applies different commission rates to different portions of sales as defined thresholds are reached."}},
+    {"@type":"Question","name":"What is base salary plus commission?","acceptedAnswer":{"@type":"Answer","text":"Base salary plus commission combines fixed pay with variable sales commission. Total gross compensation is the base amount plus earned commission."}}
+  ]
+}
+</script>
+
 </head>
 <body>
-<header class="site-header"><div class="container header-inner"><a class="brand" href="/"><span class="brand-mark">N</span><span>Numviro</span></a><nav class="main-nav"><a href="#calculator">Calculator</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a><a href="/about.html">About</a></nav></div></header>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/"><span class="brand-mark">N</span><span>Numviro</span></a><nav class="main-nav"><a href="#calculator">Calculator</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a><a href="/calculators/">Calculators</a><a href="/about.html">About</a></nav></div></header>
 <main>
 <section class="hero"><div class="container hero-grid"><div><p class="eyebrow">FREE SALES PAY TOOL</p><h1>Sales Commission Calculator</h1><p class="hero-copy">Estimate commission from sales revenue, commission rate, optional base salary, and tiered targets.</p><div class="hero-pills"><span>Commission only</span><span>Base + commission</span><span>Tiered rates</span></div></div><div class="hero-card" aria-hidden="true"><span class="mini-label">Example</span><strong>$50,000 sales</strong><span>8% commission rate</span><div class="mini-result"><small>Commission earned</small><b>$4,000</b></div></div></div></section>
 
@@ -69,6 +96,14 @@
 <h2>How to calculate sales commission</h2><p>A basic sales commission is sales revenue multiplied by a commission rate.</p>
 <div class="formula-box">Commission = Sales revenue × Commission rate</div>
 <h3>Example: 8% commission on $50,000 in sales</h3><p>A flat 8% commission on $50,000 equals $4,000. Tiered plans can pay different rates on different portions of sales, so the effective rate may be higher or lower than the first tier.</p>
+<h3>Common sales commission examples</h3>
+<table class="tier-table"><thead><tr><th>Sales</th><th>Commission rate</th><th>Commission</th></tr></thead><tbody>
+<tr><td>$10,000</td><td>5%</td><td>$500</td></tr>
+<tr><td>$20,000</td><td>5%</td><td>$1,000</td></tr>
+<tr><td>$25,000</td><td>8%</td><td>$2,000</td></tr>
+<tr><td>$50,000</td><td>8%</td><td>$4,000</td></tr>
+<tr><td>$50,000</td><td>10%</td><td>$5,000</td></tr>
+</tbody></table>
 <h2>How tiered commission works</h2><p>Tiered plans apply different commission percentages as sales cross defined thresholds. This calculator treats each tier incrementally, so only the sales within each tier receive that tier's rate.</p>
 <table class="tier-table"><thead><tr><th>Sales portion</th><th>Rate used</th></tr></thead><tbody><tr><td>Up to Tier 1 threshold</td><td>Tier 1 rate</td></tr><tr><td>Tier 1 to Tier 2</td><td>Tier 2 rate</td></tr><tr><td>Above Tier 2</td><td>Top tier rate</td></tr></tbody></table>
 <h3>Base salary plus commission</h3><p>Many sales compensation plans combine a fixed base salary with variable commission. Enter the base salary for the same pay period as your sales figures to estimate total compensation.</p>
@@ -81,15 +116,22 @@
 <h3>What is base salary plus commission?</h3><p>It is a compensation structure that combines guaranteed base pay with variable commission tied to sales performance.</p>
 <h3>Does this calculator support commission-only pay?</h3><p>Yes. Enter zero for base salary.</p>
 <h3>Does this calculate taxes?</h3><p>No. Results are gross compensation estimates before taxes and deductions.</p>
+<h3>How much is 5% commission on $10,000?</h3><p>Five percent of $10,000 is $500. Multiply $10,000 by 0.05 to calculate the commission.</p>
+<h3>How much is 10% commission on $50,000?</h3><p>Ten percent of $50,000 is $5,000 in commission.</p>
+<h3>What is an effective commission rate?</h3><p>The effective commission rate is total commission divided by total sales. It is especially useful for tiered plans where different portions of sales earn different rates.</p>
+<h3>Can I calculate annual sales compensation?</h3><p>Yes. Enter the number of pay periods per year and the calculator annualizes both estimated commission and total compensation.</p>
 </div></section>
 
 <section class="info-section" style="background:#f8fafc"><div class="container"><p class="eyebrow">RELATED TOOLS</p><h2>More Numviro pay calculators</h2><div class="related-grid">
-<article><h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3><p>Combine wages, overtime, bonuses, commissions, and other earnings.</p></article>
+<article><h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3><p>Combine wages, overtime, bonuses, commissions, tips, and other earnings.</p></article>
 <article><h3><a href="/annual-income-calculator/">Annual Income Calculator</a></h3><p>Estimate yearly gross income across common pay frequencies.</p></article>
+<article><h3><a href="/monthly-income-calculator/">Monthly Income Calculator</a></h3><p>Convert common pay frequencies into average monthly gross income.</p></article>
+<article><h3><a href="/weekly-pay-calculator/">Weekly Pay Calculator</a></h3><p>Estimate weekly gross pay from hourly wages or annual salary.</p></article>
+<article><h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3><p>Calculate time-and-a-half, double-time, and other overtime earnings.</p></article>
 <article><h3><a href="/pay-raise-calculator/">Pay Raise Calculator</a></h3><p>Calculate new pay after a percentage or fixed raise.</p></article>
-</div></div></section>
+</div><p style="margin-top:28px;"><a href="/calculators/">Browse all Numviro calculators</a></p></div></section>
 </main>
-<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Numviro · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>
+<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Numviro · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>
 
 <script>
 const $=id=>document.getElementById(id);

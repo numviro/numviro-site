@@ -15,12 +15,12 @@
     gtag('config', 'G-F3GZ1Q68KJ');
   </script>
 
-  <title>Work Hours Calculator | Numviro</title>
-  <meta name="description" content="Calculate total work hours from start time, end time, and break duration. Free work hours calculator from Numviro.">
+  <title>Work Hours Calculator – Calculate Hours Worked & Breaks | Numviro</title>
+  <meta name="description" content="Free work hours calculator. Enter start time, end time, and unpaid break to calculate hours worked, decimal hours, shift length, and estimated weekly hours.">
   <link rel="canonical" href="https://numviro.com/work-hours-calculator/">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="Work Hours Calculator | Numviro">
-  <meta property="og:description" content="Calculate your work hours after breaks in seconds.">
+  <meta property="og:title" content="Work Hours Calculator – Hours Worked & Breaks | Numviro">
+  <meta property="og:description" content="Calculate hours worked from start and end times, subtract unpaid breaks, and view decimal and weekly hours.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://numviro.com/work-hours-calculator/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -56,6 +56,49 @@
       .result-item:nth-child(odd){border-right:0}
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Work Hours Calculator",
+    "url": "https://numviro.com/work-hours-calculator/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Calculate hours worked from start time, end time, and unpaid break duration, including decimal and estimated weekly hours.",
+    "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate hours worked?",
+        "acceptedAnswer": {"@type":"Answer","text":"Subtract the start time from the end time, then subtract any unpaid break time."}
+      },
+      {
+        "@type": "Question",
+        "name": "Does break time count as work time?",
+        "acceptedAnswer": {"@type":"Answer","text":"This calculator subtracts the break minutes you enter. Whether a break must be paid depends on applicable rules and workplace policies."}
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert minutes to decimal hours?",
+        "acceptedAnswer": {"@type":"Answer","text":"Divide the number of minutes by 60. For example, 30 minutes is 0.50 hours and 15 minutes is 0.25 hours."}
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate an overnight shift?",
+        "acceptedAnswer": {"@type":"Answer","text":"Yes. If the end time is earlier than the start time, Numviro treats the end time as occurring on the following day."}
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
@@ -69,6 +112,7 @@
       <a href="#calculator">Calculator</a>
       <a href="#how-it-works">How it works</a>
       <a href="#faq">FAQ</a>
+      <a href="/calculators/">Calculators</a>
       <a href="/about.html">About</a>
     </nav>
   </div>
@@ -80,7 +124,7 @@
       <div>
         <p class="eyebrow">FREE WORK &amp; PAY TOOL</p>
         <h1>Work Hours Calculator</h1>
-        <p class="hero-copy">Enter your start time, end time, and break duration to calculate your actual hours worked.</p>
+        <p class="hero-copy">Enter your start time, end time, and unpaid break to calculate hours worked, shift length, decimal hours, and estimated weekly hours.</p>
         <div class="hero-pills">
           <span>No signup</span>
           <span>Instant results</span>
@@ -170,6 +214,14 @@
 
       <h3>What if a shift crosses midnight?</h3>
       <p>If your end time is earlier than your start time, Numviro assumes the shift ended the following day. For example, 10:00 PM to 6:00 AM is treated as an 8-hour overnight shift before breaks.</p>
+
+      <h3>How to convert work time to decimal hours</h3>
+      <p>Payroll and time sheets often use decimal hours instead of hours and minutes. Divide the minutes by 60 and add the result to the whole hours. For example, 8 hours 30 minutes equals 8.50 hours, while 7 hours 45 minutes equals 7.75 hours.</p>
+
+      <div class="formula-box">Decimal hours = Hours + (Minutes ÷ 60)</div>
+
+      <h3>Common work-hours examples</h3>
+      <p>A 9:00 AM to 5:00 PM shift with a 30-minute unpaid break equals 7 hours 30 minutes worked. A 9:00 AM to 5:30 PM shift with a 30-minute break equals 8 hours worked. A 10:00 PM to 6:00 AM overnight shift with no break equals 8 hours worked.</p>
     </div>
   </section>
 
@@ -188,6 +240,15 @@
 
       <h3>Can I estimate weekly work hours?</h3>
       <p>Yes. Enter the number of days you work each week and Numviro multiplies the daily worked hours by that number.</p>
+
+      <h3>How many hours is 9 AM to 5 PM with a 30-minute break?</h3>
+      <p>The full shift is 8 hours. After subtracting a 30-minute unpaid break, the total worked time is 7 hours 30 minutes, or 7.50 decimal hours.</p>
+
+      <h3>How many hours is 9 AM to 5:30 PM with a 30-minute break?</h3>
+      <p>The shift lasts 8 hours 30 minutes. Subtracting a 30-minute unpaid break leaves 8 hours of worked time.</p>
+
+      <h3>Can I use this calculator for a time card?</h3>
+      <p>This page is useful for a single repeated shift. If you need different clock-in and clock-out times for each day of the week, use the <a href="/time-card-calculator/">Time Card Calculator</a>.</p>
     </div>
   </section>
 
@@ -198,18 +259,31 @@
 
       <div class="related-grid">
         <article>
+          <h3><a href="/time-card-calculator/">Time Card Calculator</a></h3>
+          <p>Calculate daily and weekly clock-in and clock-out hours across a full workweek.</p>
+        </article>
+        <article>
           <h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3>
-          <p>Estimate overtime earnings using your hourly wage and overtime rate.</p>
+          <p>Estimate overtime rates and overtime earnings from your hourly wage.</p>
         </article>
         <article>
           <h3><a href="/hourly-to-salary-calculator/">Hourly to Salary Calculator</a></h3>
-          <p>Convert hourly pay into weekly, monthly, and annual salary.</p>
+          <p>Convert hourly pay into weekly, monthly, and annual salary estimates.</p>
         </article>
         <article>
           <h3><a href="/salary-to-hourly-calculator/">Salary to Hourly Calculator</a></h3>
-          <p>Convert annual salary back into an hourly wage.</p>
+          <p>Convert annual salary into an estimated hourly wage.</p>
+        </article>
+        <article>
+          <h3><a href="/weekly-pay-calculator/">Weekly Pay Calculator</a></h3>
+          <p>Estimate weekly gross pay from hourly wages or annual salary.</p>
+        </article>
+        <article>
+          <h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3>
+          <p>Combine regular wages, overtime, bonuses, commissions, tips, and other earnings.</p>
         </article>
       </div>
+      <p style="margin-top:28px;"><a href="/calculators/">Browse all Numviro calculators</a></p>
     </div>
   </section>
 </main>
@@ -218,6 +292,8 @@
   <div class="container">
     <p>
       © <span id="year"></span> Numviro ·
+      <a href="/about.html">About</a> ·
+      <a href="/contact.html">Contact</a> ·
       <a href="/privacy.html">Privacy</a> ·
       <a href="/terms.html">Terms</a>
     </p>

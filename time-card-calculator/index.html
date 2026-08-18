@@ -15,13 +15,13 @@
     gtag('config', 'G-F3GZ1Q68KJ');
   </script>
 
-  <title>Time Card Calculator | Numviro</title>
-  <meta name="description" content="Calculate weekly work hours, regular hours, overtime hours, and estimated pay with Numviro's free time card calculator.">
+  <title>Time Card Calculator – Clock In, Clock Out & Overtime | Numviro</title>
+  <meta name="description" content="Free time card calculator. Enter daily clock-in, clock-out, and break times to calculate weekly hours, regular hours, overtime hours, and estimated gross pay.">
   <link rel="canonical" href="https://numviro.com/time-card-calculator/">
   <meta name="robots" content="index,follow">
 
-  <meta property="og:title" content="Time Card Calculator | Numviro">
-  <meta property="og:description" content="Free weekly time card calculator with breaks, overtime, and pay estimates.">
+  <meta property="og:title" content="Time Card Calculator – Clock In, Clock Out & Overtime | Numviro">
+  <meta property="og:description" content="Calculate weekly time card hours from clock-in, clock-out, and break times, including overtime and estimated gross pay.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://numviro.com/time-card-calculator/">
 
@@ -66,6 +66,33 @@
       .result-item:nth-child(odd){border-right:0}
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Time Card Calculator",
+    "url":"https://numviro.com/time-card-calculator/",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "description":"Calculate weekly work hours, regular hours, overtime hours, and estimated gross pay from daily clock-in, clock-out, and break times.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How do I calculate a weekly time card?","acceptedAnswer":{"@type":"Answer","text":"Calculate the time between clock-in and clock-out for each day, subtract unpaid breaks, and add the daily totals to get weekly hours."}},
+      {"@type":"Question","name":"Can I subtract lunch breaks?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter the unpaid break in minutes for each day and the calculator subtracts it from that day's worked time."}},
+      {"@type":"Question","name":"Does the calculator support overnight shifts?","acceptedAnswer":{"@type":"Answer","text":"Yes. If a clock-out time is earlier than the clock-in time, Numviro treats the clock-out as occurring the next day."}},
+      {"@type":"Question","name":"Can the time card calculator calculate overtime?","acceptedAnswer":{"@type":"Answer","text":"Yes. Hours above the weekly overtime threshold you enter are separated as overtime hours and estimated using your selected overtime multiplier."}}
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
@@ -79,6 +106,7 @@
       <a href="#calculator">Calculator</a>
       <a href="#how-it-works">How it works</a>
       <a href="#faq">FAQ</a>
+      <a href="/calculators/">Calculators</a>
       <a href="/about.html">About</a>
     </nav>
   </div>
@@ -90,7 +118,7 @@
       <div>
         <p class="eyebrow">FREE WORK &amp; PAY TOOL</p>
         <h1>Time Card Calculator</h1>
-        <p class="hero-copy">Track a full week of clock-in, clock-out, and break times — then estimate regular hours, overtime, and gross pay.</p>
+        <p class="hero-copy">Enter daily clock-in, clock-out, and break times to calculate total weekly hours, regular hours, overtime hours, and estimated gross pay.</p>
         <div class="hero-pills">
           <span>7-day time card</span>
           <span>Overtime included</span>
@@ -193,6 +221,12 @@
 
       <h3>Example</h3>
       <p>If you work 42.5 hours in a week at $25 per hour with overtime paid at 1.5× after 40 hours, the first 40 hours are paid at $25 and the remaining 2.5 hours are estimated at $37.50 per hour.</p>
+
+      <h3>Clock-in and clock-out example</h3>
+      <p>If you clock in at 9:00 AM and clock out at 5:30 PM with a 30-minute unpaid lunch, the calculator records 8.00 worked hours for that day. Five identical days equal 40.00 weekly hours.</p>
+
+      <h3>How overtime is separated</h3>
+      <p>With the default 40-hour weekly threshold, a 45-hour week is separated into 40 regular hours and 5 overtime hours. You can change the threshold and overtime multiplier to match the schedule you want to estimate.</p>
     </div>
   </section>
 
@@ -211,6 +245,15 @@
 
       <h3>Does this calculate take-home pay?</h3>
       <p>No. Results are estimated gross pay before taxes, benefits, deductions, and other payroll adjustments.</p>
+
+      <h3>Can I subtract a lunch break from my time card?</h3>
+      <p>Yes. Enter the unpaid lunch or break duration in minutes for each day. Numviro subtracts that amount from the time between clock-in and clock-out.</p>
+
+      <h3>How many hours is 9:00 AM to 5:30 PM with a 30-minute lunch?</h3>
+      <p>The shift lasts 8 hours 30 minutes. After subtracting a 30-minute unpaid lunch, the calculated worked time is 8.00 hours.</p>
+
+      <h3>What if I only need to calculate one shift?</h3>
+      <p>Use the <a href="/work-hours-calculator/">Work Hours Calculator</a> for a single start time, end time, and break instead of a full seven-day time card.</p>
     </div>
   </section>
 
@@ -221,17 +264,30 @@
       <div class="related-grid">
         <article>
           <h3><a href="/work-hours-calculator/">Work Hours Calculator</a></h3>
-          <p>Calculate a single shift after breaks.</p>
+          <p>Calculate one shift from start time, end time, and an unpaid break.</p>
         </article>
         <article>
           <h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3>
-          <p>Estimate overtime rate and overtime earnings.</p>
+          <p>Estimate time-and-a-half, double-time, and other overtime earnings.</p>
+        </article>
+        <article>
+          <h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3>
+          <p>Combine regular wages, overtime, bonuses, commissions, tips, and other earnings.</p>
         </article>
         <article>
           <h3><a href="/hourly-to-salary-calculator/">Hourly to Salary Calculator</a></h3>
-          <p>Convert hourly pay into weekly, monthly, and annual income.</p>
+          <p>Convert hourly pay into weekly, monthly, and annual salary estimates.</p>
+        </article>
+        <article>
+          <h3><a href="/weekly-pay-calculator/">Weekly Pay Calculator</a></h3>
+          <p>Estimate weekly gross pay from hourly wages or annual salary.</p>
+        </article>
+        <article>
+          <h3><a href="/biweekly-pay-calculator/">Biweekly Pay Calculator</a></h3>
+          <p>Estimate gross earnings for a two-week pay period.</p>
         </article>
       </div>
+      <p style="margin-top:28px;"><a href="/calculators/">Browse all Numviro calculators</a></p>
     </div>
   </section>
 </main>
@@ -240,6 +296,8 @@
   <div class="container">
     <p>
       © <span id="year"></span> Numviro ·
+      <a href="/about.html">About</a> ·
+      <a href="/contact.html">Contact</a> ·
       <a href="/privacy.html">Privacy</a> ·
       <a href="/terms.html">Terms</a>
     </p>
