@@ -135,10 +135,12 @@
     }
 
     .tool-card {
+      position: relative;
       border: 1px solid #e5e7eb;
       border-radius: 20px;
       padding: 22px;
       background: #fff;
+      cursor: pointer;
       transition: transform .15s ease, box-shadow .15s ease;
     }
 
@@ -155,6 +157,20 @@
     .tool-card h3 a {
       color: #111827;
       text-decoration: none;
+    }
+
+    /* Make the entire calculator card clickable while keeping a real HTML link for SEO. */
+    .tool-card h3 a::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: 20px;
+    }
+
+    .tool-card h3 a:focus-visible::after {
+      outline: 3px solid currentColor;
+      outline-offset: 3px;
     }
 
     .tool-card p {
