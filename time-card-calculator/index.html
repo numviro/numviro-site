@@ -15,12 +15,12 @@
     gtag('config', 'G-F3GZ1Q68KJ');
   </script>
 
-  <title>Time Card Calculator – Clock In, Clock Out & Overtime | Numviro</title>
-  <meta name="description" content="Free time card calculator. Enter daily clock-in, clock-out, and break times to calculate weekly hours, regular hours, overtime hours, and estimated gross pay.">
+  <title>Time Card Calculator – Calculate Work Hours, Clock In & Out | Numviro</title>
+  <meta name="description" content="Free time card calculator and hours worked calculator. Enter clock-in, clock-out, and break times to calculate daily and weekly work hours, overtime, and gross pay.">
   <link rel="canonical" href="https://numviro.com/time-card-calculator/">
   <meta name="robots" content="index,follow">
 
-  <meta property="og:title" content="Time Card Calculator – Clock In, Clock Out & Overtime | Numviro">
+  <meta property="og:title" content="Time Card Calculator – Work Hours, Clock In & Out | Numviro">
   <meta property="og:description" content="Calculate weekly time card hours from clock-in, clock-out, and break times, including overtime and estimated gross pay.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://numviro.com/time-card-calculator/">
@@ -75,7 +75,7 @@
     "url":"https://numviro.com/time-card-calculator/",
     "applicationCategory":"UtilitiesApplication",
     "operatingSystem":"Any",
-    "description":"Calculate weekly work hours, regular hours, overtime hours, and estimated gross pay from daily clock-in, clock-out, and break times.",
+    "description":"Free time card and hours worked calculator for daily clock-in, clock-out, unpaid breaks, weekly hours, regular hours, overtime hours, and estimated gross pay.",
     "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
   }
   </script>
@@ -88,7 +88,9 @@
       {"@type":"Question","name":"How do I calculate a weekly time card?","acceptedAnswer":{"@type":"Answer","text":"Calculate the time between clock-in and clock-out for each day, subtract unpaid breaks, and add the daily totals to get weekly hours."}},
       {"@type":"Question","name":"Can I subtract lunch breaks?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter the unpaid break in minutes for each day and the calculator subtracts it from that day's worked time."}},
       {"@type":"Question","name":"Does the calculator support overnight shifts?","acceptedAnswer":{"@type":"Answer","text":"Yes. If a clock-out time is earlier than the clock-in time, Numviro treats the clock-out as occurring the next day."}},
-      {"@type":"Question","name":"Can the time card calculator calculate overtime?","acceptedAnswer":{"@type":"Answer","text":"Yes. Hours above the weekly overtime threshold you enter are separated as overtime hours and estimated using your selected overtime multiplier."}}
+      {"@type":"Question","name":"Can the time card calculator calculate overtime?","acceptedAnswer":{"@type":"Answer","text":"Yes. Hours above the weekly overtime threshold you enter are separated as overtime hours and estimated using your selected overtime multiplier."}},
+      {"@type":"Question","name":"How do I calculate hours worked from clock-in and clock-out times?","acceptedAnswer":{"@type":"Answer","text":"Subtract the clock-in time from the clock-out time, subtract any unpaid break, and repeat for each shift. Numviro adds the daily results to calculate total weekly hours."}},
+      {"@type":"Question","name":"Can I use this as a time punch calculator?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter each day's start time, end time, and unpaid break to calculate worked hours from your time punches."}}
     ]
   }
   </script>
@@ -206,8 +208,8 @@
 
   <section class="info-section" id="how-it-works">
     <div class="container">
-      <h2>How the time card calculator works</h2>
-      <p>For each day, Numviro calculates the time between your clock-in and clock-out entries and subtracts the unpaid break you enter.</p>
+      <h2>How the time card and hours worked calculator works</h2>
+      <p>For each day, Numviro calculates hours worked between your clock-in and clock-out entries and subtracts the unpaid break you enter. You can use it as a weekly time card, work hours calculator, or time punch calculator.</p>
 
       <div class="formula-box">
         Daily work hours = Clock-out − Clock-in − Break time
@@ -227,6 +229,26 @@
 
       <h3>How overtime is separated</h3>
       <p>With the default 40-hour weekly threshold, a 45-hour week is separated into 40 regular hours and 5 overtime hours. You can change the threshold and overtime multiplier to match the schedule you want to estimate.</p>
+    </div>
+  </section>
+
+  <section class="info-section" style="background:#f8fafc">
+    <div class="container">
+      <h2>Calculate hours worked from time punches</h2>
+      <p>A time card records when a shift starts and ends. To calculate hours worked, find the elapsed time between clock-in and clock-out, then subtract unpaid lunch or break time.</p>
+
+      <div class="formula-box">
+        Hours worked = Clock-out time − Clock-in time − Unpaid break
+      </div>
+
+      <h3>Common time card examples</h3>
+      <p><strong>9:00 AM to 5:00 PM with no unpaid break</strong> = 8.00 worked hours.</p>
+      <p><strong>9:00 AM to 5:30 PM with a 30-minute unpaid lunch</strong> = 8.00 worked hours.</p>
+      <p><strong>8:30 AM to 5:00 PM with a 30-minute unpaid lunch</strong> = 8.00 worked hours.</p>
+      <p><strong>10:00 PM to 6:00 AM with no unpaid break</strong> = 8.00 worked hours. Overnight shifts are supported automatically.</p>
+
+      <h3>Daily hours vs. weekly time card hours</h3>
+      <p>Each row shows the calculated hours for that day. Numviro then adds all completed shifts to produce total weekly hours and separates regular and overtime hours using the threshold you enter.</p>
     </div>
   </section>
 
@@ -251,6 +273,12 @@
 
       <h3>How many hours is 9:00 AM to 5:30 PM with a 30-minute lunch?</h3>
       <p>The shift lasts 8 hours 30 minutes. After subtracting a 30-minute unpaid lunch, the calculated worked time is 8.00 hours.</p>
+
+      <h3>How do I calculate hours worked from clock-in and clock-out?</h3>
+      <p>Subtract your clock-in time from your clock-out time, then subtract any unpaid break. For a full week, add the worked hours from each day.</p>
+
+      <h3>Can I use this as a time punch calculator?</h3>
+      <p>Yes. Enter the start and end time from each punch plus any unpaid break. The calculator converts those time punches into daily and weekly worked hours.</p>
 
       <h3>What if I only need to calculate one shift?</h3>
       <p>Use the <a href="/work-hours-calculator/">Work Hours Calculator</a> for a single start time, end time, and break instead of a full seven-day time card.</p>
