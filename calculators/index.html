@@ -24,10 +24,12 @@
   <meta name="robots" content="index,follow">
 
   <meta property="og:title" content="Free Pay, Salary & Work Calculators | Numviro">
+
   <meta
     property="og:description"
     content="Explore Numviro's free pay, salary, work-time, PTO, compensation, freelance, and business travel calculators."
   >
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://numviro.com/calculators/">
 
@@ -126,13 +128,33 @@
       border-radius: 20px;
       padding: 22px;
       background: #fff;
-      transition: transform .15s ease, box-shadow .15s ease;
       min-width: 0;
+
+      cursor: pointer;
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        border-color .15s ease,
+        background-color .15s ease;
+
+      -webkit-tap-highlight-color: transparent;
     }
 
     .tool-card:hover {
       transform: translateY(-2px);
+      border-color: #cbd5e1;
       box-shadow: 0 12px 28px rgba(17, 24, 39, .08);
+    }
+
+    .tool-card:active {
+      transform: scale(.995);
+    }
+
+    .tool-card:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, .25);
+      outline-offset: 3px;
+      border-color: #2563eb;
     }
 
     .tool-card h3 {
@@ -147,7 +169,7 @@
       overflow-wrap: anywhere;
     }
 
-    .tool-card h3 a:hover {
+    .tool-card:hover h3 a {
       color: #2563eb;
     }
 
@@ -251,6 +273,7 @@
       .tool-card {
         padding: 18px;
         border-radius: 16px;
+        min-height: 130px;
       }
 
       .tool-card h3 {
@@ -332,6 +355,7 @@
     </nav>
   </header>
 
+
   <main>
 
     <section class="hub-hero">
@@ -364,10 +388,15 @@
       </div>
     </section>
 
+
     <div class="container">
 
+      <!-- PAY & SALARY -->
+
       <section class="hub-section tool-category">
+
         <p class="eyebrow">PAY & SALARY</p>
+
         <h2>Pay & Salary Calculators</h2>
 
         <p class="section-intro">
@@ -446,8 +475,13 @@
         </div>
       </section>
 
+
+      <!-- WORK TIME -->
+
       <section class="hub-section tool-category">
+
         <p class="eyebrow">WORK TIME & SHIFT PAY</p>
+
         <h2>Work Time & Shift Calculators</h2>
 
         <p class="section-intro">
@@ -496,8 +530,13 @@
         </div>
       </section>
 
+
+      <!-- PTO -->
+
       <section class="hub-section tool-category">
+
         <p class="eyebrow">PTO & BENEFITS</p>
+
         <h2>PTO Calculators</h2>
 
         <p class="section-intro">
@@ -521,8 +560,13 @@
         </div>
       </section>
 
+
+      <!-- BONUS & FREELANCE -->
+
       <section class="hub-section tool-category">
+
         <p class="eyebrow">BONUS, COMMISSION & INDEPENDENT WORK</p>
+
         <h2>Compensation & Freelance Calculators</h2>
 
         <p class="section-intro">
@@ -559,8 +603,13 @@
         </div>
       </section>
 
+
+      <!-- BUSINESS TRAVEL -->
+
       <section class="hub-section tool-category">
+
         <p class="eyebrow">BUSINESS TRAVEL</p>
+
         <h2>Business Travel Calculators</h2>
 
         <p class="section-intro">
@@ -585,6 +634,7 @@
         </div>
       </section>
 
+
       <div id="noResults" class="no-results">
         No calculators matched your search.
         Try a broader term such as “salary,” “PTO,”
@@ -593,10 +643,14 @@
 
     </div>
 
+
     <section class="hub-bottom">
+
       <div class="container">
 
-        <h2>Simple calculators for everyday work and pay questions</h2>
+        <h2>
+          Simple calculators for everyday work and pay questions
+        </h2>
 
         <p class="section-intro">
           Numviro focuses on fast, transparent calculations
@@ -607,21 +661,33 @@
         </p>
 
       </div>
+
     </section>
 
   </main>
 
+
   <footer class="site-footer">
+
     <div class="container">
+
       <p>
         © <span id="year"></span> Numviro ·
         <a href="/privacy.html">Privacy</a> ·
         <a href="/terms.html">Terms</a>
       </p>
+
     </div>
+
   </footer>
 
+
   <script>
+
+    /* =====================================================
+       SEARCH
+       ===================================================== */
+
     const searchInput =
       document.getElementById("toolSearch");
 
@@ -638,7 +704,9 @@
     const noResults =
       document.getElementById("noResults");
 
+
     function filterTools() {
+
       const query =
         searchInput.value
           .trim()
@@ -646,7 +714,9 @@
 
       let visibleCount = 0;
 
-      cards.forEach(function (card) {
+
+      cards.forEach(function(card) {
+
         const text = (
           card.textContent +
           " " +
@@ -663,19 +733,24 @@
         if (show) {
           visibleCount += 1;
         }
+
       });
 
-      categories.forEach(function (category) {
+
+      categories.forEach(function(category) {
+
         const visibleCards =
           Array.from(
             category.querySelectorAll(".tool-card")
-          ).some(function (card) {
+          ).some(function(card) {
             return card.style.display !== "none";
           });
 
         category.style.display =
           visibleCards ? "" : "none";
+
       });
+
 
       noResults.style.display =
         visibleCount === 0
@@ -683,19 +758,108 @@
           : "none";
     }
 
+
     searchInput.addEventListener(
       "input",
       filterTools
     );
 
+
+    /* =====================================================
+       FULL CARD CLICK
+       ===================================================== */
+
+    cards.forEach(function(card) {
+
+      const link =
+        card.querySelector("h3 a");
+
+      if (!link) {
+        return;
+      }
+
+      const targetUrl =
+        link.getAttribute("href");
+
+      card.setAttribute(
+        "role",
+        "link"
+      );
+
+      card.setAttribute(
+        "tabindex",
+        "0"
+      );
+
+      card.setAttribute(
+        "aria-label",
+        link.textContent.trim()
+      );
+
+
+      card.addEventListener(
+        "click",
+        function(event) {
+
+          /*
+            If the visitor already clicked
+            the real anchor, let the browser
+            handle the anchor normally.
+          */
+
+          if (
+            event.target.closest("a")
+          ) {
+            return;
+          }
+
+          window.location.href =
+            targetUrl;
+        }
+      );
+
+
+      card.addEventListener(
+        "keydown",
+        function(event) {
+
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+
+            event.preventDefault();
+
+            window.location.href =
+              targetUrl;
+          }
+
+        }
+      );
+
+    });
+
+
+    /* =====================================================
+       MOBILE NAV
+       ===================================================== */
+
     const mobileMenuBtn =
-      document.getElementById("mobileMenuBtn");
+      document.getElementById(
+        "mobileMenuBtn"
+      );
 
     const mobileNav =
-      document.getElementById("mobileNav");
+      document.getElementById(
+        "mobileNav"
+      );
+
 
     function closeMobileMenu() {
-      mobileNav.classList.remove("is-open");
+
+      mobileNav.classList.remove(
+        "is-open"
+      );
 
       mobileMenuBtn.setAttribute(
         "aria-expanded",
@@ -706,10 +870,15 @@
         "aria-label",
         "Open navigation menu"
       );
+
     }
 
+
     function openMobileMenu() {
-      mobileNav.classList.add("is-open");
+
+      mobileNav.classList.add(
+        "is-open"
+      );
 
       mobileMenuBtn.setAttribute(
         "aria-expanded",
@@ -720,11 +889,14 @@
         "aria-label",
         "Close navigation menu"
       );
+
     }
+
 
     mobileMenuBtn.addEventListener(
       "click",
-      function (event) {
+      function(event) {
+
         event.stopPropagation();
 
         const isOpen =
@@ -732,60 +904,95 @@
             "aria-expanded"
           ) === "true";
 
+
         if (isOpen) {
+
           closeMobileMenu();
+
         } else {
+
           openMobileMenu();
+
         }
+
       }
     );
 
+
     mobileNav
       .querySelectorAll("a")
-      .forEach(function (link) {
+      .forEach(function(link) {
+
         link.addEventListener(
           "click",
           closeMobileMenu
         );
+
       });
+
 
     document.addEventListener(
       "click",
-      function (event) {
+      function(event) {
+
         if (
           mobileNav.classList.contains("is-open") &&
           !mobileNav.contains(event.target) &&
           !mobileMenuBtn.contains(event.target)
         ) {
+
           closeMobileMenu();
+
         }
+
       }
     );
 
+
     document.addEventListener(
       "keydown",
-      function (event) {
+      function(event) {
+
         if (
           event.key === "Escape" &&
           mobileNav.classList.contains("is-open")
         ) {
+
           closeMobileMenu();
+
           mobileMenuBtn.focus();
+
         }
+
       }
     );
+
 
     window.addEventListener(
       "resize",
-      function () {
-        if (window.innerWidth > 820) {
+      function() {
+
+        if (
+          window.innerWidth > 820
+        ) {
+
           closeMobileMenu();
+
         }
+
       }
     );
 
-    document.getElementById("year").textContent =
+
+    /* =====================================================
+       YEAR
+       ===================================================== */
+
+    document.getElementById(
+      "year"
+    ).textContent =
       new Date().getFullYear();
+
   </script>
 
 </body>
