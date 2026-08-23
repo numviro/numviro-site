@@ -20,42 +20,29 @@
     content="Browse free Numviro calculators for hourly pay, salary, overtime, work hours, PTO, bonuses, commissions, freelance rates, business travel, and more."
   >
 
-  <link
-    rel="canonical"
-    href="https://numviro.com/calculators/"
-  >
-
+  <link rel="canonical" href="https://numviro.com/calculators/">
   <meta name="robots" content="index,follow">
 
-  <meta
-    property="og:title"
-    content="Free Pay, Salary & Work Calculators | Numviro"
-  >
-
+  <meta property="og:title" content="Free Pay, Salary & Work Calculators | Numviro">
   <meta
     property="og:description"
     content="Explore Numviro's free pay, salary, work-time, PTO, compensation, freelance, and business travel calculators."
   >
-
   <meta property="og:type" content="website">
-
-  <meta
-    property="og:url"
-    content="https://numviro.com/calculators/"
-  >
+  <meta property="og:url" content="https://numviro.com/calculators/">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
 
   <style>
     .hub-hero {
-      padding: 84px 0 48px;
+      padding: 72px 0 42px;
       background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
     }
 
     .hub-hero h1 {
       max-width: 780px;
-      margin-bottom: 16px;
+      margin: 0 0 16px;
       font-size: clamp(2.4rem, 5vw, 4.3rem);
       line-height: 1.03;
       letter-spacing: -0.05em;
@@ -66,24 +53,30 @@
       font-size: 19px;
       line-height: 1.7;
       color: #4b5563;
-      margin-bottom: 0;
+      margin: 0;
     }
 
     .search-wrap {
-      margin-top: 30px;
+      margin-top: 26px;
       max-width: 700px;
     }
 
     .search-wrap input {
       width: 100%;
+      min-height: 54px;
       box-sizing: border-box;
-      padding: 16px 18px;
+      padding: 14px 18px;
       border: 1px solid #dbe1ea;
       border-radius: 14px;
       font-size: 17px;
       background: #fff;
       color: #111827;
       outline: none;
+    }
+
+    .search-wrap input::placeholder {
+      color: #9ca3af;
+      opacity: 1;
     }
 
     .search-wrap input:focus {
@@ -104,7 +97,7 @@
     }
 
     .hub-section {
-      padding: 64px 0 10px;
+      padding: 58px 0 8px;
     }
 
     .hub-section h2 {
@@ -125,7 +118,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-      margin-top: 28px;
+      margin-top: 26px;
     }
 
     .tool-card {
@@ -191,8 +184,8 @@
     }
 
     .hub-bottom {
-      padding: 72px 0;
-      margin-top: 50px;
+      padding: 64px 0;
+      margin-top: 44px;
       background: #f8fafc;
     }
 
@@ -211,41 +204,48 @@
 
     @media (max-width: 680px) {
       .hub-hero {
-        padding: 42px 0 34px;
+        padding: 38px 0 28px;
       }
 
       .hub-hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
         line-height: 1.07;
+        margin-bottom: 14px;
       }
 
       .hub-copy {
-        font-size: 16px;
-        line-height: 1.65;
+        font-size: 15.5px;
+        line-height: 1.62;
       }
 
       .search-wrap {
-        margin-top: 22px;
+        margin-top: 20px;
       }
 
       .search-wrap input {
-        min-height: 52px;
-        padding: 13px 15px;
+        min-height: 50px;
+        padding: 12px 16px;
         font-size: 16px;
+        border-radius: 12px;
       }
 
       .hub-section {
-        padding: 44px 0 4px;
+        padding: 38px 0 4px;
+      }
+
+      .hub-section h2 {
+        font-size: 1.8rem;
       }
 
       .section-intro {
-        font-size: 15px;
+        font-size: 14.5px;
+        line-height: 1.6;
       }
 
       .tool-grid-hub {
         grid-template-columns: 1fr;
         gap: 12px;
-        margin-top: 20px;
+        margin-top: 18px;
       }
 
       .tool-card {
@@ -269,14 +269,14 @@
       }
 
       .hub-bottom {
-        padding: 48px 0;
-        margin-top: 40px;
+        padding: 44px 0;
+        margin-top: 34px;
       }
     }
 
     @media (max-width: 380px) {
       .hub-hero h1 {
-        font-size: 2rem;
+        font-size: 1.95rem;
       }
 
       .tool-card {
@@ -289,7 +289,6 @@
 <body>
 
   <header class="site-header">
-
     <div class="container header-inner">
 
       <a class="brand" href="/" aria-label="Numviro home">
@@ -325,42 +324,22 @@
       aria-label="Mobile navigation"
     >
       <div class="mobile-nav-inner">
-
-        <a href="/calculators/">
-          Calculators
-        </a>
-
-        <a href="/#how-it-works">
-          How it works
-        </a>
-
-        <a href="/#faq">
-          FAQ
-        </a>
-
-        <a href="/about.html">
-          About
-        </a>
-
+        <a href="/calculators/">Calculators</a>
+        <a href="/#how-it-works">How it works</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/about.html">About</a>
       </div>
     </nav>
-
   </header>
-
 
   <main>
 
     <section class="hub-hero">
-
       <div class="container">
 
-        <p class="eyebrow">
-          NUMVIRO CALCULATOR LIBRARY
-        </p>
+        <p class="eyebrow">NUMVIRO CALCULATOR LIBRARY</p>
 
-        <h1>
-          Free Pay, Salary & Work Calculators
-        </h1>
+        <h1>Free Pay, Salary & Work Calculators</h1>
 
         <p class="hub-copy">
           Find free calculators for hourly pay, salary, overtime,
@@ -369,606 +348,244 @@
         </p>
 
         <div class="search-wrap">
-
-          <label
-            for="toolSearch"
-            class="sr-only"
-          >
+          <label for="toolSearch" class="sr-only">
             Search calculators
           </label>
 
           <input
             id="toolSearch"
             type="search"
-            placeholder="Search calculators — overtime, PTO, salary, mileage..."
+            placeholder="Search calculators..."
             autocomplete="off"
+            aria-label="Search Numviro calculators"
           >
-
         </div>
 
       </div>
-
     </section>
-
 
     <div class="container">
 
-      <!-- PAY & SALARY -->
-
       <section class="hub-section tool-category">
-
-        <p class="eyebrow">
-          PAY & SALARY
-        </p>
-
-        <h2>
-          Pay & Salary Calculators
-        </h2>
+        <p class="eyebrow">PAY & SALARY</p>
+        <h2>Pay & Salary Calculators</h2>
 
         <p class="section-intro">
           Convert wages between common pay periods and estimate regular,
           overtime, gross, weekly, monthly, and annual income.
         </p>
 
-
         <div class="tool-grid-hub">
 
-          <article
-            class="tool-card featured-card"
-            data-search="hourly pay salary wage weekly biweekly monthly annual"
-          >
+          <article class="tool-card featured-card" data-search="hourly pay salary wage weekly biweekly monthly annual">
             <span class="tool-tag">CORE TOOL</span>
-            <h3>
-              <a href="/">
-                Hourly Pay & Salary Calculator
-              </a>
-            </h3>
-            <p>
-              Convert hourly wages into weekly, biweekly,
-              monthly, and annual gross pay.
-            </p>
+            <h3><a href="/">Hourly Pay & Salary Calculator</a></h3>
+            <p>Convert hourly wages into weekly, biweekly, monthly, and annual gross pay.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="hourly to salary annual wage"
-          >
+          <article class="tool-card" data-search="hourly to salary annual wage">
             <span class="tool-tag">PAY CONVERSION</span>
-            <h3>
-              <a href="/hourly-to-salary-calculator/">
-                Hourly to Salary Calculator
-              </a>
-            </h3>
-            <p>
-              Convert an hourly wage into annual salary
-              and other pay periods.
-            </p>
+            <h3><a href="/hourly-to-salary-calculator/">Hourly to Salary Calculator</a></h3>
+            <p>Convert an hourly wage into annual salary and other pay periods.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="salary to hourly annual wage"
-          >
+          <article class="tool-card" data-search="salary to hourly annual wage">
             <span class="tool-tag">PAY CONVERSION</span>
-            <h3>
-              <a href="/salary-to-hourly-calculator/">
-                Salary to Hourly Calculator
-              </a>
-            </h3>
-            <p>
-              Convert annual salary into an hourly wage
-              using your work schedule.
-            </p>
+            <h3><a href="/salary-to-hourly-calculator/">Salary to Hourly Calculator</a></h3>
+            <p>Convert annual salary into an hourly wage using your work schedule.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="weekly pay wage"
-          >
+          <article class="tool-card" data-search="weekly pay wage">
             <span class="tool-tag">PAY PERIOD</span>
-            <h3>
-              <a href="/weekly-pay-calculator/">
-                Weekly Pay Calculator
-              </a>
-            </h3>
-            <p>
-              Calculate weekly gross pay from hourly wage,
-              salary, or other pay frequencies.
-            </p>
+            <h3><a href="/weekly-pay-calculator/">Weekly Pay Calculator</a></h3>
+            <p>Calculate weekly gross pay from hourly wage, salary, or other pay frequencies.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="biweekly pay paycheck two weeks"
-          >
+          <article class="tool-card" data-search="biweekly pay paycheck two weeks">
             <span class="tool-tag">PAY PERIOD</span>
-            <h3>
-              <a href="/biweekly-pay-calculator/">
-                Biweekly Pay Calculator
-              </a>
-            </h3>
-            <p>
-              Estimate gross pay every two weeks
-              from hourly wage or annual salary.
-            </p>
+            <h3><a href="/biweekly-pay-calculator/">Biweekly Pay Calculator</a></h3>
+            <p>Estimate gross pay every two weeks from hourly wage or annual salary.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="semi monthly semimonthly twice month paycheck"
-          >
+          <article class="tool-card" data-search="semi monthly semimonthly twice month paycheck">
             <span class="tool-tag">PAY PERIOD</span>
-            <h3>
-              <a href="/semi-monthly-pay-calculator/">
-                Semi-Monthly Pay Calculator
-              </a>
-            </h3>
-            <p>
-              Convert income into a twice-monthly paycheck
-              based on 24 pay periods.
-            </p>
+            <h3><a href="/semi-monthly-pay-calculator/">Semi-Monthly Pay Calculator</a></h3>
+            <p>Convert income into a twice-monthly paycheck based on 24 pay periods.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="monthly income pay salary"
-          >
+          <article class="tool-card" data-search="monthly income pay salary">
             <span class="tool-tag">INCOME</span>
-            <h3>
-              <a href="/monthly-income-calculator/">
-                Monthly Income Calculator
-              </a>
-            </h3>
-            <p>
-              Convert hourly, weekly, biweekly, or annual pay
-              into average monthly income.
-            </p>
+            <h3><a href="/monthly-income-calculator/">Monthly Income Calculator</a></h3>
+            <p>Convert hourly, weekly, biweekly, or annual pay into average monthly income.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="annual income yearly salary pay"
-          >
+          <article class="tool-card" data-search="annual income yearly salary pay">
             <span class="tool-tag">INCOME</span>
-            <h3>
-              <a href="/annual-income-calculator/">
-                Annual Income Calculator
-              </a>
-            </h3>
-            <p>
-              Estimate annual gross income across
-              common pay frequencies.
-            </p>
+            <h3><a href="/annual-income-calculator/">Annual Income Calculator</a></h3>
+            <p>Estimate annual gross income across common pay frequencies.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="gross pay before tax overtime bonus commission tips"
-          >
+          <article class="tool-card" data-search="gross pay before tax overtime bonus commission tips">
             <span class="tool-tag">GROSS PAY</span>
-            <h3>
-              <a href="/gross-pay-calculator/">
-                Gross Pay Calculator
-              </a>
-            </h3>
-            <p>
-              Combine regular wages, overtime, double time,
-              bonuses, commissions, tips, and other earnings.
-            </p>
+            <h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3>
+            <p>Combine regular wages, overtime, double time, bonuses, commissions, tips, and other earnings.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="overtime time half double time"
-          >
+          <article class="tool-card" data-search="overtime time half double time">
             <span class="tool-tag">OVERTIME</span>
-            <h3>
-              <a href="/overtime-pay-calculator/">
-                Overtime Pay Calculator
-              </a>
-            </h3>
-            <p>
-              Estimate overtime rates and overtime earnings.
-            </p>
+            <h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3>
+            <p>Estimate overtime rates and overtime earnings.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="pay raise salary increase percentage"
-          >
+          <article class="tool-card" data-search="pay raise salary increase percentage">
             <span class="tool-tag">COMPENSATION</span>
-            <h3>
-              <a href="/pay-raise-calculator/">
-                Pay Raise Calculator
-              </a>
-            </h3>
-            <p>
-              Calculate new salary or hourly pay
-              after a percentage or fixed raise.
-            </p>
+            <h3><a href="/pay-raise-calculator/">Pay Raise Calculator</a></h3>
+            <p>Calculate new salary or hourly pay after a percentage or fixed raise.</p>
           </article>
 
         </div>
-
       </section>
 
-
-      <!-- WORK TIME -->
-
       <section class="hub-section tool-category">
-
-        <p class="eyebrow">
-          WORK TIME & SHIFT PAY
-        </p>
-
-        <h2>
-          Work Time & Shift Calculators
-        </h2>
+        <p class="eyebrow">WORK TIME & SHIFT PAY</p>
+        <h2>Work Time & Shift Calculators</h2>
 
         <p class="section-intro">
           Calculate work hours, time cards, holiday premiums,
           shift differentials, piece-rate earnings, and tipped income.
         </p>
 
-
         <div class="tool-grid-hub">
 
-          <article
-            class="tool-card"
-            data-search="work hours clock break time shift"
-          >
+          <article class="tool-card" data-search="work hours clock break time shift">
             <span class="tool-tag">TIME</span>
-
-            <h3>
-              <a href="/work-hours-calculator/">
-                Work Hours Calculator
-              </a>
-            </h3>
-
-            <p>
-              Calculate daily or weekly hours worked
-              after unpaid breaks.
-            </p>
+            <h3><a href="/work-hours-calculator/">Work Hours Calculator</a></h3>
+            <p>Calculate daily or weekly hours worked after unpaid breaks.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="time card clock in clock out lunch overtime"
-          >
+          <article class="tool-card" data-search="time card clock in clock out lunch overtime">
             <span class="tool-tag">TIME CARD</span>
-
-            <h3>
-              <a href="/time-card-calculator/">
-                Time Card Calculator
-              </a>
-            </h3>
-
-            <p>
-              Total clock-in, clock-out, break,
-              regular, and overtime hours.
-            </p>
+            <h3><a href="/time-card-calculator/">Time Card Calculator</a></h3>
+            <p>Total clock-in, clock-out, break, regular, and overtime hours.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="shift differential night evening weekend premium"
-          >
+          <article class="tool-card" data-search="shift differential night evening weekend premium">
             <span class="tool-tag">SHIFT PAY</span>
-
-            <h3>
-              <a href="/shift-differential-calculator/">
-                Shift Differential Calculator
-              </a>
-            </h3>
-
-            <p>
-              Estimate extra pay for night, evening,
-              weekend, or other premium shifts.
-            </p>
+            <h3><a href="/shift-differential-calculator/">Shift Differential Calculator</a></h3>
+            <p>Estimate extra pay for night, evening, weekend, or other premium shifts.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="holiday pay time half double time premium"
-          >
+          <article class="tool-card" data-search="holiday pay time half double time premium">
             <span class="tool-tag">HOLIDAY PAY</span>
-
-            <h3>
-              <a href="/holiday-pay-calculator/">
-                Holiday Pay Calculator
-              </a>
-            </h3>
-
-            <p>
-              Estimate holiday work pay using regular,
-              1.5×, 2×, or custom premium rates.
-            </p>
+            <h3><a href="/holiday-pay-calculator/">Holiday Pay Calculator</a></h3>
+            <p>Estimate holiday work pay using regular, 1.5×, 2×, or custom premium rates.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="piece rate piecework unit pay production"
-          >
+          <article class="tool-card" data-search="piece rate piecework unit pay production">
             <span class="tool-tag">PIECEWORK</span>
-
-            <h3>
-              <a href="/piece-rate-calculator/">
-                Piece Rate Calculator
-              </a>
-            </h3>
-
-            <p>
-              Calculate pay per unit, total piecework earnings,
-              and effective hourly rate.
-            </p>
+            <h3><a href="/piece-rate-calculator/">Piece Rate Calculator</a></h3>
+            <p>Calculate pay per unit, total piecework earnings, and effective hourly rate.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="tip income tips per hour tip out server restaurant"
-          >
+          <article class="tool-card" data-search="tip income tips per hour tip out server restaurant">
             <span class="tool-tag">TIPPED INCOME</span>
-
-            <h3>
-              <a href="/tip-income-calculator/">
-                Tip Income Calculator
-              </a>
-            </h3>
-
-            <p>
-              Calculate tips kept, tip-out, base wages,
-              and effective hourly earnings.
-            </p>
+            <h3><a href="/tip-income-calculator/">Tip Income Calculator</a></h3>
+            <p>Calculate tips kept, tip-out, base wages, and effective hourly earnings.</p>
           </article>
 
         </div>
-
       </section>
 
-
-      <!-- PTO -->
-
       <section class="hub-section tool-category">
-
-        <p class="eyebrow">
-          PTO & BENEFITS
-        </p>
-
-        <h2>
-          PTO Calculators
-        </h2>
+        <p class="eyebrow">PTO & BENEFITS</p>
+        <h2>PTO Calculators</h2>
 
         <p class="section-intro">
-          Estimate paid-time-off accrual and the gross
-          cash value of unused PTO.
+          Estimate paid-time-off accrual and the gross cash value of unused PTO.
         </p>
-
 
         <div class="tool-grid-hub">
 
-          <article
-            class="tool-card"
-            data-search="pto accrual vacation hours earned balance"
-          >
+          <article class="tool-card" data-search="pto accrual vacation hours earned balance">
             <span class="tool-tag">PTO</span>
-
-            <h3>
-              <a href="/pto-accrual-calculator/">
-                PTO Accrual Calculator
-              </a>
-            </h3>
-
-            <p>
-              Estimate PTO earned per pay period,
-              per hour worked, and available balance.
-            </p>
+            <h3><a href="/pto-accrual-calculator/">PTO Accrual Calculator</a></h3>
+            <p>Estimate PTO earned per pay period, per hour worked, and available balance.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="pto payout unused vacation cash value"
-          >
+          <article class="tool-card" data-search="pto payout unused vacation cash value">
             <span class="tool-tag">PTO</span>
-
-            <h3>
-              <a href="/pto-payout-calculator/">
-                PTO Payout Calculator
-              </a>
-            </h3>
-
-            <p>
-              Estimate the gross cash value of unused
-              PTO or vacation hours.
-            </p>
+            <h3><a href="/pto-payout-calculator/">PTO Payout Calculator</a></h3>
+            <p>Estimate the gross cash value of unused PTO or vacation hours.</p>
           </article>
 
         </div>
-
       </section>
 
-
-      <!-- COMPENSATION -->
-
       <section class="hub-section tool-category">
-
-        <p class="eyebrow">
-          BONUS, COMMISSION & INDEPENDENT WORK
-        </p>
-
-        <h2>
-          Compensation & Freelance Calculators
-        </h2>
+        <p class="eyebrow">BONUS, COMMISSION & INDEPENDENT WORK</p>
+        <h2>Compensation & Freelance Calculators</h2>
 
         <p class="section-intro">
           Plan bonuses, sales commissions, freelance pricing,
           contractor costs, and other variable compensation.
         </p>
 
-
         <div class="tool-grid-hub">
 
-          <article
-            class="tool-card"
-            data-search="bonus salary percentage performance prorated"
-          >
+          <article class="tool-card" data-search="bonus salary percentage performance prorated">
             <span class="tool-tag">BONUS</span>
-
-            <h3>
-              <a href="/bonus-calculator/">
-                Bonus Calculator
-              </a>
-            </h3>
-
-            <p>
-              Calculate gross bonuses using salary percentage,
-              performance payout, proration, or fixed amount.
-            </p>
+            <h3><a href="/bonus-calculator/">Bonus Calculator</a></h3>
+            <p>Calculate gross bonuses using salary percentage, performance payout, proration, or fixed amount.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="sales commission tiered base salary"
-          >
+          <article class="tool-card" data-search="sales commission tiered base salary">
             <span class="tool-tag">COMMISSION</span>
-
-            <h3>
-              <a href="/sales-commission-calculator/">
-                Sales Commission Calculator
-              </a>
-            </h3>
-
-            <p>
-              Estimate flat or tiered sales commission
-              and total compensation.
-            </p>
+            <h3><a href="/sales-commission-calculator/">Sales Commission Calculator</a></h3>
+            <p>Estimate flat or tiered sales commission and total compensation.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="freelance rate hourly day client billable hours expenses"
-          >
+          <article class="tool-card" data-search="freelance rate hourly day client billable hours expenses">
             <span class="tool-tag">FREELANCE</span>
-
-            <h3>
-              <a href="/freelance-rate-calculator/">
-                Freelance Rate Calculator
-              </a>
-            </h3>
-
-            <p>
-              Work backward from income goals, expenses,
-              and billable hours to a client rate.
-            </p>
+            <h3><a href="/freelance-rate-calculator/">Freelance Rate Calculator</a></h3>
+            <p>Work backward from income goals, expenses, and billable hours to a client rate.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="contractor vs employee cost hiring w2 1099"
-          >
+          <article class="tool-card" data-search="contractor vs employee cost hiring w2 1099">
             <span class="tool-tag">HIRING COST</span>
-
-            <h3>
-              <a href="/contractor-vs-employee-cost-calculator/">
-                Contractor vs Employee Cost Calculator
-              </a>
-            </h3>
-
-            <p>
-              Compare estimated employee total cost
-              with contractor hourly and annual cost.
-            </p>
+            <h3><a href="/contractor-vs-employee-cost-calculator/">Contractor vs Employee Cost Calculator</a></h3>
+            <p>Compare estimated employee total cost with contractor hourly and annual cost.</p>
           </article>
 
         </div>
-
       </section>
 
-
-      <!-- BUSINESS TRAVEL -->
-
       <section class="hub-section tool-category">
-
-        <p class="eyebrow">
-          BUSINESS TRAVEL
-        </p>
-
-        <h2>
-          Business Travel Calculators
-        </h2>
+        <p class="eyebrow">BUSINESS TRAVEL</p>
+        <h2>Business Travel Calculators</h2>
 
         <p class="section-intro">
           Estimate mileage reimbursement and travel allowances
           using the rates that apply to your trip or organization.
         </p>
 
-
         <div class="tool-grid-hub">
 
-          <article
-            class="tool-card"
-            data-search="mileage reimbursement business miles travel rate"
-          >
+          <article class="tool-card" data-search="mileage reimbursement business miles travel rate">
             <span class="tool-tag">MILEAGE</span>
-
-            <h3>
-              <a href="/mileage-reimbursement-calculator/">
-                Mileage Reimbursement Calculator
-              </a>
-            </h3>
-
-            <p>
-              Calculate reimbursable business miles
-              using a custom per-mile rate.
-            </p>
+            <h3><a href="/mileage-reimbursement-calculator/">Mileage Reimbursement Calculator</a></h3>
+            <p>Calculate reimbursable business miles using a custom per-mile rate.</p>
           </article>
 
-
-          <article
-            class="tool-card"
-            data-search="per diem lodging meals incidentals travel allowance"
-          >
+          <article class="tool-card" data-search="per diem lodging meals incidentals travel allowance">
             <span class="tool-tag">PER DIEM</span>
-
-            <h3>
-              <a href="/per-diem-calculator/">
-                Per Diem Calculator
-              </a>
-            </h3>
-
-            <p>
-              Estimate lodging, meals-and-incidentals,
-              and travel-day allowances.
-            </p>
+            <h3><a href="/per-diem-calculator/">Per Diem Calculator</a></h3>
+            <p>Estimate lodging, meals-and-incidentals, and travel-day allowances.</p>
           </article>
 
         </div>
-
       </section>
 
-
-      <div
-        id="noResults"
-        class="no-results"
-      >
+      <div id="noResults" class="no-results">
         No calculators matched your search.
         Try a broader term such as “salary,” “PTO,”
         “overtime,” “tips,” or “travel.”
@@ -976,14 +593,10 @@
 
     </div>
 
-
     <section class="hub-bottom">
-
       <div class="container">
 
-        <h2>
-          Simple calculators for everyday work and pay questions
-        </h2>
+        <h2>Simple calculators for everyday work and pay questions</h2>
 
         <p class="section-intro">
           Numviro focuses on fast, transparent calculations
@@ -994,32 +607,21 @@
         </p>
 
       </div>
-
     </section>
 
   </main>
 
-
   <footer class="site-footer">
-
     <div class="container">
-
       <p>
         © <span id="year"></span> Numviro ·
         <a href="/privacy.html">Privacy</a> ·
         <a href="/terms.html">Terms</a>
       </p>
-
     </div>
-
   </footer>
 
-
   <script>
-    /* =====================================================
-       CALCULATOR SEARCH
-       ===================================================== */
-
     const searchInput =
       document.getElementById("toolSearch");
 
@@ -1036,9 +638,7 @@
     const noResults =
       document.getElementById("noResults");
 
-
     function filterTools() {
-
       const query =
         searchInput.value
           .trim()
@@ -1046,34 +646,26 @@
 
       let visibleCount = 0;
 
-
       cards.forEach(function (card) {
-
         const text = (
           card.textContent +
           " " +
           (card.dataset.search || "")
         ).toLowerCase();
 
-
         const show =
           !query ||
           text.includes(query);
 
-
         card.style.display =
           show ? "" : "none";
-
 
         if (show) {
           visibleCount += 1;
         }
-
       });
 
-
       categories.forEach(function (category) {
-
         const visibleCards =
           Array.from(
             category.querySelectorAll(".tool-card")
@@ -1081,30 +673,20 @@
             return card.style.display !== "none";
           });
 
-
         category.style.display =
           visibleCards ? "" : "none";
-
       });
-
 
       noResults.style.display =
         visibleCount === 0
           ? "block"
           : "none";
-
     }
-
 
     searchInput.addEventListener(
       "input",
       filterTools
     );
-
-
-    /* =====================================================
-       MOBILE NAVIGATION
-       ===================================================== */
 
     const mobileMenuBtn =
       document.getElementById("mobileMenuBtn");
@@ -1112,9 +694,7 @@
     const mobileNav =
       document.getElementById("mobileNav");
 
-
     function closeMobileMenu() {
-
       mobileNav.classList.remove("is-open");
 
       mobileMenuBtn.setAttribute(
@@ -1126,12 +706,9 @@
         "aria-label",
         "Open navigation menu"
       );
-
     }
 
-
     function openMobileMenu() {
-
       mobileNav.classList.add("is-open");
 
       mobileMenuBtn.setAttribute(
@@ -1143,14 +720,11 @@
         "aria-label",
         "Close navigation menu"
       );
-
     }
-
 
     mobileMenuBtn.addEventListener(
       "click",
       function (event) {
-
         event.stopPropagation();
 
         const isOpen =
@@ -1158,80 +732,57 @@
             "aria-expanded"
           ) === "true";
 
-
         if (isOpen) {
           closeMobileMenu();
         } else {
           openMobileMenu();
         }
-
       }
     );
-
 
     mobileNav
       .querySelectorAll("a")
       .forEach(function (link) {
-
         link.addEventListener(
           "click",
           closeMobileMenu
         );
-
       });
-
 
     document.addEventListener(
       "click",
       function (event) {
-
         if (
           mobileNav.classList.contains("is-open") &&
           !mobileNav.contains(event.target) &&
           !mobileMenuBtn.contains(event.target)
         ) {
-
           closeMobileMenu();
-
         }
-
       }
     );
-
 
     document.addEventListener(
       "keydown",
       function (event) {
-
         if (
           event.key === "Escape" &&
           mobileNav.classList.contains("is-open")
         ) {
-
           closeMobileMenu();
           mobileMenuBtn.focus();
-
         }
-
       }
     );
-
 
     window.addEventListener(
       "resize",
       function () {
-
         if (window.innerWidth > 820) {
           closeMobileMenu();
         }
-
       }
     );
-
-
-    /* =====================================================
-       YEAR
-       ===================================================== */
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
