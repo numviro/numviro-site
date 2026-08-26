@@ -14,9 +14,9 @@
 </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Salary to Hourly Calculator – Convert Annual Salary to Hourly Rate | Numviro</title>
+  <title>Salary to Hourly Calculator – Annual Salary to Hourly Pay | Numviro</title>
 
-  <meta name="description" content="Free salary to hourly calculator. Convert annual salary to hourly rate, weekly, biweekly, monthly, and daily gross pay. See common $40k to $200k salary conversions.">
+  <meta name="description" content="Free salary to hourly calculator. Convert annual salary to hourly pay using hours per week and weeks per year, with weekly, biweekly, monthly, daily, and 2,080-hour examples.">
 
   <link rel="canonical" href="https://numviro.com/salary-to-hourly-calculator/">
   <meta name="robots" content="index,follow">
@@ -155,42 +155,6 @@
       margin-top: 28px;
     }
 
-    .quick-table-wrap {
-      overflow-x: auto;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      margin: 26px 0;
-      background: #fff;
-    }
-
-    .quick-table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 680px;
-    }
-
-    .quick-table th,
-    .quick-table td {
-      padding: 14px 16px;
-      border-bottom: 1px solid #e5e7eb;
-      text-align: right;
-    }
-
-    .quick-table th:first-child,
-    .quick-table td:first-child {
-      text-align: left;
-      font-weight: 800;
-    }
-
-    .quick-table th {
-      background: #f8fafc;
-      color: #374151;
-    }
-
-    .quick-table tr:last-child td {
-      border-bottom: 0;
-    }
-
     .formula-box {
       background: #f4f7fb;
       border: 1px solid #e4e8ef;
@@ -211,6 +175,195 @@
         margin-left: 0;
       }
     }
+  
+    /* =====================================================
+       MOBILE NAVIGATION + PAGE UX
+       ===================================================== */
+
+    .salary-related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .salary-related-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 20px;
+      background: #fff;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .salary-related-card:hover {
+      transform: translateY(-2px);
+      border-color: #cbd5e1;
+      box-shadow: 0 10px 25px rgba(15,23,42,.07);
+    }
+
+    .salary-related-card:active {
+      transform: scale(.995);
+    }
+
+    .salary-related-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .salary-related-card a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .salary-related-card p {
+      margin: 0;
+      color: #4b5563;
+    }
+
+    .quick-table {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      margin-top: 22px;
+    }
+
+    .quick-table > div {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px;
+      border-bottom: 1px solid #eef2f7;
+    }
+
+    .quick-table > div:last-child {
+      border-bottom: 0;
+    }
+
+    @media (max-width: 820px) {
+      .salary-related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 36px;
+        padding-bottom: 32px;
+      }
+
+      .tool-grid {
+        gap: 18px;
+      }
+
+      .calculator-card,
+      .result-card {
+        padding: 22px;
+      }
+
+      .info-section {
+        padding: 48px 0;
+      }
+
+      .info-section h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding-top: 28px;
+        padding-bottom: 26px;
+      }
+
+      .hero h1 {
+        font-size: 2.05rem;
+        line-height: 1.06;
+      }
+
+      .hero-copy {
+        font-size: .96rem;
+        line-height: 1.62;
+      }
+
+      .example-card {
+        padding: 18px;
+        border-radius: 18px;
+      }
+
+      .example-number {
+        font-size: 2rem;
+      }
+
+      .calculator-card,
+      .result-card {
+        padding: 18px;
+        border-radius: 18px;
+      }
+
+      .field input {
+        min-height: 50px;
+        font-size: 16px;
+      }
+
+      .big-result {
+        font-size: 2.15rem;
+        letter-spacing: -1px;
+      }
+
+      .result-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .result-item {
+        padding: 13px 8px;
+      }
+
+      .result-value {
+        font-size: .98rem;
+      }
+
+      .info-section {
+        padding: 40px 0;
+      }
+
+      .info-section h2 {
+        font-size: 1.65rem;
+      }
+
+      .info-section p {
+        font-size: .94rem;
+      }
+
+      .formula-box {
+        padding: 15px;
+        font-size: .9rem;
+      }
+
+      .quick-table > div {
+        padding: 12px 13px;
+        font-size: .9rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-item:nth-child(odd) {
+        border-right: 0;
+      }
+
+      .quick-table > div {
+        flex-direction: column;
+        gap: 2px;
+      }
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -261,26 +414,18 @@
       },
       {
         "@type": "Question",
-        "name": "How much is $40,000 a year per hour?",
+        "name": "How do I convert annual salary to hourly pay?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "At 40 hours per week and 52 weeks per year, a $40,000 annual salary is approximately $19.23 per hour."
+          "text": "Divide annual salary by total paid work hours for the year. For a standard 40-hour week and 52 weeks per year, divide salary by 2,080."
         }
       },
       {
         "@type": "Question",
-        "name": "How much is $75,000 a year per hour?",
+        "name": "Why do salary to hourly calculations use 2,080 hours?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "At 40 hours per week and 52 weeks per year, a $75,000 annual salary is approximately $36.06 per hour."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much is $80,000 a year per hour?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "At 40 hours per week and 52 weeks per year, an $80,000 annual salary is approximately $38.46 per hour."
+          "text": "2,080 hours comes from 40 hours per week multiplied by 52 weeks. It is a common full-time baseline, but this calculator lets you change both inputs."
         }
       },
       {
@@ -310,9 +455,33 @@
       <a href="#calculator">Calculator</a>
       <a href="#how-it-works">How it works</a>
       <a href="#faq">FAQ</a>
+      <a href="/calculators/">Calculators</a>
       <a href="/about.html">About</a>
     </nav>
+
+    <button
+      class="mobile-menu-btn"
+      id="mobileMenuBtn"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileNav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <div class="mobile-nav-inner">
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/calculators/">All Calculators</a>
+      <a href="/about.html">About</a>
+    </div>
+  </nav>
 </header>
 
 <main>
@@ -326,7 +495,7 @@
       <h1>Salary to Hourly Calculator</h1>
 
       <p class="hero-copy">
-        Convert your annual salary into hourly pay, weekly pay, biweekly pay, monthly income, and daily pay using your work schedule.
+        Use this salary to hourly calculator to convert annual salary into hourly pay, weekly pay, biweekly pay, monthly income, and daily pay using your actual work schedule.
       </p>
 
       <div class="hero-badges">
@@ -516,38 +685,6 @@
       and $100,000 is about $48.08 per hour.
     </p>
 
-    <h3>Quick salary to hourly conversion table</h3>
-    <p>
-      The table below uses the common full-time assumption of 40 hours per week and 52 weeks per year,
-      or 2,080 hours annually. These are gross-pay equivalents before taxes and deductions.
-    </p>
-
-    <div class="quick-table-wrap">
-      <table class="quick-table">
-        <thead>
-          <tr>
-            <th>Annual salary</th>
-            <th>Hourly rate</th>
-            <th>Weekly pay</th>
-            <th>Monthly pay</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>$40,000</td><td>$19.23</td><td>$769.23</td><td>$3,333.33</td></tr>
-          <tr><td>$50,000</td><td>$24.04</td><td>$961.54</td><td>$4,166.67</td></tr>
-          <tr><td>$60,000</td><td>$28.85</td><td>$1,153.85</td><td>$5,000.00</td></tr>
-          <tr><td>$70,000</td><td>$33.65</td><td>$1,346.15</td><td>$5,833.33</td></tr>
-          <tr><td>$75,000</td><td>$36.06</td><td>$1,442.31</td><td>$6,250.00</td></tr>
-          <tr><td>$80,000</td><td>$38.46</td><td>$1,538.46</td><td>$6,666.67</td></tr>
-          <tr><td>$90,000</td><td>$43.27</td><td>$1,730.77</td><td>$7,500.00</td></tr>
-          <tr><td>$100,000</td><td>$48.08</td><td>$1,923.08</td><td>$8,333.33</td></tr>
-          <tr><td>$120,000</td><td>$57.69</td><td>$2,307.69</td><td>$10,000.00</td></tr>
-          <tr><td>$150,000</td><td>$72.12</td><td>$2,884.62</td><td>$12,500.00</td></tr>
-          <tr><td>$200,000</td><td>$96.15</td><td>$3,846.15</td><td>$16,666.67</td></tr>
-        </tbody>
-      </table>
-    </div>
-
     <h3>Related pay calculators</h3>
     <p>
       Need to calculate in the opposite direction? Use the
@@ -561,6 +698,39 @@
 
   </div>
 
+</section>
+
+<section class="info-section" style="background:#f8fafc">
+  <div class="container narrow">
+
+    <p class="eyebrow">QUICK REFERENCE</p>
+
+    <h2>Annual salary to hourly pay examples</h2>
+
+    <p>
+      Using the common full-time assumption of
+      <strong>40 hours per week × 52 weeks = 2,080 hours per year</strong>,
+      these annual salaries convert to the following approximate hourly rates.
+      For a different schedule, use the calculator above.
+    </p>
+
+    <div class="quick-table">
+      <div><span>$40,000/year</span><strong>$19.23/hour</strong></div>
+      <div><span>$50,000/year</span><strong>$24.04/hour</strong></div>
+      <div><span>$60,000/year</span><strong>$28.85/hour</strong></div>
+      <div><span>$75,000/year</span><strong>$36.06/hour</strong></div>
+      <div><span>$80,000/year</span><strong>$38.46/hour</strong></div>
+      <div><span>$100,000/year</span><strong>$48.08/hour</strong></div>
+    </div>
+
+    <p style="margin-top:22px;">
+      Want a larger reference table? See the
+      <a href="/salary-to-hourly-chart/">Salary to Hourly Chart</a>.
+      To convert in the opposite direction, use the
+      <a href="/hourly-to-salary-calculator/">Hourly to Salary Calculator</a>.
+    </p>
+
+  </div>
 </section>
 
 <section class="info-section" id="faq">
@@ -587,22 +757,18 @@
       $100,000 per year is approximately $48.08 per hour.
     </p>
 
-    <h3>How much is $40,000 a year per hour?</h3>
+    <h3>How do I convert annual salary to hourly pay?</h3>
     <p>
-      At 40 hours per week and 52 weeks per year,
-      $40,000 per year is approximately $19.23 per hour.
+      Divide annual salary by total paid work hours for the year.
+      For a standard 40-hour week and 52 weeks per year,
+      divide the annual salary by 2,080.
     </p>
 
-    <h3>How much is $75,000 a year per hour?</h3>
+    <h3>Why do salary to hourly calculations use 2,080 hours?</h3>
     <p>
-      At 40 hours per week and 52 weeks per year,
-      $75,000 per year is approximately $36.06 per hour.
-    </p>
-
-    <h3>How much is $80,000 a year per hour?</h3>
-    <p>
-      At 40 hours per week and 52 weeks per year,
-      $80,000 per year is approximately $38.46 per hour.
+      2,080 hours comes from 40 hours per week multiplied by 52 weeks.
+      It is a common full-time baseline, but this calculator lets you
+      change both weekly hours and weeks per year.
     </p>
 
     <h3>Does this calculator include taxes?</h3>
@@ -621,6 +787,55 @@
 
 </section>
 
+<section class="info-section" style="background:#f8fafc">
+  <div class="container">
+
+    <p class="eyebrow">RELATED TOOLS</p>
+
+    <h2>More Numviro salary & pay calculators</h2>
+
+    <div class="salary-related-grid">
+
+      <article class="salary-related-card">
+        <h3><a href="/hourly-to-salary-calculator/">Hourly to Salary Calculator</a></h3>
+        <p>Convert an hourly wage into weekly, monthly, and annual gross pay.</p>
+      </article>
+
+      <article class="salary-related-card">
+        <h3><a href="/salary-to-hourly-chart/">Salary to Hourly Chart</a></h3>
+        <p>Compare common annual salaries with hourly, weekly, biweekly, and monthly equivalents.</p>
+      </article>
+
+      <article class="salary-related-card">
+        <h3><a href="/weekly-pay-calculator/">Weekly Pay Calculator</a></h3>
+        <p>Estimate weekly gross pay from hourly wages or annual salary.</p>
+      </article>
+
+      <article class="salary-related-card">
+        <h3><a href="/biweekly-pay-calculator/">Biweekly Pay Calculator</a></h3>
+        <p>Estimate gross earnings for a two-week pay period.</p>
+      </article>
+
+      <article class="salary-related-card">
+        <h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3>
+        <p>Calculate regular pay, overtime, bonuses, commissions, tips, and other gross earnings.</p>
+      </article>
+
+      <article class="salary-related-card">
+        <h3><a href="/pay-raise-calculator/">Pay Raise Calculator</a></h3>
+        <p>See how a percentage or fixed raise changes your salary or hourly equivalent.</p>
+      </article>
+
+    </div>
+
+    <p style="margin-top:28px;">
+      <a class="primary-btn" href="/calculators/">Browse all Numviro calculators</a>
+    </p>
+
+  </div>
+</section>
+
+
 </main>
 
 <footer class="site-footer">
@@ -638,6 +853,77 @@
 <script>
 
   const $ = id => document.getElementById(id);
+
+
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+
+  function closeMobileMenu() {
+    mobileNav.classList.remove("is-open");
+    mobileMenuBtn.setAttribute("aria-expanded", "false");
+    mobileMenuBtn.setAttribute("aria-label", "Open navigation menu");
+  }
+
+  function openMobileMenu() {
+    mobileNav.classList.add("is-open");
+    mobileMenuBtn.setAttribute("aria-expanded", "true");
+    mobileMenuBtn.setAttribute("aria-label", "Close navigation menu");
+  }
+
+  mobileMenuBtn.addEventListener("click", function(event) {
+    event.stopPropagation();
+    const isOpen = mobileMenuBtn.getAttribute("aria-expanded") === "true";
+    if (isOpen) closeMobileMenu();
+    else openMobileMenu();
+  });
+
+  mobileNav.querySelectorAll("a").forEach(function(link) {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  document.addEventListener("click", function(event) {
+    if (
+      mobileNav.classList.contains("is-open") &&
+      !mobileNav.contains(event.target) &&
+      !mobileMenuBtn.contains(event.target)
+    ) {
+      closeMobileMenu();
+    }
+  });
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape" && mobileNav.classList.contains("is-open")) {
+      closeMobileMenu();
+      mobileMenuBtn.focus();
+    }
+  });
+
+  window.addEventListener("resize", function() {
+    if (window.innerWidth > 820) closeMobileMenu();
+  });
+
+  document.querySelectorAll(".salary-related-card").forEach(function(card) {
+    const link = card.querySelector("h3 a");
+    if (!link) return;
+
+    const targetUrl = link.getAttribute("href");
+    card.setAttribute("role", "link");
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-label", link.textContent.trim());
+
+    card.addEventListener("click", function(event) {
+      if (event.target.closest("a")) return;
+      window.location.href = targetUrl;
+    });
+
+    card.addEventListener("keydown", function(event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        window.location.href = targetUrl;
+      }
+    });
+  });
+
 
   function money(value, decimals = 0) {
     return new Intl.NumberFormat("en-US", {
