@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1914228668102308"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1914228668102308"
+       crossorigin="anonymous"></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,239 +16,565 @@
     gtag('config', 'G-F3GZ1Q68KJ');
   </script>
 
-  <title>Annual Income Calculator – Hourly, Monthly & Yearly Pay | Numviro</title>
-  <meta name="description" content="Free annual income calculator. Convert hourly, weekly, biweekly, semi-monthly, or monthly pay into yearly gross income, with optional overtime, bonus, and commission.">
+  <title>Annual Income Calculator – Calculate Yearly Income | Numviro</title>
+  <meta name="description" content="Free annual income calculator. Calculate yearly gross income from hourly, weekly, biweekly, semi-monthly, monthly, or annual pay, with optional overtime, bonus, and commission.">
   <link rel="canonical" href="https://numviro.com/annual-income-calculator/">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="Annual Income Calculator | Numviro">
-  <meta property="og:description" content="Convert hourly, weekly, biweekly, or monthly pay to annual gross income with overtime and extra income.">
+
+  <meta property="og:title" content="Annual Income Calculator – Calculate Yearly Income | Numviro">
+  <meta property="og:description" content="Calculate annual gross income from hourly, weekly, biweekly, semi-monthly, monthly, or annual pay, including overtime and extra income.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://numviro.com/annual-income-calculator/">
 
+  <meta name="theme-color" content="#111827">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
 
   <style>
     .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-    .calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}
+    .calculator-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px;box-shadow:0 16px 50px rgba(15,23,42,.05)}
     .field{margin-bottom:18px}
     .field label{display:block;font-weight:700;margin-bottom:8px;color:#111827}
-    .field input,.field select{width:100%;box-sizing:border-box;padding:14px 15px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff}
+    .field input,.field select{width:100%;box-sizing:border-box;padding:14px 15px;border:1px solid #dbe1ea;border-radius:12px;font-size:16px;background:#fff;color:#111827;outline:none}
+    .field input:focus,.field select:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
     .inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .result-card{background:#111827;color:#fff;border-radius:24px;padding:30px}
+    .result-card{background:#111827;color:#fff;border-radius:24px;padding:30px;position:sticky;top:96px}
     .result-card .eyebrow{color:#60a5fa}
-    .big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0}
+    .big-result{font-size:clamp(42px,5vw,60px);font-weight:800;letter-spacing:-2px;margin:8px 0;overflow-wrap:anywhere}
     .result-sub{color:#aeb8c8;margin-bottom:24px}
     .result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}
-    .result-item{padding:18px 8px;border-bottom:1px solid #2b3547}
+    .result-item{padding:18px 8px;border-bottom:1px solid #2b3547;min-width:0}
     .result-item:nth-child(odd){border-right:1px solid #2b3547}
     .result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}
-    .result-value{font-size:19px;font-weight:800}
+    .result-value{font-size:19px;font-weight:800;overflow-wrap:anywhere}
     .info-section{padding:70px 0}
+    .info-section.alt{background:#f8fafc}
+    .info-section h2{letter-spacing:-.035em}
     .formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}
-    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-    .related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}
-    .related-grid a{color:#111827;text-decoration:none}
-    .seo-table{width:100%;border-collapse:collapse;margin:24px 0}
+    .table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .seo-table{width:100%;min-width:560px;border-collapse:collapse;margin:24px 0}
     .seo-table th,.seo-table td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left}
+    .quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+    .quick-card{border:1px solid #e5e7eb;border-radius:16px;padding:18px;background:#fff}
+    .quick-card span{display:block;color:#6b7280;font-size:13px;margin-bottom:5px}
+    .quick-card strong{font-size:1.15rem;color:#111827}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .related-card{display:block;border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff;color:#111827;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;-webkit-tap-highlight-color:transparent}
+    .related-card:hover{transform:translateY(-2px);border-color:#cbd5e1;box-shadow:0 10px 25px rgba(15,23,42,.07)}
+    .related-card:active{transform:scale(.995)}
+    .related-card h3{margin:0 0 8px;color:#111827}
+    .related-card p{margin:0;color:#4b5563}
+
     @media(max-width:850px){
-      .tool-grid,.inline-grid,.related-grid,.result-grid{grid-template-columns:1fr}
+      .tool-grid,.inline-grid{grid-template-columns:1fr}
+      .result-card{position:static}
+      .related-grid{grid-template-columns:1fr 1fr}
+      .quick-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:520px){
+      .hero{padding-top:28px;padding-bottom:26px}
+      .hero h1{font-size:2.05rem;line-height:1.06}
+      .hero-copy{font-size:.96rem;line-height:1.62}
+      .calculator-section{padding-top:34px;padding-bottom:38px}
+      .calculator-card,.result-card{padding:18px;border-radius:18px}
+      .field{margin-bottom:15px}
+      .field input,.field select{min-height:50px;font-size:16px}
+      .big-result{font-size:2.2rem;letter-spacing:-1px}
+      .result-grid{grid-template-columns:1fr 1fr}
+      .result-item{padding:13px 8px}
+      .result-value{font-size:.97rem}
+      .info-section{padding:42px 0}
+      .info-section h2{font-size:1.65rem}
+      .info-section p{font-size:.94rem}
+      .formula-box{padding:15px;font-size:.9rem}
+      .quick-grid,.related-grid{grid-template-columns:1fr}
+      .related-card{padding:18px}
+    }
+
+    @media(max-width:380px){
+      .hero h1{font-size:1.9rem}
+      .result-grid{grid-template-columns:1fr}
       .result-item:nth-child(odd){border-right:0}
     }
   </style>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"Annual Income Calculator",
-  "url":"https://numviro.com/annual-income-calculator/",
-  "applicationCategory":"FinanceApplication",
-  "operatingSystem":"Any",
-  "description":"Convert hourly, weekly, biweekly, semi-monthly, monthly, or annual pay into estimated yearly gross income.",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"How do I calculate annual income from hourly pay?","acceptedAnswer":{"@type":"Answer","text":"Multiply hourly wage by hours worked per week and weeks worked per year. For example, $25 per hour at 40 hours per week for 52 weeks equals $52,000 per year before taxes and deductions."}},
-    {"@type":"Question","name":"How much is $20 an hour per year?","acceptedAnswer":{"@type":"Answer","text":"At 40 hours per week and 52 weeks per year, $20 per hour equals $41,600 in annual gross income."}},
-    {"@type":"Question","name":"How much is $25 an hour per year?","acceptedAnswer":{"@type":"Answer","text":"At 40 hours per week and 52 weeks per year, $25 per hour equals $52,000 in annual gross income."}},
-    {"@type":"Question","name":"How do I convert monthly income to annual income?","acceptedAnswer":{"@type":"Answer","text":"Multiply monthly gross income by 12. For example, $5,000 per month equals $60,000 per year."}},
-    {"@type":"Question","name":"Does annual income include overtime and bonuses?","acceptedAnswer":{"@type":"Answer","text":"It can. This calculator lets you add estimated overtime, annual bonuses, commissions, and other extra income to the base annual amount."}}
-  ]
-}
-</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Annual Income Calculator",
+    "url":"https://numviro.com/annual-income-calculator/",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Any",
+    "description":"Calculate annual gross income from hourly, weekly, biweekly, semi-monthly, monthly, or annual pay, including overtime, bonuses, commissions, and extra income.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
 
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What is annual income?","acceptedAnswer":{"@type":"Answer","text":"Annual income is the amount earned over a year. This calculator estimates gross annual income before taxes and payroll deductions."}},
+      {"@type":"Question","name":"How do I calculate annual income?","acceptedAnswer":{"@type":"Answer","text":"The formula depends on your pay frequency. Hourly income can be multiplied by hours per week and weeks per year, weekly pay by weeks per year, biweekly pay by 26, semi-monthly pay by 24, and monthly pay by 12."}},
+      {"@type":"Question","name":"How do I calculate annual income from hourly pay?","acceptedAnswer":{"@type":"Answer","text":"Multiply hourly wage by hours worked per week and weeks worked per year. For example, $25 per hour at 40 hours per week for 52 weeks equals $52,000 in base annual gross income."}},
+      {"@type":"Question","name":"How many work hours are in a year?","acceptedAnswer":{"@type":"Answer","text":"A common full-time assumption is 2,080 hours per year, calculated as 40 hours per week multiplied by 52 weeks."}},
+      {"@type":"Question","name":"Is biweekly pay multiplied by 26 for annual income?","acceptedAnswer":{"@type":"Answer","text":"Yes. A standard biweekly schedule usually has 26 pay periods per year, although calendar timing can occasionally create a 27th paycheck."}},
+      {"@type":"Question","name":"Does annual income include overtime and bonuses?","acceptedAnswer":{"@type":"Answer","text":"It can. This calculator lets you add average overtime, annual bonuses, commissions, and other extra income to the base annual estimate."}},
+      {"@type":"Question","name":"Does this annual income calculator show take-home pay?","acceptedAnswer":{"@type":"Answer","text":"No. Results are gross income estimates before taxes, benefits, insurance, retirement contributions, and other deductions."}}
+    ]
+  }
+  </script>
 </head>
+
 <body>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label="Numviro home"><span class="brand-mark">N</span><span>Numviro</span></a>
+    <a class="brand" href="/" aria-label="Numviro home">
+      <span class="brand-mark">N</span>
+      <span>Numviro</span>
+    </a>
+
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="#calculator">Calculator</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a><a href="/calculators/">Calculators</a><a href="/about.html">About</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/calculators/">Calculators</a>
+      <a href="/about.html">About</a>
     </nav>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <div class="mobile-nav-inner">
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/calculators/">All Calculators</a>
+      <a href="/about.html">About</a>
+    </div>
+  </nav>
 </header>
 
 <main>
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <p class="eyebrow">FREE INCOME CALCULATOR</p>
+      <p class="eyebrow">FREE ANNUAL INCOME TOOL</p>
       <h1>Annual Income Calculator</h1>
-      <p class="hero-copy">Convert hourly, weekly, biweekly, or monthly pay into annual gross income. Add overtime, bonuses, and commission for a more complete yearly estimate.</p>
-      <div class="hero-pills"><span>Multiple pay periods</span><span>Overtime included</span><span>Bonus &amp; commission</span></div>
+      <p class="hero-copy">
+        Calculate your yearly gross income from hourly, weekly, biweekly,
+        semi-monthly, monthly, or annual pay. Add overtime, bonuses,
+        commissions, and other extra income for a more complete estimate.
+      </p>
+      <div class="hero-pills">
+        <span>Hourly → yearly</span>
+        <span>6 pay frequencies</span>
+        <span>Overtime included</span>
+        <span>Bonus &amp; commission</span>
+      </div>
     </div>
+
     <div class="hero-card" aria-hidden="true">
-      <span class="mini-label">Example</span><strong>$25/hour</strong><span>40 hours/week · 52 weeks</span>
-      <div class="mini-result"><small>Annual gross income</small><b>$52,000</b></div>
+      <span class="mini-label">EXAMPLE</span>
+      <strong>$25/hour</strong>
+      <span>40 hours/week · 52 weeks</span>
+      <div class="mini-result">
+        <small>Annual gross income</small>
+        <b>$52,000</b>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="calculator" class="calculator-section">
-<div class="container tool-grid">
-  <div class="calculator-card">
-    <p class="eyebrow">CALCULATOR</p><h2>Calculate annual income</h2>
-    <div class="inline-grid">
-      <div class="field"><label for="frequency">Current pay frequency</label>
-        <select id="frequency">
-          <option value="hourly">Hourly</option><option value="weekly">Weekly</option>
-          <option value="biweekly">Biweekly</option><option value="semimonthly">Semi-monthly</option>
-          <option value="monthly">Monthly</option><option value="annual">Annual</option>
-        </select>
+  <div class="container tool-grid">
+    <div class="calculator-card">
+      <p class="eyebrow">CALCULATOR</p>
+      <h2>Calculate annual income</h2>
+      <p>Choose how your pay is quoted, then enter your pay amount and schedule.</p>
+
+      <div class="inline-grid">
+        <div class="field">
+          <label for="frequency">Current pay frequency</label>
+          <select id="frequency">
+            <option value="hourly">Hourly</option>
+            <option value="weekly">Weekly</option>
+            <option value="biweekly">Biweekly</option>
+            <option value="semimonthly">Semi-monthly</option>
+            <option value="monthly">Monthly</option>
+            <option value="annual">Annual</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="payAmount">Pay amount</label>
+          <input id="payAmount" type="number" min="0" step="0.01" value="25" inputmode="decimal">
+        </div>
       </div>
-      <div class="field"><label for="payAmount">Pay amount</label><input id="payAmount" type="number" min="0" step="0.01" value="25"></div>
+
+      <div class="inline-grid">
+        <div class="field">
+          <label for="hoursWeek">Hours per week</label>
+          <input id="hoursWeek" type="number" min="1" max="168" step="0.25" value="40" inputmode="decimal">
+        </div>
+
+        <div class="field">
+          <label for="weeksYear">Weeks worked per year</label>
+          <input id="weeksYear" type="number" min="1" max="52" step="1" value="52" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="inline-grid">
+        <div class="field">
+          <label for="otHours">Average overtime hours/week</label>
+          <input id="otHours" type="number" min="0" max="168" step="0.25" value="0" inputmode="decimal">
+        </div>
+
+        <div class="field">
+          <label for="otMultiplier">Overtime multiplier</label>
+          <input id="otMultiplier" type="number" min="1" max="5" step="0.1" value="1.5" inputmode="decimal">
+        </div>
+      </div>
+
+      <div class="inline-grid">
+        <div class="field">
+          <label for="bonus">Annual bonus</label>
+          <input id="bonus" type="number" min="0" step="100" value="0" inputmode="decimal">
+        </div>
+
+        <div class="field">
+          <label for="commission">Annual commission / extra income</label>
+          <input id="commission" type="number" min="0" step="100" value="0" inputmode="decimal">
+        </div>
+      </div>
+
+      <p class="form-note">
+        Gross-income estimate only. Taxes, deductions, benefits,
+        and payroll-specific rules are not included.
+      </p>
     </div>
 
-    <div class="inline-grid">
-      <div class="field"><label for="hoursWeek">Hours per week</label><input id="hoursWeek" type="number" min="1" max="168" step="0.25" value="40"></div>
-      <div class="field"><label for="weeksYear">Weeks worked per year</label><input id="weeksYear" type="number" min="1" max="52" step="1" value="52"></div>
-    </div>
+    <aside class="result-card" aria-live="polite">
+      <p class="eyebrow">YOUR RESULTS</p>
+      <div class="big-result" id="annualIncome">$52,000</div>
+      <div class="result-sub">Estimated annual gross income</div>
 
-    <div class="inline-grid">
-      <div class="field"><label for="otHours">Average overtime hours/week</label><input id="otHours" type="number" min="0" max="168" step="0.25" value="0"></div>
-      <div class="field"><label for="otMultiplier">Overtime multiplier</label><input id="otMultiplier" type="number" min="1" max="5" step="0.1" value="1.5"></div>
-    </div>
-
-    <div class="inline-grid">
-      <div class="field"><label for="bonus">Annual bonus</label><input id="bonus" type="number" min="0" step="100" value="0"></div>
-      <div class="field"><label for="commission">Annual commission / extra income</label><input id="commission" type="number" min="0" step="100" value="0"></div>
-    </div>
-    <p class="form-note">Gross-income estimate only. Taxes, deductions, benefits, and payroll-specific rules are not included.</p>
+      <div class="result-grid">
+        <div class="result-item"><span class="result-label">Monthly average</span><span class="result-value" id="monthlyIncome">$4,333.33</span></div>
+        <div class="result-item"><span class="result-label">Biweekly equivalent</span><span class="result-value" id="biweeklyIncome">$2,000</span></div>
+        <div class="result-item"><span class="result-label">Weekly income</span><span class="result-value" id="weeklyIncome">$1,000</span></div>
+        <div class="result-item"><span class="result-label">Hourly equivalent</span><span class="result-value" id="hourlyIncome">$25.00/hr</span></div>
+        <div class="result-item"><span class="result-label">Annual overtime</span><span class="result-value" id="annualOvertime">$0</span></div>
+        <div class="result-item"><span class="result-label">Bonus + extra income</span><span class="result-value" id="extraIncome">$0</span></div>
+      </div>
+    </aside>
   </div>
-
-  <aside class="result-card" aria-live="polite">
-    <p class="eyebrow">YOUR RESULTS</p><div class="big-result" id="annualIncome">$52,000</div><div class="result-sub">Estimated annual gross income</div>
-    <div class="result-grid">
-      <div class="result-item"><span class="result-label">Monthly average</span><span class="result-value" id="monthlyIncome">$4,333.33</span></div>
-      <div class="result-item"><span class="result-label">Biweekly equivalent</span><span class="result-value" id="biweeklyIncome">$2,000</span></div>
-      <div class="result-item"><span class="result-label">Weekly income</span><span class="result-value" id="weeklyIncome">$1,000</span></div>
-      <div class="result-item"><span class="result-label">Hourly equivalent</span><span class="result-value" id="hourlyIncome">$25.00/hr</span></div>
-      <div class="result-item"><span class="result-label">Annual overtime</span><span class="result-value" id="annualOvertime">$0</span></div>
-      <div class="result-item"><span class="result-label">Bonus + extra income</span><span class="result-value" id="extraIncome">$0</span></div>
-    </div>
-  </aside>
-</div>
 </section>
 
 <section class="info-section" id="how-it-works">
-<div class="container">
-<h2>How to calculate annual income</h2>
-<p>Annual income is the total gross income you earn during a year before taxes and deductions. The conversion depends on how your pay is quoted.</p>
-<div class="formula-box">Hourly annual income = Hourly wage × Hours per week × Weeks worked per year</div>
-<table class="seo-table">
-<thead><tr><th>Pay frequency</th><th>Basic annual conversion</th></tr></thead>
-<tbody>
-<tr><td>Hourly</td><td>Rate × hours/week × weeks/year</td></tr>
-<tr><td>Weekly</td><td>Weekly pay × weeks/year</td></tr>
-<tr><td>Biweekly</td><td>Biweekly pay × 26</td></tr>
-<tr><td>Semi-monthly</td><td>Paycheck × 24</td></tr>
-<tr><td>Monthly</td><td>Monthly pay × 12</td></tr>
-<tr><td>Annual</td><td>Annual amount</td></tr>
-</tbody>
-</table>
-<h3>Example: $25 an hour is how much a year?</h3>
-<p>At $25 per hour, 40 hours per week, and 52 paid weeks per year, base annual income is $52,000 before taxes and deductions.</p>
-<h3>Common hourly-to-annual income examples</h3>
-<table class="seo-table">
-<thead><tr><th>Hourly wage</th><th>Annual gross income</th></tr></thead>
-<tbody>
-<tr><td>$15/hour</td><td>$31,200/year</td></tr>
-<tr><td>$20/hour</td><td>$41,600/year</td></tr>
-<tr><td>$25/hour</td><td>$52,000/year</td></tr>
-<tr><td>$30/hour</td><td>$62,400/year</td></tr>
-<tr><td>$40/hour</td><td>$83,200/year</td></tr>
-</tbody>
-</table>
-<p>These examples assume 40 hours per week and 52 paid weeks per year.</p>
-<h3>Annual income with overtime and bonuses</h3>
-<p>Regular overtime, bonuses, commissions, or other recurring compensation can materially change yearly gross income. This calculator lets you add those amounts instead of relying only on a basic hourly-to-yearly conversion.</p>
-<h3>Monthly income to annual income</h3>
-<p>For a basic monthly-to-yearly conversion, multiply monthly gross income by 12. For example, $5,000 per month equals $60,000 per year before taxes and deductions.</p>
-</div>
+  <div class="container narrow">
+    <p class="eyebrow">HOW IT WORKS</p>
+    <h2>How to calculate annual income</h2>
+
+    <p>
+      Annual income is the total amount you earn during a year.
+      This calculator reports estimated <strong>gross annual income</strong>
+      before taxes and payroll deductions.
+    </p>
+
+    <p>
+      The formula depends on how your pay is quoted. Hourly workers need
+      their hourly wage, average weekly hours, and weeks worked per year.
+      Weekly, biweekly, semi-monthly, and monthly pay can be converted using
+      the number of standard pay periods in a year.
+    </p>
+
+    <div class="formula-box">
+      Hourly annual income = Hourly wage × Hours per week × Weeks worked per year
+    </div>
+
+    <div class="table-scroll">
+      <table class="seo-table">
+        <thead>
+          <tr><th>Pay frequency</th><th>Basic annual conversion</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hourly</td><td>Rate × hours/week × weeks/year</td></tr>
+          <tr><td>Weekly</td><td>Weekly pay × weeks/year</td></tr>
+          <tr><td>Biweekly</td><td>Biweekly pay × 26</td></tr>
+          <tr><td>Semi-monthly</td><td>Paycheck × 24</td></tr>
+          <tr><td>Monthly</td><td>Monthly pay × 12</td></tr>
+          <tr><td>Annual</td><td>Annual amount</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Example: $25 an hour is how much a year?</h3>
+    <p>
+      At $25 per hour, 40 hours per week, and 52 paid weeks per year,
+      base annual income is <strong>$52,000</strong> before taxes and deductions.
+    </p>
+
+    <div class="formula-box">
+      $25 × 40 × 52 = $52,000 per year
+    </div>
+
+    <h3>How to calculate yearly income with overtime</h3>
+    <p>
+      If you regularly work overtime, the calculator estimates an hourly
+      overtime rate using the multiplier you enter and adds those annual
+      overtime earnings to your base income.
+    </p>
+
+    <h3>Annual income with bonuses and commissions</h3>
+    <p>
+      Bonuses, commissions, and other extra earnings can materially change
+      yearly gross income. Add annual amounts in the calculator instead of
+      relying only on the base pay conversion.
+    </p>
+  </div>
+</section>
+
+<section class="info-section alt">
+  <div class="container narrow">
+    <p class="eyebrow">QUICK EXAMPLES</p>
+    <h2>Common annual income examples</h2>
+
+    <p>
+      These examples use gross income before taxes and deductions.
+      Hourly examples assume 40 hours per week and 52 weeks per year.
+    </p>
+
+    <div class="quick-grid">
+      <div class="quick-card"><span>$20/hour</span><strong>$41,600/year</strong></div>
+      <div class="quick-card"><span>$25/hour</span><strong>$52,000/year</strong></div>
+      <div class="quick-card"><span>$30/hour</span><strong>$62,400/year</strong></div>
+      <div class="quick-card"><span>$1,000/week</span><strong>$52,000/year</strong></div>
+      <div class="quick-card"><span>$2,000 biweekly</span><strong>$52,000/year</strong></div>
+      <div class="quick-card"><span>$5,000/month</span><strong>$60,000/year</strong></div>
+    </div>
+
+    <h3>How many work hours are in a year?</h3>
+    <p>
+      A common full-time baseline is <strong>2,080 hours per year</strong>,
+      calculated as 40 hours per week × 52 weeks. Actual annual hours may be
+      lower for part-time schedules, unpaid time off, or fewer working weeks.
+    </p>
+  </div>
 </section>
 
 <section class="info-section" id="faq">
-<div class="container">
-<h2>Annual income calculator FAQ</h2>
-<h3>What is annual income?</h3><p>Annual income is the amount earned over a year. This calculator reports gross income before taxes and deductions.</p>
-<h3>How many work hours are in a year?</h3><p>A common full-time assumption is 40 hours per week for 52 weeks, or 2,080 hours. Your actual annual hours may differ because of unpaid time off, part-time schedules, or other arrangements.</p>
-<h3>Is biweekly pay multiplied by 26?</h3><p>For a standard biweekly schedule, 26 pay periods is the usual annual conversion. Calendar timing can occasionally produce 27 paychecks.</p>
-<h3>Is semi-monthly the same as biweekly?</h3><p>No. Semi-monthly generally means 24 pay periods per year, while biweekly generally means 26.</p>
-<h3>Does annual income include overtime?</h3><p>It can. Use the overtime fields if you regularly earn overtime and want it included in your estimate.</p>
-<h3>How much is $20 an hour per year?</h3><p>At 40 hours per week and 52 weeks per year, $20 per hour equals $41,600 in annual gross income before taxes and deductions.</p>
-<h3>How much is $25 an hour per year?</h3><p>At 40 hours per week and 52 weeks per year, $25 per hour equals $52,000 in annual gross income before taxes and deductions.</p>
-<h3>How do I convert monthly income to yearly income?</h3><p>Multiply monthly gross income by 12. For example, $4,000 per month equals $48,000 per year.</p>
-<h3>Is annual income the same as take-home pay?</h3><p>No. This calculator estimates gross annual income before taxes, benefits, insurance, retirement contributions, and other deductions.</p>
-</div>
+  <div class="container narrow">
+    <p class="eyebrow">FAQ</p>
+    <h2>Annual income calculator FAQ</h2>
+
+    <h3>What is annual income?</h3>
+    <p>Annual income is the amount earned over a year. This calculator reports estimated gross income before taxes and deductions.</p>
+
+    <h3>How do I calculate annual income?</h3>
+    <p>The formula depends on your pay frequency. Hourly pay uses hourly wage × hours per week × weeks per year. Weekly pay is multiplied by weeks per year, biweekly pay by 26, semi-monthly pay by 24, and monthly pay by 12.</p>
+
+    <h3>How do I calculate annual income from hourly pay?</h3>
+    <p>Multiply your hourly wage by average hours worked per week and weeks worked per year. At $25 per hour, 40 hours per week, and 52 weeks, annual gross income is $52,000.</p>
+
+    <h3>How many work hours are in a year?</h3>
+    <p>A common full-time assumption is 40 hours per week for 52 weeks, or 2,080 hours. Your actual annual hours may differ.</p>
+
+    <h3>Is biweekly pay multiplied by 26?</h3>
+    <p>For a standard biweekly schedule, 26 pay periods is the usual annual conversion. Calendar timing can occasionally produce 27 paychecks.</p>
+
+    <h3>Is semi-monthly the same as biweekly?</h3>
+    <p>No. Semi-monthly generally means 24 pay periods per year, while biweekly generally means 26.</p>
+
+    <h3>Does annual income include overtime?</h3>
+    <p>It can. Enter average overtime hours and the overtime multiplier if you regularly earn overtime and want it included in the estimate.</p>
+
+    <h3>Does annual income include bonuses and commissions?</h3>
+    <p>It can. Enter annual bonus, commission, or other recurring extra income to include those amounts in the yearly gross estimate.</p>
+
+    <h3>Does this calculate take-home pay?</h3>
+    <p>No. Results are gross-income estimates before taxes, benefits, insurance, retirement contributions, and other deductions.</p>
+  </div>
 </section>
 
-<section class="info-section" style="background:#f8fafc">
-<div class="container">
-<p class="eyebrow">RELATED TOOLS</p><h2>More Numviro income calculators</h2>
-<div class="related-grid">
-<article><h3><a href="/monthly-income-calculator/">Monthly Income Calculator</a></h3><p>Convert common pay frequencies into average monthly gross income.</p></article>
-<article><h3><a href="/weekly-pay-calculator/">Weekly Pay Calculator</a></h3><p>Estimate gross pay for one week from hourly wages or annual salary.</p></article>
-<article><h3><a href="/biweekly-pay-calculator/">Biweekly Pay Calculator</a></h3><p>Calculate estimated gross pay every two weeks.</p></article>
-<article><h3><a href="/hourly-to-salary-calculator/">Hourly to Salary Calculator</a></h3><p>Convert hourly wages into weekly, monthly, and annual salary estimates.</p></article>
-<article><h3><a href="/salary-to-hourly-calculator/">Salary to Hourly Calculator</a></h3><p>Convert annual salary into an estimated hourly wage.</p></article>
-<article><h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3><p>Add regular wages, overtime, bonuses, commissions, tips, and other earnings.</p></article>
-</div>
-<p style="margin-top:28px;"><a href="/calculators/">Browse all Numviro calculators</a></p>
-</div>
+<section class="info-section alt">
+  <div class="container">
+    <p class="eyebrow">RELATED TOOLS</p>
+    <h2>More Numviro income &amp; pay calculators</h2>
+
+    <div class="related-grid">
+      <a class="related-card" href="/hourly-to-salary-calculator/">
+        <h3>Hourly to Salary Calculator</h3>
+        <p>Convert hourly wages into weekly, monthly, and annual gross pay.</p>
+      </a>
+
+      <a class="related-card" href="/salary-to-hourly-calculator/">
+        <h3>Salary to Hourly Calculator</h3>
+        <p>Convert annual salary back into an hourly wage using your work schedule.</p>
+      </a>
+
+      <a class="related-card" href="/monthly-income-calculator/">
+        <h3>Monthly Income Calculator</h3>
+        <p>Convert hourly, weekly, biweekly, or annual pay into average monthly income.</p>
+      </a>
+
+      <a class="related-card" href="/weekly-pay-calculator/">
+        <h3>Weekly Pay Calculator</h3>
+        <p>Estimate weekly gross pay from hourly wages or annual salary.</p>
+      </a>
+
+      <a class="related-card" href="/biweekly-pay-calculator/">
+        <h3>Biweekly Pay Calculator</h3>
+        <p>Estimate gross pay for a standard two-week pay period.</p>
+      </a>
+
+      <a class="related-card" href="/gross-pay-calculator/">
+        <h3>Gross Pay Calculator</h3>
+        <p>Combine regular wages, overtime, bonuses, commissions, tips, and other earnings.</p>
+      </a>
+    </div>
+
+    <p style="margin-top:28px;">
+      <a class="primary-btn" href="/calculators/">Browse all Numviro calculators</a>
+    </p>
+  </div>
 </section>
 </main>
 
-<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Numviro · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p></div></footer>
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      © <span id="year"></span> Numviro ·
+      <a href="/about.html">About</a> ·
+      <a href="/contact.html">Contact</a> ·
+      <a href="/privacy.html">Privacy</a> ·
+      <a href="/terms.html">Terms</a>
+    </p>
+  </div>
+</footer>
 
 <script>
-const $=id=>document.getElementById(id);
-function money(v,d=2){return new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:d}).format(v||0);}
-function calculate(){
- const f=$("frequency").value, amount=Math.max(0,+$("payAmount").value||0), h=Math.max(1,+$("hoursWeek").value||40), w=Math.max(1,+$("weeksYear").value||52);
- const otH=Math.max(0,+$("otHours").value||0), otM=Math.max(1,+$("otMultiplier").value||1.5), bonus=Math.max(0,+$("bonus").value||0), commission=Math.max(0,+$("commission").value||0);
- let base=0, hourlyBase=0;
- if(f==="hourly"){hourlyBase=amount;base=amount*h*w;}
- else if(f==="weekly"){base=amount*w;hourlyBase=amount/h;}
- else if(f==="biweekly"){base=amount*26;hourlyBase=base/(h*w);}
- else if(f==="semimonthly"){base=amount*24;hourlyBase=base/(h*w);}
- else if(f==="monthly"){base=amount*12;hourlyBase=base/(h*w);}
- else{base=amount;hourlyBase=base/(h*w);}
- const overtime=hourlyBase*otM*otH*w, extra=bonus+commission, annual=base+overtime+extra;
- $("annualIncome").textContent=money(annual,0);
- $("monthlyIncome").textContent=money(annual/12);
- $("biweeklyIncome").textContent=money(annual/26);
- $("weeklyIncome").textContent=money(annual/w);
- $("hourlyIncome").textContent=money(annual/(h*w))+"/hr";
- $("annualOvertime").textContent=money(overtime,0);
- $("extraIncome").textContent=money(extra,0);
+const $ = id => document.getElementById(id);
+
+function money(v,d=2){
+  return new Intl.NumberFormat("en-US",{
+    style:"currency",
+    currency:"USD",
+    maximumFractionDigits:d
+  }).format(v||0);
 }
-document.addEventListener("DOMContentLoaded",()=>{$("year").textContent=new Date().getFullYear();document.querySelectorAll("input,select").forEach(e=>{e.addEventListener("input",calculate);e.addEventListener("change",calculate)});calculate();});
+
+function calculate(){
+  const f = $("frequency").value;
+  const amount = Math.max(0,+$("payAmount").value||0);
+  const h = Math.max(1,+$("hoursWeek").value||40);
+  const w = Math.max(1,+$("weeksYear").value||52);
+  const otH = Math.max(0,+$("otHours").value||0);
+  const otM = Math.max(1,+$("otMultiplier").value||1.5);
+  const bonus = Math.max(0,+$("bonus").value||0);
+  const commission = Math.max(0,+$("commission").value||0);
+
+  let base=0, hourlyBase=0;
+
+  if(f==="hourly"){
+    hourlyBase=amount;
+    base=amount*h*w;
+  }
+  else if(f==="weekly"){
+    base=amount*w;
+    hourlyBase=amount/h;
+  }
+  else if(f==="biweekly"){
+    base=amount*26;
+    hourlyBase=base/(h*w);
+  }
+  else if(f==="semimonthly"){
+    base=amount*24;
+    hourlyBase=base/(h*w);
+  }
+  else if(f==="monthly"){
+    base=amount*12;
+    hourlyBase=base/(h*w);
+  }
+  else{
+    base=amount;
+    hourlyBase=base/(h*w);
+  }
+
+  const overtime=hourlyBase*otM*otH*w;
+  const extra=bonus+commission;
+  const annual=base+overtime+extra;
+
+  $("annualIncome").textContent=money(annual,0);
+  $("monthlyIncome").textContent=money(annual/12);
+  $("biweeklyIncome").textContent=money(annual/26);
+  $("weeklyIncome").textContent=money(annual/w);
+  $("hourlyIncome").textContent=money(annual/(h*w))+"/hr";
+  $("annualOvertime").textContent=money(overtime,0);
+  $("extraIncome").textContent=money(extra,0);
+}
+
+const mobileMenuBtn=document.getElementById("mobileMenuBtn");
+const mobileNav=document.getElementById("mobileNav");
+
+function closeMobileMenu(){
+  mobileNav.classList.remove("is-open");
+  mobileMenuBtn.setAttribute("aria-expanded","false");
+  mobileMenuBtn.setAttribute("aria-label","Open navigation menu");
+}
+
+function openMobileMenu(){
+  mobileNav.classList.add("is-open");
+  mobileMenuBtn.setAttribute("aria-expanded","true");
+  mobileMenuBtn.setAttribute("aria-label","Close navigation menu");
+}
+
+mobileMenuBtn.addEventListener("click",function(event){
+  event.stopPropagation();
+  const isOpen=mobileMenuBtn.getAttribute("aria-expanded")==="true";
+  if(isOpen) closeMobileMenu();
+  else openMobileMenu();
+});
+
+mobileNav.querySelectorAll("a").forEach(function(link){
+  link.addEventListener("click",closeMobileMenu);
+});
+
+document.addEventListener("click",function(event){
+  if(
+    mobileNav.classList.contains("is-open") &&
+    !mobileNav.contains(event.target) &&
+    !mobileMenuBtn.contains(event.target)
+  ){
+    closeMobileMenu();
+  }
+});
+
+document.addEventListener("keydown",function(event){
+  if(event.key==="Escape" && mobileNav.classList.contains("is-open")){
+    closeMobileMenu();
+    mobileMenuBtn.focus();
+  }
+});
+
+window.addEventListener("resize",function(){
+  if(window.innerWidth>820) closeMobileMenu();
+});
+
+document.addEventListener("DOMContentLoaded",()=>{
+  $("year").textContent=new Date().getFullYear();
+  document.querySelectorAll("input,select").forEach(e=>{
+    e.addEventListener("input",calculate);
+    e.addEventListener("change",calculate);
+  });
+  calculate();
+});
 </script>
 </body>
 </html>
