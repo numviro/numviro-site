@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1914228668102308"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1914228668102308"
+       crossorigin="anonymous"></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,13 +16,20 @@
     gtag('config', 'G-F3GZ1Q68KJ');
   </script>
 
-  <title>Time Card Calculator – Calculate Work Hours, Clock In & Out | Numviro</title>
-  <meta name="description" content="Free time card calculator and hours worked calculator. Enter clock-in, clock-out, and break times to calculate daily and weekly work hours, overtime, and gross pay.">
+  <title>Time Card Calculator – Clock In & Out, Hours Worked | Numviro</title>
+
+  <meta name="description"
+        content="Free time card calculator and time punch calculator. Enter clock-in, clock-out, and break times to calculate hours worked, weekly hours, overtime, and gross pay.">
+
   <link rel="canonical" href="https://numviro.com/time-card-calculator/">
   <meta name="robots" content="index,follow">
 
-  <meta property="og:title" content="Time Card Calculator – Work Hours, Clock In & Out | Numviro">
-  <meta property="og:description" content="Calculate weekly time card hours from clock-in, clock-out, and break times, including overtime and estimated gross pay.">
+  <meta property="og:title"
+        content="Time Card Calculator – Clock In & Out, Hours Worked | Numviro">
+
+  <meta property="og:description"
+        content="Calculate hours worked from clock-in and clock-out times, including unpaid breaks, weekly overtime, and estimated gross pay.">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://numviro.com/time-card-calculator/">
 
@@ -29,41 +37,348 @@
   <link rel="stylesheet" href="/styles.css">
 
   <style>
-    .tc-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
-    .tc-card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:28px}
-    .days{display:grid;gap:12px;margin-top:22px}
-    .day-row{display:grid;grid-template-columns:90px 1fr 1fr 1fr 90px;gap:10px;align-items:end}
-    .day-row strong{padding-bottom:12px}
-    .mini-label{display:block;font-size:12px;color:#6b7280;margin-bottom:5px;font-weight:700}
-    .day-row input{width:100%;box-sizing:border-box;padding:11px 10px;border:1px solid #dbe1ea;border-radius:10px;font-size:14px}
-    .day-total{font-weight:800;padding-bottom:10px;text-align:right}
-    .pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
-    .pay-grid label{font-weight:700;color:#111827}
-    .pay-grid input{margin-top:7px;width:100%;box-sizing:border-box;padding:12px;border:1px solid #dbe1ea;border-radius:10px;font-size:15px}
-    .result-card{background:#111827;color:#fff;border-radius:24px;padding:30px;position:sticky;top:90px}
-    .result-card .eyebrow{color:#60a5fa}
-    .big-result{font-size:clamp(42px,5vw,58px);font-weight:800;letter-spacing:-2px;margin:8px 0}
-    .result-sub{color:#aeb8c8;margin-bottom:24px}
-    .result-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #2b3547}
-    .result-item{padding:18px 8px;border-bottom:1px solid #2b3547}
-    .result-item:nth-child(odd){border-right:1px solid #2b3547}
-    .result-label{display:block;color:#aeb8c8;font-size:13px;margin-bottom:5px}
-    .result-value{font-size:19px;font-weight:800}
-    .info-section{padding:70px 0}
-    .formula-box{background:#f4f7fb;border:1px solid #e4e8ef;padding:20px;border-radius:14px;margin:20px 0;font-weight:700}
-    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-    .related-grid article{border:1px solid #e5e7eb;border-radius:18px;padding:20px;background:#fff}
-    .related-grid a{color:#111827;text-decoration:none}
-    @media(max-width:950px){
-      .tc-wrap{grid-template-columns:1fr}
-      .result-card{position:static}
+    .tc-wrap{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:24px;
+      align-items:start;
     }
+
+    .tc-card{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:24px;
+      padding:28px;
+    }
+
+    .days{
+      display:grid;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .day-row{
+      display:grid;
+      grid-template-columns:90px 1fr 1fr 1fr 90px;
+      gap:10px;
+      align-items:end;
+    }
+
+    .day-row strong{
+      padding-bottom:12px;
+    }
+
+    .mini-label{
+      display:block;
+      font-size:12px;
+      color:#6b7280;
+      margin-bottom:5px;
+      font-weight:700;
+    }
+
+    .day-row input{
+      width:100%;
+      box-sizing:border-box;
+      padding:11px 10px;
+      border:1px solid #dbe1ea;
+      border-radius:10px;
+      font-size:14px;
+      background:#fff;
+    }
+
+    .day-total{
+      font-weight:800;
+      padding-bottom:10px;
+      text-align:right;
+    }
+
+    .pay-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .pay-grid label{
+      font-weight:700;
+      color:#111827;
+    }
+
+    .pay-grid input{
+      margin-top:7px;
+      width:100%;
+      box-sizing:border-box;
+      padding:12px;
+      border:1px solid #dbe1ea;
+      border-radius:10px;
+      font-size:15px;
+      background:#fff;
+    }
+
+    .result-card{
+      background:#111827;
+      color:#fff;
+      border-radius:24px;
+      padding:30px;
+      position:sticky;
+      top:90px;
+    }
+
+    .result-card .eyebrow{
+      color:#60a5fa;
+    }
+
+    .big-result{
+      font-size:clamp(42px,5vw,58px);
+      font-weight:800;
+      letter-spacing:-2px;
+      margin:8px 0;
+    }
+
+    .result-sub{
+      color:#aeb8c8;
+      margin-bottom:24px;
+    }
+
+    .result-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      border-top:1px solid #2b3547;
+    }
+
+    .result-item{
+      padding:18px 8px;
+      border-bottom:1px solid #2b3547;
+    }
+
+    .result-item:nth-child(odd){
+      border-right:1px solid #2b3547;
+    }
+
+    .result-label{
+      display:block;
+      color:#aeb8c8;
+      font-size:13px;
+      margin-bottom:5px;
+    }
+
+    .result-value{
+      font-size:19px;
+      font-weight:800;
+    }
+
+    .info-section{
+      padding:70px 0;
+    }
+
+    .info-section h2{
+      letter-spacing:-.035em;
+    }
+
+    .formula-box{
+      background:#f4f7fb;
+      border:1px solid #e4e8ef;
+      padding:20px;
+      border-radius:14px;
+      margin:20px 0;
+      font-weight:700;
+    }
+
+    .example-list{
+      display:grid;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .example-row{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      padding:16px 18px;
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+    }
+
+    .example-row strong{
+      white-space:nowrap;
+    }
+
+    .related-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .related-card{
+      display:block;
+      border:1px solid #e5e7eb;
+      border-radius:18px;
+      padding:20px;
+      background:#fff;
+      color:#111827;
+      text-decoration:none;
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        border-color .15s ease;
+    }
+
+    .related-card:hover{
+      transform:translateY(-2px);
+      border-color:#cbd5e1;
+      box-shadow:0 10px 28px rgba(15,23,42,.08);
+    }
+
+    .related-card h3{
+      margin:0 0 8px;
+      color:#111827;
+    }
+
+    .related-card p{
+      margin:0;
+      color:#4b5563;
+    }
+
+    .mobile-menu-btn{
+      display:none;
+      width:48px;
+      height:48px;
+      border:1px solid #dbe1ea;
+      border-radius:14px;
+      background:#fff;
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:5px;
+    }
+
+    .mobile-menu-btn span{
+      width:22px;
+      height:2px;
+      background:#111827;
+      border-radius:2px;
+    }
+
+    .mobile-menu{
+      display:none;
+    }
+
+    @media(max-width:950px){
+      .tc-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .result-card{
+        position:static;
+      }
+    }
+
+    @media(max-width:820px){
+      .mobile-menu-btn{
+        display:flex;
+      }
+
+      .mobile-menu.open{
+        display:block;
+        position:absolute;
+        left:0;
+        right:0;
+        top:100%;
+        background:#fff;
+        border-top:1px solid #e5e7eb;
+        border-bottom:1px solid #e5e7eb;
+        box-shadow:0 12px 30px rgba(15,23,42,.08);
+      }
+
+      .mobile-menu a{
+        display:block;
+        padding:16px 28px;
+        color:#111827;
+        text-decoration:none;
+        font-weight:750;
+        border-bottom:1px solid #f1f5f9;
+      }
+
+      .mobile-menu a:last-child{
+        border-bottom:0;
+      }
+    }
+
     @media(max-width:760px){
-      .day-row{grid-template-columns:1fr 1fr}
-      .day-row strong{grid-column:1/-1;padding-bottom:0}
-      .day-total{grid-column:1/-1;text-align:left}
-      .pay-grid,.related-grid,.result-grid{grid-template-columns:1fr}
-      .result-item:nth-child(odd){border-right:0}
+      .tc-card{
+        padding:20px;
+        border-radius:20px;
+      }
+
+      .result-card{
+        padding:24px 20px;
+        border-radius:20px;
+      }
+
+      .day-row{
+        grid-template-columns:1fr 1fr;
+        padding:16px 0;
+        border-bottom:1px solid #eef2f7;
+      }
+
+      .day-row:last-child{
+        border-bottom:0;
+      }
+
+      .day-row strong{
+        grid-column:1/-1;
+        padding-bottom:0;
+        font-size:17px;
+      }
+
+      .day-total{
+        grid-column:1/-1;
+        text-align:left;
+        padding:4px 0 0;
+        color:#2563eb;
+      }
+
+      .pay-grid,
+      .related-grid,
+      .result-grid{
+        grid-template-columns:1fr;
+      }
+
+      .result-item:nth-child(odd){
+        border-right:0;
+      }
+
+      .example-row{
+        flex-direction:column;
+        gap:4px;
+      }
+
+      .example-row strong{
+        white-space:normal;
+      }
+    }
+
+    @media(max-width:520px){
+      .info-section{
+        padding:52px 0;
+      }
+
+      .big-result{
+        font-size:44px;
+      }
+
+      .day-row input{
+        min-height:46px;
+        font-size:16px;
+      }
+
+      .pay-grid input{
+        min-height:48px;
+        font-size:16px;
+      }
     }
   </style>
 
@@ -72,11 +387,20 @@
     "@context":"https://schema.org",
     "@type":"WebApplication",
     "name":"Time Card Calculator",
+    "alternateName":[
+      "Time Punch Calculator",
+      "Clock In and Out Calculator",
+      "Hours Worked Calculator"
+    ],
     "url":"https://numviro.com/time-card-calculator/",
     "applicationCategory":"UtilitiesApplication",
     "operatingSystem":"Any",
-    "description":"Free time card and hours worked calculator for daily clock-in, clock-out, unpaid breaks, weekly hours, regular hours, overtime hours, and estimated gross pay.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+    "description":"Free time card calculator for calculating hours worked from clock-in and clock-out times, unpaid breaks, weekly overtime, and estimated gross pay.",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"USD"
+    }
   }
   </script>
 
@@ -85,12 +409,54 @@
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
-      {"@type":"Question","name":"How do I calculate a weekly time card?","acceptedAnswer":{"@type":"Answer","text":"Calculate the time between clock-in and clock-out for each day, subtract unpaid breaks, and add the daily totals to get weekly hours."}},
-      {"@type":"Question","name":"Can I subtract lunch breaks?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter the unpaid break in minutes for each day and the calculator subtracts it from that day's worked time."}},
-      {"@type":"Question","name":"Does the calculator support overnight shifts?","acceptedAnswer":{"@type":"Answer","text":"Yes. If a clock-out time is earlier than the clock-in time, Numviro treats the clock-out as occurring the next day."}},
-      {"@type":"Question","name":"Can the time card calculator calculate overtime?","acceptedAnswer":{"@type":"Answer","text":"Yes. Hours above the weekly overtime threshold you enter are separated as overtime hours and estimated using your selected overtime multiplier."}},
-      {"@type":"Question","name":"How do I calculate hours worked from clock-in and clock-out times?","acceptedAnswer":{"@type":"Answer","text":"Subtract the clock-in time from the clock-out time, subtract any unpaid break, and repeat for each shift. Numviro adds the daily results to calculate total weekly hours."}},
-      {"@type":"Question","name":"Can I use this as a time punch calculator?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter each day's start time, end time, and unpaid break to calculate worked hours from your time punches."}}
+      {
+        "@type":"Question",
+        "name":"How do I calculate hours worked from clock-in and clock-out?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Subtract the clock-in time from the clock-out time and subtract any unpaid break. Add each day's worked hours to calculate total weekly hours."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I use this as a time punch calculator?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Enter your clock-in and clock-out time punches plus unpaid breaks to calculate daily and weekly hours worked."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do I calculate a weekly time card?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Calculate the hours between clock-in and clock-out for each day, subtract unpaid breaks, and add all daily totals."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does the calculator support overnight shifts?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. If the clock-out time is earlier than the clock-in time, Numviro treats the clock-out time as occurring on the following day."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can the time card calculator calculate overtime?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Hours above the weekly overtime threshold are separated as overtime hours and estimated using the overtime multiplier entered."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I subtract lunch breaks?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Enter the unpaid lunch or break duration in minutes and the calculator subtracts it from the shift."
+        }
+      }
     ]
   }
   </script>
@@ -98,12 +464,15 @@
 </head>
 
 <body>
+
 <header class="site-header">
   <div class="container header-inner">
+
     <a class="brand" href="/" aria-label="Numviro home">
       <span class="brand-mark">N</span>
       <span>Numviro</span>
     </a>
+
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#calculator">Calculator</a>
       <a href="#how-it-works">How it works</a>
@@ -111,217 +480,494 @@
       <a href="/calculators/">Calculators</a>
       <a href="/about.html">About</a>
     </nav>
+
+    <button
+      class="mobile-menu-btn"
+      id="mobileMenuBtn"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      class="mobile-menu"
+      id="mobileMenu"
+      aria-label="Mobile navigation">
+
+      <a href="#calculator">Calculator</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/calculators/">All Calculators</a>
+      <a href="/about.html">About</a>
+    </nav>
+
   </div>
 </header>
 
+
 <main>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">FREE WORK &amp; PAY TOOL</p>
-        <h1>Time Card Calculator</h1>
-        <p class="hero-copy">Enter daily clock-in, clock-out, and break times to calculate total weekly hours, regular hours, overtime hours, and estimated gross pay.</p>
-        <div class="hero-pills">
-          <span>7-day time card</span>
-          <span>Overtime included</span>
-          <span>Instant pay estimate</span>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <p class="eyebrow">FREE TIME CARD &amp; WORK HOURS TOOL</p>
+
+      <h1>Time Card Calculator</h1>
+
+      <p class="hero-copy">
+        Calculate hours worked from clock-in and clock-out times.
+        Enter your daily time punches and unpaid breaks to calculate
+        weekly hours, overtime, and estimated gross pay.
+      </p>
+
+      <div class="hero-pills">
+        <span>Clock in &amp; out</span>
+        <span>7-day time card</span>
+        <span>Overtime included</span>
+        <span>Instant pay estimate</span>
+      </div>
+    </div>
+
+    <div class="hero-card" aria-hidden="true">
+
+      <span class="mini-label">Example time card</span>
+
+      <strong>42.5 hours</strong>
+
+      <span>40 regular + 2.5 overtime</span>
+
+      <div class="mini-result">
+        <small>At $25/hour</small>
+        <b>$1,093.75</b>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section id="calculator" class="calculator-section">
+
+  <div class="container tc-wrap">
+
+    <div class="tc-card">
+
+      <p class="eyebrow">TIME PUNCH CALCULATOR</p>
+
+      <h2>Enter your clock-in and clock-out times</h2>
+
+      <p>
+        Enter each shift below. Leave unused days blank.
+        Breaks are entered in minutes.
+      </p>
+
+      <div class="days" id="days"></div>
+
+      <div class="pay-grid">
+
+        <label>
+          Hourly wage
+          <input
+            id="hourlyWage"
+            type="number"
+            min="0"
+            step="0.01"
+            value="25"
+            inputmode="decimal">
+        </label>
+
+        <label>
+          Overtime multiplier
+          <input
+            id="otMultiplier"
+            type="number"
+            min="1"
+            max="5"
+            step="0.1"
+            value="1.5"
+            inputmode="decimal">
+        </label>
+
+        <label>
+          Overtime after weekly hours
+          <input
+            id="otThreshold"
+            type="number"
+            min="1"
+            max="168"
+            step="0.25"
+            value="40"
+            inputmode="decimal">
+        </label>
+
+      </div>
+
+      <p class="form-note">
+        This calculator provides a general estimate only.
+        Overtime laws and payroll rules can vary by location,
+        employer, and job classification.
+      </p>
+
+    </div>
+
+
+    <aside class="result-card" aria-live="polite">
+
+      <p class="eyebrow">YOUR RESULTS</p>
+
+      <div class="big-result" id="totalHours">0.00</div>
+
+      <div class="result-sub">
+        Total weekly hours worked
+      </div>
+
+      <div class="result-grid">
+
+        <div class="result-item">
+          <span class="result-label">Regular hours</span>
+          <span class="result-value" id="regularHours">0.00</span>
         </div>
-      </div>
 
-      <div class="hero-card" aria-hidden="true">
-        <span class="mini-label">Example week</span>
-        <strong>42.5 hours</strong>
-        <span>40 regular + 2.5 overtime</span>
-        <div class="mini-result">
-          <small>At $25/hour</small>
-          <b>$1,093.75</b>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="calculator" class="calculator-section">
-    <div class="container tc-wrap">
-
-      <div class="tc-card">
-        <p class="eyebrow">CALCULATOR</p>
-        <h2>Enter your weekly time card</h2>
-        <p>Leave unused days blank. Breaks are entered in minutes.</p>
-
-        <div class="days" id="days"></div>
-
-        <div class="pay-grid">
-          <label>
-            Hourly wage
-            <input id="hourlyWage" type="number" min="0" step="0.01" value="25">
-          </label>
-
-          <label>
-            Overtime multiplier
-            <input id="otMultiplier" type="number" min="1" max="5" step="0.1" value="1.5">
-          </label>
-
-          <label>
-            Overtime after weekly hours
-            <input id="otThreshold" type="number" min="1" max="168" step="0.25" value="40">
-          </label>
+        <div class="result-item">
+          <span class="result-label">Overtime hours</span>
+          <span class="result-value" id="overtimeHours">0.00</span>
         </div>
 
-        <p class="form-note">This calculator provides a general estimate only. Overtime laws and payroll rules can vary by location, employer, and job classification.</p>
-      </div>
-
-      <aside class="result-card" aria-live="polite">
-        <p class="eyebrow">YOUR RESULTS</p>
-        <div class="big-result" id="totalHours">0.00</div>
-        <div class="result-sub">Total weekly hours</div>
-
-        <div class="result-grid">
-          <div class="result-item">
-            <span class="result-label">Regular hours</span>
-            <span class="result-value" id="regularHours">0.00</span>
-          </div>
-          <div class="result-item">
-            <span class="result-label">Overtime hours</span>
-            <span class="result-value" id="overtimeHours">0.00</span>
-          </div>
-          <div class="result-item">
-            <span class="result-label">Regular pay</span>
-            <span class="result-value" id="regularPay">$0</span>
-          </div>
-          <div class="result-item">
-            <span class="result-label">Overtime pay</span>
-            <span class="result-value" id="overtimePay">$0</span>
-          </div>
-          <div class="result-item">
-            <span class="result-label">Overtime rate</span>
-            <span class="result-value" id="overtimeRate">$37.50/hr</span>
-          </div>
-          <div class="result-item">
-            <span class="result-label">Estimated total pay</span>
-            <span class="result-value" id="totalPay">$0</span>
-          </div>
+        <div class="result-item">
+          <span class="result-label">Regular pay</span>
+          <span class="result-value" id="regularPay">$0</span>
         </div>
-      </aside>
 
-    </div>
-  </section>
+        <div class="result-item">
+          <span class="result-label">Overtime pay</span>
+          <span class="result-value" id="overtimePay">$0</span>
+        </div>
 
-  <section class="info-section" id="how-it-works">
-    <div class="container">
-      <h2>How the time card and hours worked calculator works</h2>
-      <p>For each day, Numviro calculates hours worked between your clock-in and clock-out entries and subtracts the unpaid break you enter. You can use it as a weekly time card, work hours calculator, or time punch calculator.</p>
+        <div class="result-item">
+          <span class="result-label">Overtime rate</span>
+          <span class="result-value" id="overtimeRate">$37.50/hr</span>
+        </div>
 
-      <div class="formula-box">
-        Daily work hours = Clock-out − Clock-in − Break time
+        <div class="result-item">
+          <span class="result-label">Estimated gross pay</span>
+          <span class="result-value" id="totalPay">$0</span>
+        </div>
+
       </div>
 
-      <p>Weekly hours are the sum of all daily work hours. Hours above your selected weekly overtime threshold are separated as overtime hours.</p>
+    </aside>
 
-      <div class="formula-box">
-        Estimated pay = Regular hours × hourly wage + Overtime hours × overtime rate
+  </div>
+</section>
+
+
+<section class="info-section" id="how-it-works">
+
+  <div class="container narrow">
+
+    <p class="eyebrow">HOW IT WORKS</p>
+
+    <h2>How to calculate hours worked from clock in and clock out</h2>
+
+    <p>
+      To calculate hours worked, subtract your clock-in time from
+      your clock-out time and then subtract any unpaid lunch or break.
+      Repeat the calculation for each shift and add the daily totals
+      to calculate your weekly work hours.
+    </p>
+
+    <div class="formula-box">
+      Hours worked = Clock-out − Clock-in − Unpaid break
+    </div>
+
+    <p>
+      Numviro does this automatically for every day entered in the
+      time card calculator.
+    </p>
+
+
+    <h3>Clock-in and clock-out example</h3>
+
+    <p>
+      If you clock in at 9:00 AM and clock out at 5:30 PM,
+      the elapsed time is 8 hours 30 minutes.
+      With a 30-minute unpaid lunch, your total worked time is
+      8.00 hours.
+    </p>
+
+
+    <h3>Weekly time card calculation</h3>
+
+    <p>
+      Your weekly hours are the sum of all completed daily shifts.
+      If your weekly total exceeds the overtime threshold entered
+      above, Numviro separates the extra hours as overtime.
+    </p>
+
+    <div class="formula-box">
+      Weekly hours = Monday + Tuesday + Wednesday + Thursday +
+      Friday + Saturday + Sunday
+    </div>
+
+
+    <h3>How overtime pay is calculated</h3>
+
+    <p>
+      With a 40-hour weekly threshold, a 45-hour workweek is
+      separated into 40 regular hours and 5 overtime hours.
+      If your hourly wage is $25 and your overtime multiplier is
+      1.5×, your overtime rate is $37.50 per hour.
+    </p>
+
+    <div class="formula-box">
+      Estimated gross pay =
+      Regular hours × hourly wage +
+      Overtime hours × overtime rate
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="info-section" style="background:#f8fafc">
+
+  <div class="container narrow">
+
+    <p class="eyebrow">TIME PUNCH EXAMPLES</p>
+
+    <h2>Common clock in and out calculations</h2>
+
+    <p>
+      These examples show how a time punch calculator converts
+      clock-in and clock-out times into worked hours.
+    </p>
+
+    <div class="example-list">
+
+      <div class="example-row">
+        <span>9:00 AM → 5:00 PM, no unpaid break</span>
+        <strong>8.00 hours</strong>
       </div>
 
-      <h3>Example</h3>
-      <p>If you work 42.5 hours in a week at $25 per hour with overtime paid at 1.5× after 40 hours, the first 40 hours are paid at $25 and the remaining 2.5 hours are estimated at $37.50 per hour.</p>
-
-      <h3>Clock-in and clock-out example</h3>
-      <p>If you clock in at 9:00 AM and clock out at 5:30 PM with a 30-minute unpaid lunch, the calculator records 8.00 worked hours for that day. Five identical days equal 40.00 weekly hours.</p>
-
-      <h3>How overtime is separated</h3>
-      <p>With the default 40-hour weekly threshold, a 45-hour week is separated into 40 regular hours and 5 overtime hours. You can change the threshold and overtime multiplier to match the schedule you want to estimate.</p>
-    </div>
-  </section>
-
-  <section class="info-section" style="background:#f8fafc">
-    <div class="container">
-      <h2>Calculate hours worked from time punches</h2>
-      <p>A time card records when a shift starts and ends. To calculate hours worked, find the elapsed time between clock-in and clock-out, then subtract unpaid lunch or break time.</p>
-
-      <div class="formula-box">
-        Hours worked = Clock-out time − Clock-in time − Unpaid break
+      <div class="example-row">
+        <span>9:00 AM → 5:30 PM, 30-minute lunch</span>
+        <strong>8.00 hours</strong>
       </div>
 
-      <h3>Common time card examples</h3>
-      <p><strong>9:00 AM to 5:00 PM with no unpaid break</strong> = 8.00 worked hours.</p>
-      <p><strong>9:00 AM to 5:30 PM with a 30-minute unpaid lunch</strong> = 8.00 worked hours.</p>
-      <p><strong>8:30 AM to 5:00 PM with a 30-minute unpaid lunch</strong> = 8.00 worked hours.</p>
-      <p><strong>10:00 PM to 6:00 AM with no unpaid break</strong> = 8.00 worked hours. Overnight shifts are supported automatically.</p>
-
-      <h3>Daily hours vs. weekly time card hours</h3>
-      <p>Each row shows the calculated hours for that day. Numviro then adds all completed shifts to produce total weekly hours and separates regular and overtime hours using the threshold you enter.</p>
-    </div>
-  </section>
-
-  <section class="info-section" id="faq">
-    <div class="container">
-      <h2>Frequently asked questions</h2>
-
-      <h3>Can I leave days blank?</h3>
-      <p>Yes. Days without both a start and end time are ignored.</p>
-
-      <h3>Does the calculator support overnight shifts?</h3>
-      <p>Yes. If the end time is earlier than the start time, Numviro treats the end time as occurring the next day.</p>
-
-      <h3>Can I change the overtime threshold?</h3>
-      <p>Yes. The default is 40 weekly hours, but you can enter another threshold for estimation purposes.</p>
-
-      <h3>Does this calculate take-home pay?</h3>
-      <p>No. Results are estimated gross pay before taxes, benefits, deductions, and other payroll adjustments.</p>
-
-      <h3>Can I subtract a lunch break from my time card?</h3>
-      <p>Yes. Enter the unpaid lunch or break duration in minutes for each day. Numviro subtracts that amount from the time between clock-in and clock-out.</p>
-
-      <h3>How many hours is 9:00 AM to 5:30 PM with a 30-minute lunch?</h3>
-      <p>The shift lasts 8 hours 30 minutes. After subtracting a 30-minute unpaid lunch, the calculated worked time is 8.00 hours.</p>
-
-      <h3>How do I calculate hours worked from clock-in and clock-out?</h3>
-      <p>Subtract your clock-in time from your clock-out time, then subtract any unpaid break. For a full week, add the worked hours from each day.</p>
-
-      <h3>Can I use this as a time punch calculator?</h3>
-      <p>Yes. Enter the start and end time from each punch plus any unpaid break. The calculator converts those time punches into daily and weekly worked hours.</p>
-
-      <h3>What if I only need to calculate one shift?</h3>
-      <p>Use the <a href="/work-hours-calculator/">Work Hours Calculator</a> for a single start time, end time, and break instead of a full seven-day time card.</p>
-    </div>
-  </section>
-
-  <section class="info-section" style="background:#f8fafc">
-    <div class="container">
-      <p class="eyebrow">RELATED TOOLS</p>
-      <h2>More Numviro work &amp; pay calculators</h2>
-      <div class="related-grid">
-        <article>
-          <h3><a href="/work-hours-calculator/">Work Hours Calculator</a></h3>
-          <p>Calculate one shift from start time, end time, and an unpaid break.</p>
-        </article>
-        <article>
-          <h3><a href="/overtime-pay-calculator/">Overtime Pay Calculator</a></h3>
-          <p>Estimate time-and-a-half, double-time, and other overtime earnings.</p>
-        </article>
-        <article>
-          <h3><a href="/gross-pay-calculator/">Gross Pay Calculator</a></h3>
-          <p>Combine regular wages, overtime, bonuses, commissions, tips, and other earnings.</p>
-        </article>
-        <article>
-          <h3><a href="/hourly-to-salary-calculator/">Hourly to Salary Calculator</a></h3>
-          <p>Convert hourly pay into weekly, monthly, and annual salary estimates.</p>
-        </article>
-        <article>
-          <h3><a href="/weekly-pay-calculator/">Weekly Pay Calculator</a></h3>
-          <p>Estimate weekly gross pay from hourly wages or annual salary.</p>
-        </article>
-        <article>
-          <h3><a href="/biweekly-pay-calculator/">Biweekly Pay Calculator</a></h3>
-          <p>Estimate gross earnings for a two-week pay period.</p>
-        </article>
+      <div class="example-row">
+        <span>8:30 AM → 5:00 PM, 30-minute lunch</span>
+        <strong>8.00 hours</strong>
       </div>
-      <p style="margin-top:28px;"><a href="/calculators/">Browse all Numviro calculators</a></p>
+
+      <div class="example-row">
+        <span>8:00 AM → 4:30 PM, 30-minute lunch</span>
+        <strong>8.00 hours</strong>
+      </div>
+
+      <div class="example-row">
+        <span>10:00 PM → 6:00 AM, no break</span>
+        <strong>8.00 hours</strong>
+      </div>
+
     </div>
-  </section>
+
+
+    <h3>Can this calculate overnight time punches?</h3>
+
+    <p>
+      Yes. If your clock-out time is earlier than your clock-in time,
+      the calculator assumes the shift ended the following day.
+      For example, a shift from 10:00 PM to 6:00 AM is calculated
+      as 8 hours.
+    </p>
+
+
+    <h3>Daily hours vs. weekly hours</h3>
+
+    <p>
+      Each row calculates the hours worked for one day.
+      Numviro then adds those daily totals together to calculate
+      total weekly hours, regular hours, and overtime hours.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="info-section" id="faq">
+
+  <div class="container narrow">
+
+    <p class="eyebrow">FAQ</p>
+
+    <h2>Time card calculator FAQ</h2>
+
+
+    <h3>How do I calculate hours worked from clock-in and clock-out?</h3>
+
+    <p>
+      Subtract your clock-in time from your clock-out time,
+      then subtract any unpaid lunch or break.
+      Add each daily total together for weekly hours.
+    </p>
+
+
+    <h3>Can I use this as a time punch calculator?</h3>
+
+    <p>
+      Yes. Enter your clock-in and clock-out time punches for each
+      day plus any unpaid break. Numviro converts the punches into
+      daily and weekly hours worked.
+    </p>
+
+
+    <h3>Can I leave days blank?</h3>
+
+    <p>
+      Yes. Days without both a start and end time are ignored.
+    </p>
+
+
+    <h3>Does the calculator support overnight shifts?</h3>
+
+    <p>
+      Yes. If the end time is earlier than the start time,
+      Numviro treats the end time as occurring on the following day.
+    </p>
+
+
+    <h3>Can I change the overtime threshold?</h3>
+
+    <p>
+      Yes. The default is 40 weekly hours, but you can enter another
+      threshold for estimation purposes.
+    </p>
+
+
+    <h3>Can I subtract a lunch break from my time card?</h3>
+
+    <p>
+      Yes. Enter the unpaid lunch or break duration in minutes.
+      Numviro subtracts it from the elapsed shift time.
+    </p>
+
+
+    <h3>How many hours is 9 AM to 5:30 PM with a 30-minute lunch?</h3>
+
+    <p>
+      The elapsed shift is 8 hours 30 minutes.
+      After subtracting a 30-minute unpaid lunch,
+      the worked time is 8.00 hours.
+    </p>
+
+
+    <h3>Does this calculate take-home pay?</h3>
+
+    <p>
+      No. The pay result is estimated gross pay before taxes,
+      benefits, deductions, and other payroll adjustments.
+    </p>
+
+
+    <h3>What if I only need to calculate one shift?</h3>
+
+    <p>
+      Use the
+      <a href="/work-hours-calculator/">Work Hours Calculator</a>
+      if you only need to calculate one start time, end time,
+      and break instead of a seven-day time card.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="info-section" style="background:#f8fafc">
+
+  <div class="container">
+
+    <p class="eyebrow">RELATED TOOLS</p>
+
+    <h2>More work &amp; pay calculators</h2>
+
+    <div class="related-grid">
+
+      <a class="related-card" href="/work-hours-calculator/">
+        <h3>Work Hours Calculator</h3>
+        <p>
+          Calculate one shift from start time,
+          end time, and an unpaid break.
+        </p>
+      </a>
+
+      <a class="related-card" href="/overtime-pay-calculator/">
+        <h3>Overtime Pay Calculator</h3>
+        <p>
+          Estimate time-and-a-half, double-time,
+          and other overtime earnings.
+        </p>
+      </a>
+
+      <a class="related-card" href="/gross-pay-calculator/">
+        <h3>Gross Pay Calculator</h3>
+        <p>
+          Calculate gross earnings before taxes
+          and payroll deductions.
+        </p>
+      </a>
+
+      <a class="related-card" href="/hourly-to-salary-calculator/">
+        <h3>Hourly to Salary Calculator</h3>
+        <p>
+          Convert hourly pay into weekly,
+          monthly, and annual salary.
+        </p>
+      </a>
+
+      <a class="related-card" href="/weekly-pay-calculator/">
+        <h3>Weekly Pay Calculator</h3>
+        <p>
+          Estimate weekly gross pay from
+          hourly wages or annual salary.
+        </p>
+      </a>
+
+      <a class="related-card" href="/biweekly-pay-calculator/">
+        <h3>Biweekly Pay Calculator</h3>
+        <p>
+          Estimate gross earnings for
+          a two-week pay period.
+        </p>
+      </a>
+
+    </div>
+
+    <p style="margin-top:28px;">
+      <a href="/calculators/">
+        Browse all Numviro calculators →
+      </a>
+    </p>
+
+  </div>
+
+</section>
+
 </main>
 
+
 <footer class="site-footer">
+
   <div class="container">
+
     <p>
       © <span id="year"></span> Numviro ·
       <a href="/about.html">About</a> ·
@@ -329,114 +975,281 @@
       <a href="/privacy.html">Privacy</a> ·
       <a href="/terms.html">Terms</a>
     </p>
+
   </div>
+
 </footer>
 
+
 <script>
-  const dayNames = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
-  const defaults = [
-    ["09:00","17:30",30],
-    ["09:00","17:30",30],
-    ["09:00","17:30",30],
-    ["09:00","17:30",30],
-    ["09:00","17:30",30],
-    ["","",0],
-    ["","",0]
-  ];
 
-  const $ = id => document.getElementById(id);
+const dayNames = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
+];
 
-  function money(value) {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      maximumFractionDigits: value % 1 === 0 ? 0 : 2
-    }).format(value || 0);
+const defaults = [
+  ["09:00","17:30",30],
+  ["09:00","17:30",30],
+  ["09:00","17:30",30],
+  ["09:00","17:30",30],
+  ["09:00","17:30",30],
+  ["","",0],
+  ["","",0]
+];
+
+const $ = id => document.getElementById(id);
+
+
+function money(value){
+
+  return new Intl.NumberFormat("en-US",{
+    style:"currency",
+    currency:"USD",
+    maximumFractionDigits:value % 1 === 0 ? 0 : 2
+  }).format(value || 0);
+
+}
+
+
+function minutesFromTime(value){
+
+  if(!value) return null;
+
+  const [h,m] = value.split(":").map(Number);
+
+  return h * 60 + m;
+
+}
+
+
+function dayHours(startValue,endValue,breakMinutes){
+
+  const start = minutesFromTime(startValue);
+  let end = minutesFromTime(endValue);
+
+  if(start === null || end === null) return 0;
+
+  if(end < start){
+    end += 1440;
   }
 
-  function minutesFromTime(value) {
-    if (!value) return null;
-    const [h,m] = value.split(":").map(Number);
-    return h * 60 + m;
-  }
+  const worked = Math.max(
+    0,
+    end - start - Math.max(0,breakMinutes || 0)
+  );
 
-  function dayHours(startValue, endValue, breakMinutes) {
-    const start = minutesFromTime(startValue);
-    let end = minutesFromTime(endValue);
-    if (start === null || end === null) return 0;
-    if (end < start) end += 1440;
-    const worked = Math.max(0, end - start - Math.max(0, breakMinutes || 0));
-    return worked / 60;
-  }
+  return worked / 60;
 
-  function buildRows() {
-    const holder = $("days");
-    dayNames.forEach((day, i) => {
-      const row = document.createElement("div");
-      row.className = "day-row";
-      row.innerHTML = `
-        <strong>${day}</strong>
-        <label>
-          <span class="mini-label">Start</span>
-          <input id="start-${i}" type="time" value="${defaults[i][0]}">
-        </label>
-        <label>
-          <span class="mini-label">End</span>
-          <input id="end-${i}" type="time" value="${defaults[i][1]}">
-        </label>
-        <label>
-          <span class="mini-label">Break</span>
-          <input id="break-${i}" type="number" min="0" step="1" value="${defaults[i][2]}">
-        </label>
-        <div class="day-total" id="total-${i}">0.00h</div>
-      `;
-      holder.appendChild(row);
-    });
-  }
+}
 
-  function calculate() {
-    let total = 0;
 
-    dayNames.forEach((_, i) => {
-      const hours = dayHours(
-        $(`start-${i}`).value,
-        $(`end-${i}`).value,
-        parseFloat($(`break-${i}`).value) || 0
-      );
-      total += hours;
-      $(`total-${i}`).textContent = `${hours.toFixed(2)}h`;
-    });
+function buildRows(){
 
-    const hourly = Math.max(0, parseFloat($("hourlyWage").value) || 0);
-    const multiplier = Math.max(1, parseFloat($("otMultiplier").value) || 1.5);
-    const threshold = Math.max(0, parseFloat($("otThreshold").value) || 40);
+  const holder = $("days");
 
-    const regularHours = Math.min(total, threshold);
-    const overtimeHours = Math.max(0, total - threshold);
-    const overtimeRate = hourly * multiplier;
-    const regularPay = regularHours * hourly;
-    const overtimePay = overtimeHours * overtimeRate;
-    const totalPay = regularPay + overtimePay;
+  dayNames.forEach((day,i)=>{
 
-    $("totalHours").textContent = total.toFixed(2);
-    $("regularHours").textContent = regularHours.toFixed(2);
-    $("overtimeHours").textContent = overtimeHours.toFixed(2);
-    $("regularPay").textContent = money(regularPay);
-    $("overtimePay").textContent = money(overtimePay);
-    $("overtimeRate").textContent = money(overtimeRate) + "/hr";
-    $("totalPay").textContent = money(totalPay);
-  }
+    const row = document.createElement("div");
 
-  document.addEventListener("DOMContentLoaded", () => {
-    $("year").textContent = new Date().getFullYear();
-    buildRows();
+    row.className = "day-row";
 
-    document.querySelectorAll("input").forEach(input => {
-      input.addEventListener("input", calculate);
-    });
+    row.innerHTML = `
+      <strong>${day}</strong>
 
-    calculate();
+      <label>
+        <span class="mini-label">Clock in</span>
+        <input
+          id="start-${i}"
+          type="time"
+          value="${defaults[i][0]}"
+          aria-label="${day} clock in">
+      </label>
+
+      <label>
+        <span class="mini-label">Clock out</span>
+        <input
+          id="end-${i}"
+          type="time"
+          value="${defaults[i][1]}"
+          aria-label="${day} clock out">
+      </label>
+
+      <label>
+        <span class="mini-label">Break (min)</span>
+        <input
+          id="break-${i}"
+          type="number"
+          min="0"
+          step="1"
+          inputmode="numeric"
+          value="${defaults[i][2]}"
+          aria-label="${day} unpaid break minutes">
+      </label>
+
+      <div
+        class="day-total"
+        id="total-${i}">
+        0.00h
+      </div>
+    `;
+
+    holder.appendChild(row);
+
   });
+
+}
+
+
+function calculate(){
+
+  let total = 0;
+
+  dayNames.forEach((_,i)=>{
+
+    const hours = dayHours(
+      $(`start-${i}`).value,
+      $(`end-${i}`).value,
+      parseFloat($(`break-${i}`).value) || 0
+    );
+
+    total += hours;
+
+    $(`total-${i}`).textContent =
+      `${hours.toFixed(2)}h`;
+
+  });
+
+
+  const hourly = Math.max(
+    0,
+    parseFloat($("hourlyWage").value) || 0
+  );
+
+  const multiplier = Math.max(
+    1,
+    parseFloat($("otMultiplier").value) || 1.5
+  );
+
+  const threshold = Math.max(
+    0,
+    parseFloat($("otThreshold").value) || 40
+  );
+
+
+  const regularHours =
+    Math.min(total,threshold);
+
+  const overtimeHours =
+    Math.max(0,total - threshold);
+
+  const overtimeRate =
+    hourly * multiplier;
+
+  const regularPay =
+    regularHours * hourly;
+
+  const overtimePay =
+    overtimeHours * overtimeRate;
+
+  const totalPay =
+    regularPay + overtimePay;
+
+
+  $("totalHours").textContent =
+    total.toFixed(2);
+
+  $("regularHours").textContent =
+    regularHours.toFixed(2);
+
+  $("overtimeHours").textContent =
+    overtimeHours.toFixed(2);
+
+  $("regularPay").textContent =
+    money(regularPay);
+
+  $("overtimePay").textContent =
+    money(overtimePay);
+
+  $("overtimeRate").textContent =
+    money(overtimeRate) + "/hr";
+
+  $("totalPay").textContent =
+    money(totalPay);
+
+}
+
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+  $("year").textContent =
+    new Date().getFullYear();
+
+  buildRows();
+
+
+  document.querySelectorAll("input").forEach(input=>{
+
+    input.addEventListener(
+      "input",
+      calculate
+    );
+
+  });
+
+
+  const mobileMenuBtn =
+    $("mobileMenuBtn");
+
+  const mobileMenu =
+    $("mobileMenu");
+
+
+  if(mobileMenuBtn && mobileMenu){
+
+    mobileMenuBtn.addEventListener("click",()=>{
+
+      const isOpen =
+        mobileMenu.classList.toggle("open");
+
+      mobileMenuBtn.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+    });
+
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(link=>{
+
+        link.addEventListener("click",()=>{
+
+          mobileMenu.classList.remove("open");
+
+          mobileMenuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
+      });
+
+  }
+
+
+  calculate();
+
+});
+
 </script>
+
 </body>
 </html>
